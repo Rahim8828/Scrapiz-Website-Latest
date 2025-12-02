@@ -1,0 +1,13 @@
+{"timestamp":"2025-11-30T20:01:07.423Z","level":"INFO","message":"Logger initialized","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.428Z","level":"INFO","message":"Backup directory initialized","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.436Z","level":"ERROR","message":"HTTP status check failed for http://localhost:5173/","sessionId":1764532867423,"data":{"error":"Error"}}
+{"timestamp":"2025-11-30T20:01:07.437Z","level":"ERROR","message":"HTTP status check failed for http://localhost:5173/about","sessionId":1764532867423,"data":{"error":"Error"}}
+{"timestamp":"2025-11-30T20:01:07.438Z","level":"ERROR","message":"HTTP status check failed for http://localhost:5173/contact","sessionId":1764532867423,"data":{"error":"Error"}}
+{"timestamp":"2025-11-30T20:01:07.438Z","level":"INFO","message":"Starting soft 404 fixes for 3 issues (dry run: true)","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.438Z","level":"INFO","message":"Fixing soft 404: http://localhost:5173/test-thin-content (reason: thin-content)","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.438Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764532867423,"data":{"fixType":"soft404","url":"http://localhost:5173/test-thin-content","details":{"url":"http://localhost:5173/test-thin-content","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T20:01:07.439Z","level":"INFO","message":"Fixing soft 404: http://localhost:5173/test-empty-page (reason: empty-page)","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.439Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764532867423,"data":{"fixType":"soft404","url":"http://localhost:5173/test-empty-page","details":{"url":"http://localhost:5173/test-empty-page","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T20:01:07.439Z","level":"INFO","message":"Fixing soft 404: http://localhost:5173/test-low-quality (reason: low-quality)","sessionId":1764532867423}
+{"timestamp":"2025-11-30T20:01:07.439Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764532867423,"data":{"fixType":"soft404","url":"http://localhost:5173/test-low-quality","details":{"url":"http://localhost:5173/test-low-quality","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T20:01:07.439Z","level":"INFO","message":"Soft 404 fixes complete: 0 fixed, 3 failed","sessionId":1764532867423}

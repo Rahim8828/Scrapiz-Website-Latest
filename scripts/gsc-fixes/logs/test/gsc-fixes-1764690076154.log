@@ -1,0 +1,12 @@
+{"timestamp":"2025-12-02T15:41:16.154Z","level":"INFO","message":"Logger initialized","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.155Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.156Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.156Z","level":"INFO","message":"Checking 4 resources for blocking","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.157Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764690076154,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:41:16.157Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.157Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764690076154,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:41:16.157Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.158Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764690076154,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:41:16.158Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076154}
+{"timestamp":"2025-12-02T15:41:16.158Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764690076154,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:41:16.158Z","level":"INFO","message":"Found 3 blocked resources","sessionId":1764690076154}

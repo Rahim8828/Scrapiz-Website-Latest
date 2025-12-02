@@ -1,0 +1,9 @@
+{"timestamp":"2025-12-02T15:26:54.278Z","level":"INFO","message":"Logger initialized","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.286Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.287Z","level":"INFO","message":"Cleaning sitemap: removing 1 URLs","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.288Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/sitemap.test.xml.backup.1764689214287","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.288Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.288Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.288Z","level":"INFO","message":"Generating sitemap for 0 pages","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.288Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764689214276}
+{"timestamp":"2025-12-02T15:26:54.289Z","level":"INFO","message":"Sitemap cleaned: removed 1 URLs","sessionId":1764689214276}

@@ -4,6 +4,7 @@ import { Calendar, MapPin, Phone, User, Package, ArrowRight, Wrench } from 'luci
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
+import OptimizedImage from './OptimizedImage';
 
 const HeroSection = () => {
   const formRef = useRef();
@@ -73,7 +74,7 @@ const HeroSection = () => {
               transition={{ delay: 0.8 }}
               className="inline-flex items-center gap-2 sm:gap-3 bg-white/80 backdrop-blur-sm border border-green-200 rounded-full pl-2 pr-3 sm:pr-4 py-1.5 sm:py-2 shadow-md"
             >
-              <img alt="Startup India Logo" width="120" height="40" className="h-8 sm:h-10 w-auto" src="https://horizons-cdn.hostinger.com/4ac3079d-8cee-4c39-b363-0d9dc8e58a65/3c8b5158057f3cfa9cb1ef802827f1dc.png" loading="lazy" />
+              <img alt="Startup India Logo" width="120" height="40" className="h-8 sm:h-10 w-auto" src="https://horizons-cdn.hostinger.com/4ac3079d-8cee-4c39-b363-0d9dc8e58a65/3c8b5158057f3cfa9cb1ef802827f1dc.png" loading="eager" style={{ aspectRatio: '3/1' }} />
               <span className="font-semibold text-green-800 text-xs sm:text-sm">Recognized by Startup India</span>
             </motion.div>
 

@@ -1,0 +1,16 @@
+{"timestamp":"2025-12-02T15:25:15.985Z","level":"INFO","message":"Logger initialized","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.985Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.986Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.986Z","level":"INFO","message":"Validating robots.txt","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.986Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.986Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.988Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.988Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.992Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.993Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115985}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115985,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:25:15.994Z","level":"INFO","message":"Robots.txt validation: invalid","sessionId":1764689115985,"data":{"issueCount":1}}

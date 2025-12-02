@@ -3,7 +3,7 @@ title: "Sell Scrap Online in Mumbai – Instant Pickup | Scrapiz"
 description: "Sell scrap online in Mumbai with Scrapiz. Enjoy instant doorstep pickup, fair and transparent pricing, and instant digital payments – all while supporting eco-friendly recycling."
 date: "2025-05-08"
 author: "Scrapiz Team"
-featuredImage: "/Sell Your Scrap Online In Mumbai.webp"
+featuredImage: "/optimized/Sell Your Scrap Online In Mumbai.webp"
 ---
 
 ## Changing the Way Mumbai Sells Scrap

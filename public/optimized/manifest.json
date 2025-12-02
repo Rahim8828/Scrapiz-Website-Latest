@@ -1,0 +1,607 @@
+{
+  "generatedAt": "2025-12-01T16:55:46.879Z",
+  "config": {
+    "inputDir": "/Users/founderscrapiz/Desktop/Scrapiz Website/public",
+    "outputDir": "/Users/founderscrapiz/Desktop/Scrapiz Website/public/optimized",
+    "quality": 85,
+    "formats": [
+      "webp"
+    ],
+    "breakpoints": [
+      320,
+      640,
+      768,
+      1024,
+      1280,
+      1920
+    ],
+    "minCompressionRatio": 0.6
+  },
+  "images": [
+    {
+      "original": "10 Reasons To Sell Your Scrap Online.webp",
+      "originalSize": 14002,
+      "optimized": "/10 Reasons To Sell Your Scrap Online.webp",
+      "optimizedSize": 31136,
+      "compressionRatio": -1.2236823310955578,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/10 Reasons To Sell Your Scrap Online-320w.webp",
+          "size": 8598
+        },
+        {
+          "width": 640,
+          "path": "/10 Reasons To Sell Your Scrap Online-640w.webp",
+          "size": 19140
+        },
+        {
+          "width": 768,
+          "path": "/10 Reasons To Sell Your Scrap Online-768w.webp",
+          "size": 23942
+        },
+        {
+          "width": 1024,
+          "path": "/10 Reasons To Sell Your Scrap Online-1024w.webp",
+          "size": 29494
+        }
+      ]
+    },
+    {
+      "original": "Dharavi-Koliwada.webp",
+      "originalSize": 61412,
+      "optimized": "/Dharavi-Koliwada.webp",
+      "optimizedSize": 167810,
+      "compressionRatio": -1.7325278447209014,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Dharavi-Koliwada-320w.webp",
+          "size": 12416
+        },
+        {
+          "width": 640,
+          "path": "/Dharavi-Koliwada-640w.webp",
+          "size": 33008
+        },
+        {
+          "width": 768,
+          "path": "/Dharavi-Koliwada-768w.webp",
+          "size": 42766
+        },
+        {
+          "width": 1024,
+          "path": "/Dharavi-Koliwada-1024w.webp",
+          "size": 61808
+        },
+        {
+          "width": 1280,
+          "path": "/Dharavi-Koliwada-1280w.webp",
+          "size": 80702
+        },
+        {
+          "width": 1920,
+          "path": "/Dharavi-Koliwada-1920w.webp",
+          "size": 133328
+        }
+      ]
+    },
+    {
+      "original": "Mahim-West.webp",
+      "originalSize": 22378,
+      "optimized": "/Mahim-West.webp",
+      "optimizedSize": 49288,
+      "compressionRatio": -1.2025203324693896,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Mahim-West-320w.webp",
+          "size": 12234
+        },
+        {
+          "width": 640,
+          "path": "/Mahim-West-640w.webp",
+          "size": 32398
+        },
+        {
+          "width": 768,
+          "path": "/Mahim-West-768w.webp",
+          "size": 41586
+        },
+        {
+          "width": 1024,
+          "path": "/Mahim-West-1024w.webp",
+          "size": 55060
+        }
+      ]
+    },
+    {
+      "original": "Reliable Scrap Buyer Near Me.webp",
+      "originalSize": 15764,
+      "optimized": "/Reliable Scrap Buyer Near Me.webp",
+      "optimizedSize": 36940,
+      "compressionRatio": -1.343313879725958,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Reliable Scrap Buyer Near Me-320w.webp",
+          "size": 8788
+        },
+        {
+          "width": 640,
+          "path": "/Reliable Scrap Buyer Near Me-640w.webp",
+          "size": 21460
+        },
+        {
+          "width": 768,
+          "path": "/Reliable Scrap Buyer Near Me-768w.webp",
+          "size": 26388
+        },
+        {
+          "width": 1024,
+          "path": "/Reliable Scrap Buyer Near Me-1024w.webp",
+          "size": 32458
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-App-Screenshot.webp",
+      "originalSize": 13138,
+      "optimized": "/Scrapiz-App-Screenshot.webp",
+      "optimizedSize": 31706,
+      "compressionRatio": -1.4133049170345564,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-App-Screenshot-320w.webp",
+          "size": 8288
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-App-Screenshot-640w.webp",
+          "size": 22470
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-App-Screenshot-768w.webp",
+          "size": 28648
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-App-Screenshot-1024w.webp",
+          "size": 32250
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Bandra-East.webp",
+      "originalSize": 23702,
+      "optimized": "/Scrapiz-Bandra-East.webp",
+      "optimizedSize": 53100,
+      "compressionRatio": -1.2403172728039826,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Bandra-East-320w.webp",
+          "size": 12402
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Bandra-East-640w.webp",
+          "size": 33444
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Bandra-East-768w.webp",
+          "size": 43338
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Bandra-East-1024w.webp",
+          "size": 57208
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Bandra.webp",
+      "originalSize": 22922,
+      "optimized": "/Scrapiz-Bandra.webp",
+      "optimizedSize": 51292,
+      "compressionRatio": -1.237675595497775,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Bandra-320w.webp",
+          "size": 12178
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Bandra-640w.webp",
+          "size": 32956
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Bandra-768w.webp",
+          "size": 42284
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Bandra-1024w.webp",
+          "size": 55208
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Goregaon.webp",
+      "originalSize": 22132,
+      "optimized": "/Scrapiz-Goregaon.webp",
+      "optimizedSize": 48716,
+      "compressionRatio": -1.2011566961865174,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Goregaon-320w.webp",
+          "size": 11936
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Goregaon-640w.webp",
+          "size": 31852
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Goregaon-768w.webp",
+          "size": 40806
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Goregaon-1024w.webp",
+          "size": 54168
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Jogeshwari.webp",
+      "originalSize": 22930,
+      "optimized": "/Scrapiz-Jogeshwari.webp",
+      "optimizedSize": 51268,
+      "compressionRatio": -1.2358482337549064,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Jogeshwari-320w.webp",
+          "size": 12576
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Jogeshwari-640w.webp",
+          "size": 33402
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Jogeshwari-768w.webp",
+          "size": 43188
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Jogeshwari-1024w.webp",
+          "size": 56922
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Kandivali.webp",
+      "originalSize": 21840,
+      "optimized": "/Scrapiz-Kandivali.webp",
+      "optimizedSize": 48210,
+      "compressionRatio": -1.2074175824175826,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Kandivali-320w.webp",
+          "size": 11768
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Kandivali-640w.webp",
+          "size": 31404
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Kandivali-768w.webp",
+          "size": 40566
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Kandivali-1024w.webp",
+          "size": 52990
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-Nalasopara.webp",
+      "originalSize": 22510,
+      "optimized": "/Scrapiz-Nalasopara.webp",
+      "optimizedSize": 50562,
+      "compressionRatio": -1.2462016881386049,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-Nalasopara-320w.webp",
+          "size": 12456
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-Nalasopara-640w.webp",
+          "size": 32812
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-Nalasopara-768w.webp",
+          "size": 42048
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-Nalasopara-1024w.webp",
+          "size": 55620
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-dharavi.webp",
+      "originalSize": 23162,
+      "optimized": "/Scrapiz-dharavi.webp",
+      "optimizedSize": 50914,
+      "compressionRatio": -1.1981694154218117,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-dharavi-320w.webp",
+          "size": 12432
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-dharavi-640w.webp",
+          "size": 32956
+        },
+        {
+          "width": 768,
+          "path": "/Scrapiz-dharavi-768w.webp",
+          "size": 42516
+        },
+        {
+          "width": 1024,
+          "path": "/Scrapiz-dharavi-1024w.webp",
+          "size": 56384
+        }
+      ]
+    },
+    {
+      "original": "Scrapiz-logo.webp",
+      "originalSize": 26236,
+      "optimized": "/Scrapiz-logo.webp",
+      "optimizedSize": 27666,
+      "compressionRatio": -0.0545052599481628,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Scrapiz-logo-320w.webp",
+          "size": 10932
+        },
+        {
+          "width": 640,
+          "path": "/Scrapiz-logo-640w.webp",
+          "size": 25586
+        }
+      ]
+    },
+    {
+      "original": "Sell My Unused Junk For Cash.webp",
+      "originalSize": 15906,
+      "optimized": "/Sell My Unused Junk For Cash.webp",
+      "optimizedSize": 37276,
+      "compressionRatio": -1.3435181692443101,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Sell My Unused Junk For Cash-320w.webp",
+          "size": 9954
+        },
+        {
+          "width": 640,
+          "path": "/Sell My Unused Junk For Cash-640w.webp",
+          "size": 23348
+        },
+        {
+          "width": 768,
+          "path": "/Sell My Unused Junk For Cash-768w.webp",
+          "size": 28488
+        },
+        {
+          "width": 1024,
+          "path": "/Sell My Unused Junk For Cash-1024w.webp",
+          "size": 34318
+        }
+      ]
+    },
+    {
+      "original": "Sell Your Scrap Online In Mumbai.webp",
+      "originalSize": 14242,
+      "optimized": "/Sell Your Scrap Online In Mumbai.webp",
+      "optimizedSize": 33482,
+      "compressionRatio": -1.3509338576042689,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Sell Your Scrap Online In Mumbai-320w.webp",
+          "size": 9410
+        },
+        {
+          "width": 640,
+          "path": "/Sell Your Scrap Online In Mumbai-640w.webp",
+          "size": 21546
+        },
+        {
+          "width": 768,
+          "path": "/Sell Your Scrap Online In Mumbai-768w.webp",
+          "size": 26782
+        },
+        {
+          "width": 1024,
+          "path": "/Sell Your Scrap Online In Mumbai-1024w.webp",
+          "size": 30244
+        }
+      ]
+    },
+    {
+      "original": "Selling Scrap Online With Scrapiz.webp",
+      "originalSize": 18644,
+      "optimized": "/Selling Scrap Online With Scrapiz.webp",
+      "optimizedSize": 40526,
+      "compressionRatio": -1.1736751770006437,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Selling Scrap Online With Scrapiz-320w.webp",
+          "size": 10464
+        },
+        {
+          "width": 640,
+          "path": "/Selling Scrap Online With Scrapiz-640w.webp",
+          "size": 25130
+        },
+        {
+          "width": 768,
+          "path": "/Selling Scrap Online With Scrapiz-768w.webp",
+          "size": 30650
+        },
+        {
+          "width": 1024,
+          "path": "/Selling Scrap Online With Scrapiz-1024w.webp",
+          "size": 38428
+        }
+      ]
+    },
+    {
+      "original": "Shop-No-07-Dharavi.webp",
+      "originalSize": 23164,
+      "optimized": "/Shop-No-07-Dharavi.webp",
+      "optimizedSize": 50682,
+      "compressionRatio": -1.1879640821965118,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/Shop-No-07-Dharavi-320w.webp",
+          "size": 12338
+        },
+        {
+          "width": 640,
+          "path": "/Shop-No-07-Dharavi-640w.webp",
+          "size": 33094
+        },
+        {
+          "width": 768,
+          "path": "/Shop-No-07-Dharavi-768w.webp",
+          "size": 42544
+        },
+        {
+          "width": 1024,
+          "path": "/Shop-No-07-Dharavi-1024w.webp",
+          "size": 56324
+        }
+      ]
+    },
+    {
+      "original": "scrapiz-facility.webp",
+      "originalSize": 25300,
+      "optimized": "/scrapiz-facility.webp",
+      "optimizedSize": 64532,
+      "compressionRatio": -1.5506719367588935,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/scrapiz-facility-320w.webp",
+          "size": 13508
+        },
+        {
+          "width": 640,
+          "path": "/scrapiz-facility-640w.webp",
+          "size": 40956
+        },
+        {
+          "width": 768,
+          "path": "/scrapiz-facility-768w.webp",
+          "size": 52640
+        },
+        {
+          "width": 1024,
+          "path": "/scrapiz-facility-1024w.webp",
+          "size": 59858
+        }
+      ]
+    },
+    {
+      "original": "scrapiz-logo1.webp",
+      "originalSize": 50246,
+      "optimized": "/scrapiz-logo1.webp",
+      "optimizedSize": 53922,
+      "compressionRatio": -0.07316005254149593,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/scrapiz-logo1-320w.webp",
+          "size": 9126
+        },
+        {
+          "width": 640,
+          "path": "/scrapiz-logo1-640w.webp",
+          "size": 21780
+        },
+        {
+          "width": 768,
+          "path": "/scrapiz-logo1-768w.webp",
+          "size": 28324
+        },
+        {
+          "width": 1024,
+          "path": "/scrapiz-logo1-1024w.webp",
+          "size": 40918
+        },
+        {
+          "width": 1280,
+          "path": "/scrapiz-logo1-1280w.webp",
+          "size": 54808
+        }
+      ]
+    },
+    {
+      "original": "sell-scrap-online-in-Mumbai-Scrapiz.webp",
+      "originalSize": 13186,
+      "optimized": "/sell-scrap-online-in-Mumbai-Scrapiz.webp",
+      "optimizedSize": 27406,
+      "compressionRatio": -1.0784165023509784,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "/sell-scrap-online-in-Mumbai-Scrapiz-320w.webp",
+          "size": 9184
+        },
+        {
+          "width": 640,
+          "path": "/sell-scrap-online-in-Mumbai-Scrapiz-640w.webp",
+          "size": 21170
+        },
+        {
+          "width": 768,
+          "path": "/sell-scrap-online-in-Mumbai-Scrapiz-768w.webp",
+          "size": 26064
+        },
+        {
+          "width": 1024,
+          "path": "/sell-scrap-online-in-Mumbai-Scrapiz-1024w.webp",
+          "size": 31482
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ title: "Reliable Scrap Buyer Near Me for Home Pick-Up – The Ultimate Guide"
 description: "Find a reliable scrap buyer near you with home pick-up services. This guide helps you get fair prices, instant payment, and contribute to eco-friendly recycling."
 date: "2025-09-15"
 author: "Scrapiz Team"
-featuredImage: "/Reliable Scrap Buyer Near Me.webp"
+featuredImage: "/optimized/Reliable Scrap Buyer Near Me.webp"
 readTime: "7 min read"
 category: "Recycling"
 ---

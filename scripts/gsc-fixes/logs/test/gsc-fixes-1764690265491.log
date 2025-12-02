@@ -1,0 +1,4 @@
+{"timestamp":"2025-12-02T15:44:25.492Z","level":"INFO","message":"Logger initialized","sessionId":1764690265491}
+{"timestamp":"2025-12-02T15:44:25.493Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690265491}
+{"timestamp":"2025-12-02T15:44:25.493Z","level":"INFO","message":"Validating 1 sitemap entries","sessionId":1764690265491}
+{"timestamp":"2025-12-02T15:44:25.493Z","level":"INFO","message":"Validation complete: 2 issues found","sessionId":1764690265491}

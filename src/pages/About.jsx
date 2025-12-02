@@ -75,8 +75,11 @@ const About = () => {
                 <img
                   className="w-full h-auto object-cover"
                   alt="Scrapiz processing facility with a truck unloading scrap"
-                  src="/scrapiz-facility.webp"
+                  src="/optimized/scrapiz-facility.webp"
+                  width="800"
+                  height="600"
                   loading="lazy"
+                  style={{ aspectRatio: '4/3' }}
                 />
               </motion.div>
               <motion.div

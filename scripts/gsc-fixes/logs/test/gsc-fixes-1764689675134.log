@@ -1,0 +1,6 @@
+{"timestamp":"2025-12-02T15:34:35.134Z","level":"INFO","message":"Logger initialized","sessionId":1764689675134}
+{"timestamp":"2025-12-02T15:34:35.136Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689675134}
+{"timestamp":"2025-12-02T15:34:35.136Z","level":"INFO","message":"Validating sitemap structure","sessionId":1764689675134}
+{"timestamp":"2025-12-02T15:34:35.136Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689675134}
+{"timestamp":"2025-12-02T15:34:35.138Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689675134}
+{"timestamp":"2025-12-02T15:34:35.138Z","level":"INFO","message":"Structure validation complete: valid","sessionId":1764689675134}

@@ -3,7 +3,7 @@ title: "10 Reasons to Sell Your Scrap Online with Scrapiz"
 description: "Stop letting your scrap gather dust. Discover 10 powerful benefits of selling scrap online with Scrapiz—from fair prices and instant cash to saving the planet."
 date: "2025-09-22"
 author: "Scrapiz GreenTech Team"
-featuredImage: "/10 Reasons To Sell Your Scrap Online.webp"
+featuredImage: "/optimized/10 Reasons To Sell Your Scrap Online.webp"
 ---
 
 Stop letting your scrap gather dust. Discover 10 powerful benefits of selling scrap online with Scrapiz—from fair prices and instant cash to saving the planet.

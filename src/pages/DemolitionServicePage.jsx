@@ -75,6 +75,7 @@ const DemolitionServicePage = ({ openModal }) => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <link rel="canonical" href="https://www.scrapiz.in/services/demolition-service" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

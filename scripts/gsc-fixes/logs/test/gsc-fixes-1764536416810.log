@@ -1,0 +1,22 @@
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Logger initialized","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Validating sitemap directive in robots.txt","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Sitemap directive validation: invalid","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.810Z","level":"INFO","message":"Logger initialized","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Validating robots.txt","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.811Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416810}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416810,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-11-30T21:00:16.812Z","level":"INFO","message":"Robots.txt validation: valid","sessionId":1764536416810,"data":{"issueCount":0}}

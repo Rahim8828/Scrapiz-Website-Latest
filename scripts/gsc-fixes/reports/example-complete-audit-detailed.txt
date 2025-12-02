@@ -1,0 +1,200 @@
+================================================================================
+GSC INDEXING ISSUES - DETAILED REPORT
+================================================================================
+
+Generated: 2025-11-30 21:04:30
+Total Pages Analyzed: 50
+
+
+SOFT 404 ERRORS
+================================================================================
+Total: 2
+
+1. https://example.com/thin-page
+   Reason: thin-content
+   Word Count: 150
+   Has Headings: No
+   Has Internal Links: No
+   Recommendation: Enhance content to at least 500 words (currently 150 words)
+   Fixable: Yes
+
+2. https://example.com/empty-page
+   Reason: empty-page
+   Word Count: 50
+   Has Headings: No
+   Has Internal Links: No
+   Recommendation: Add substantial body content or return proper 404 status
+   Fixable: Yes
+
+
+CANONICAL TAG ISSUES
+================================================================================
+Total: 2
+
+1. https://example.com/page-without-canonical
+   Issue Type: missing
+   Current Canonical: None
+   Expected Canonical: https://example.com/page-without-canonical
+   In Sitemap: Yes
+   Recommendation: Add self-referencing canonical tag
+   Fixable: Yes
+
+2. https://example.com/duplicate-page
+   Issue Type: missing
+   Current Canonical: None
+   Expected Canonical: https://example.com/original-page
+   In Sitemap: No
+   Recommendation: Add canonical tag pointing to original page
+   Fixable: Yes
+
+
+REDIRECT ISSUES
+================================================================================
+Total: 2
+
+1. https://example.com/old-page
+   Redirect Type: 301
+   Redirect Chain: https://example.com/old-page → https://example.com/intermediate-page → https://example.com/new-page
+   Final Destination: https://example.com/new-page
+   In Sitemap: Yes
+   Internal Links Count: 5
+   Recommendation: Flatten redirect chain (3 redirects). Update sitemap and internal links to point to final destination
+   Fixable: Yes
+
+2. https://example.com/temp-redirect
+   Redirect Type: 302
+   Redirect Chain: https://example.com/temp-redirect → https://example.com/destination
+   Final Destination: https://example.com/destination
+   In Sitemap: No
+   Internal Links Count: 2
+   Recommendation: Change to 301 permanent redirect. Update sitemap and internal links to point to final destination
+   Fixable: Yes
+
+
+NOINDEX TAG ISSUES
+================================================================================
+Total: 2
+
+1. https://example.com/valuable-page
+   Noindex Source: meta-tag
+   Should Be Indexed: Yes
+   In Sitemap: Yes
+   Has Backlinks: Yes
+   Recommendation: Remove noindex tag - page has valuable content
+   Fixable: Yes
+
+2. https://example.com/admin-page
+   Noindex Source: meta-tag, http-header
+   Should Be Indexed: No
+   In Sitemap: No
+   Has Backlinks: No
+   Recommendation: Keep noindex or improve content quality
+   Fixable: No
+
+
+DUPLICATE CONTENT ISSUES
+================================================================================
+Total: 1
+
+1. https://example.com/page?sort=asc
+   Duplicate Of: https://example.com/page
+   Similarity Score: 95.0%
+   Has Canonical: No
+   Canonical Target: None
+   Recommendation: Add canonical tag pointing to https://example.com/page
+   Fixable: Yes
+
+
+CRAWLED BUT NOT INDEXED
+================================================================================
+Total: 1
+
+1. https://example.com/crawled-page
+   Reason: thin-content
+   Recommendation: Enhance content to at least 500 words of unique, valuable information
+
+
+DISCOVERED BUT NOT INDEXED
+================================================================================
+Total: 1
+
+1. https://example.com/discovered-page
+   Reason: not-in-sitemap
+   Recommendation: Add to sitemap and improve internal linking
+
+
+404 NOT FOUND ERRORS
+================================================================================
+Total: 2
+
+1. https://example.com/deleted-page
+   Has Backlinks: Yes
+   Internal Links Count: 3
+   Recommendation: Implement 301 redirect to most relevant existing page
+   Fixable: Yes
+
+2. https://example.com/never-existed
+   Has Backlinks: No
+   Internal Links Count: 0
+   Recommendation: Ensure it returns proper 404 status and is removed from sitemaps
+   Fixable: Yes
+
+
+INVALID STRUCTURED DATA
+================================================================================
+Total: 2
+
+1. https://example.com/business-page
+   Schema Type: LocalBusiness
+   Errors:
+     - telephone: Missing required field (error)
+     - address: Invalid format (error)
+   Fixable: Yes
+
+2. https://example.com/faq-page
+   Schema Type: FAQPage
+   Errors:
+     - acceptedAnswer: Missing required property (error)
+   Fixable: Yes
+
+
+PRIORITY RECOMMENDATIONS
+================================================================================
+
+1. [CRITICAL] Fix 404 errors with backlinks
+   These pages have external links pointing to them but return 404. Implement 301 redirects to preserve link equity.
+   Affected URLs: 1
+
+2. [CRITICAL] Remove noindex from valuable pages
+   These pages have substantial content but are blocked from indexing by noindex tags.
+   Affected URLs: 1
+
+3. [CRITICAL] Fix invalid structured data
+   Invalid schema markup prevents rich results in search. Fix missing required fields and format errors.
+   Affected URLs: 2
+
+4. [HIGH] Resolve soft 404 errors
+   These pages return 200 status but have thin or low-quality content. Enhance content or implement proper 404 status.
+   Affected URLs: 2
+
+5. [HIGH] Flatten redirect chains
+   Multiple redirects waste crawl budget and slow page load. Implement direct redirects.
+   Affected URLs: 1
+
+6. [HIGH] Add missing canonical tags
+   Pages without canonical tags may have indexing issues. Add self-referencing canonical tags.
+   Affected URLs: 2
+
+7. [MEDIUM] Resolve duplicate content
+   Implement canonical tags or 301 redirects to consolidate duplicate pages.
+   Affected URLs: 1
+
+8. [MEDIUM] Improve crawled but not indexed pages
+   Enhance content quality, add internal links, or consolidate with canonical tags.
+   Affected URLs: 1
+
+9. [LOW] Optimize discovered pages
+   Add to sitemap and improve internal linking to help Google crawl these pages.
+   Affected URLs: 1
+
+================================================================================

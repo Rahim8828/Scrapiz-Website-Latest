@@ -1,0 +1,4 @@
+{"timestamp":"2025-12-02T15:25:15.952Z","level":"INFO","message":"Logger initialized","sessionId":1764689115952}
+{"timestamp":"2025-12-02T15:25:15.953Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689115952}
+{"timestamp":"2025-12-02T15:25:15.953Z","level":"INFO","message":"Generating robots.txt","sessionId":1764689115952}
+{"timestamp":"2025-12-02T15:25:15.953Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764689115952}

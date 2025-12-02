@@ -11,6 +11,7 @@ const NotFound = () => {
       <Helmet>
         <title>404 - Page Not Found | Scrapiz</title>
         <meta name="description" content="The page you are looking for does not exist." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-50 text-center hero-pattern">
         <motion.div

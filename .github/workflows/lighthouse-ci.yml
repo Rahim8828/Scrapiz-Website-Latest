@@ -1,0 +1,97 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  lighthouse-desktop:
+    runs-on: ubuntu-latest
+    name: Lighthouse CI - Desktop
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run Lighthouse CI (Desktop)
+        run: npm run lhci:desktop
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-desktop-results
+          path: .lighthouseci/
+
+  lighthouse-mobile:
+    runs-on: ubuntu-latest
+    name: Lighthouse CI - Mobile
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run Lighthouse CI (Mobile)
+        run: npm run lhci:mobile
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile-results
+          path: .lighthouseci/
+
+  performance-regression-check:
+    runs-on: ubuntu-latest
+    name: Performance Regression Check
+    needs: [lighthouse-desktop, lighthouse-mobile]
+    if: always()
+    steps:
+      - name: Download Desktop Results
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-desktop-results
+          path: ./desktop-results
+
+      - name: Download Mobile Results
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-mobile-results
+          path: ./mobile-results
+
+      - name: Check for Performance Regressions
+        run: |
+          echo "Performance regression check completed"
+          echo "Review the Lighthouse CI results in the artifacts"

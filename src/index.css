@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -148,4 +147,75 @@ mmer animation for Today's Rate Banner */
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* Layout Stability Improvements */
+/* Ensure all images have proper aspect ratios to prevent layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reserve space for images before they load */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Prevent layout shift from lazy-loaded images */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Reserve space for dynamic content */
+.dynamic-content-placeholder {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent font loading from causing layout shifts */
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap;
+  src: local('Poppins');
+}
+
+/* Skeleton loading states for better perceived performance */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Ensure form elements don't cause layout shifts */
+input, select, textarea, button {
+  box-sizing: border-box;
+}
+
+/* Prevent CLS from animations */
+.motion-safe\:animate-float,
+.motion-safe\:animate-pulse-slow {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reserve space for modals and overlays */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+/* Prevent layout shifts from sticky headers */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  contain: layout;
 }

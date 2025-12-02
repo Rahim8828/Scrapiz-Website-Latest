@@ -63,6 +63,7 @@ const Services = () => {
       <Helmet>
         <title>Our Services - Scrapiz</title>
         <meta name="description" content="Explore the wide range of services offered by Scrapiz, including scrap collection, demolition, dismantling, paper shredding, and more." />
+        <link rel="canonical" href="https://www.scrapiz.in/services" />
       </Helmet>
       <div className="bg-gray-50">
         {/* Hero Section */}

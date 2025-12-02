@@ -34,7 +34,27 @@ const BrassScrapPage = ({ openModal }) => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Service", "name": "Brass Scrap Buying Service Mumbai", "description": pageDescription, "provider": { "@type": "LocalBusiness", "name": "Scrapiz", "telephone": "+91-8828700630" }, "areaServed": { "@type": "City", "name": "Mumbai" } },
+      { 
+        "@type": "Service", 
+        "name": "Brass Scrap Buying Service Mumbai", 
+        "description": pageDescription, 
+        "provider": { 
+          "@type": "LocalBusiness", 
+          "name": "Scrapiz", 
+          "telephone": "+91-8828700630",
+          "email": "contact@scrapiz.in",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Shop No. 07, Dharavi",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "postalCode": "400017",
+            "addressCountry": "IN"
+          },
+          "priceRange": "₹₹"
+        }, 
+        "areaServed": { "@type": "City", "name": "Mumbai" } 
+      },
       { "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.question, "acceptedAnswer": { "@type": "Answer", "text": faq.answer } })) }
     ]
   };

@@ -1,0 +1,8 @@
+{"timestamp":"2025-12-01T16:19:25.505Z","level":"INFO","message":"Logger initialized","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.505Z","level":"INFO","message":"Backup directory initialized","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.505Z","level":"INFO","message":"Logger initialized","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.506Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.507Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764605965504,"data":{"userAgents":2,"sitemaps":0}}
+{"timestamp":"2025-12-01T16:19:25.508Z","level":"INFO","message":"Backup directory initialized","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.508Z","level":"INFO","message":"Generating sitemap for 2 pages","sessionId":1764605965504}
+{"timestamp":"2025-12-01T16:19:25.511Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764605965504}

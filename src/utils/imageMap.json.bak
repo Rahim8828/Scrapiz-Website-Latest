@@ -1,0 +1,587 @@
+{
+  "10 Reasons To Sell Your Scrap Online": {
+    "original": "/10 Reasons To Sell Your Scrap Online.webp",
+    "width": 1280,
+    "height": 720,
+    "srcSet": "/responsive/10 Reasons To Sell Your Scrap Online-320w.webp 320w, /responsive/10 Reasons To Sell Your Scrap Online-640w.webp 640w, /responsive/10 Reasons To Sell Your Scrap Online-768w.webp 768w, /responsive/10 Reasons To Sell Your Scrap Online-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/responsive/10 Reasons To Sell Your Scrap Online-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "src": "/responsive/10 Reasons To Sell Your Scrap Online-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 432,
+        "src": "/responsive/10 Reasons To Sell Your Scrap Online-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 576,
+        "src": "/responsive/10 Reasons To Sell Your Scrap Online-1024w.webp"
+      }
+    ]
+  },
+  "Dharavi-Koliwada": {
+    "original": "/Dharavi-Koliwada.webp",
+    "width": 3200,
+    "height": 1600,
+    "srcSet": "/responsive/Dharavi-Koliwada-320w.webp 320w, /responsive/Dharavi-Koliwada-640w.webp 640w, /responsive/Dharavi-Koliwada-768w.webp 768w, /responsive/Dharavi-Koliwada-1024w.webp 1024w, /responsive/Dharavi-Koliwada-1280w.webp 1280w, /responsive/Dharavi-Koliwada-1920w.webp 1920w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Dharavi-Koliwada-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Dharavi-Koliwada-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Dharavi-Koliwada-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Dharavi-Koliwada-1024w.webp"
+      },
+      {
+        "width": 1280,
+        "height": 640,
+        "src": "/responsive/Dharavi-Koliwada-1280w.webp"
+      },
+      {
+        "width": 1920,
+        "height": 960,
+        "src": "/responsive/Dharavi-Koliwada-1920w.webp"
+      }
+    ]
+  },
+  "Mahim-West": {
+    "original": "/Mahim-West.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Mahim-West-320w.webp 320w, /responsive/Mahim-West-640w.webp 640w, /responsive/Mahim-West-768w.webp 768w, /responsive/Mahim-West-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Mahim-West-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Mahim-West-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Mahim-West-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Mahim-West-1024w.webp"
+      }
+    ]
+  },
+  "Reliable Scrap Buyer Near Me": {
+    "original": "/Reliable Scrap Buyer Near Me.webp",
+    "width": 1280,
+    "height": 720,
+    "srcSet": "/responsive/Reliable Scrap Buyer Near Me-320w.webp 320w, /responsive/Reliable Scrap Buyer Near Me-640w.webp 640w, /responsive/Reliable Scrap Buyer Near Me-768w.webp 768w, /responsive/Reliable Scrap Buyer Near Me-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/responsive/Reliable Scrap Buyer Near Me-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "src": "/responsive/Reliable Scrap Buyer Near Me-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 432,
+        "src": "/responsive/Reliable Scrap Buyer Near Me-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 576,
+        "src": "/responsive/Reliable Scrap Buyer Near Me-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-App-Screenshot": {
+    "original": "/Scrapiz-App-Screenshot.webp",
+    "width": 1080,
+    "height": 1094,
+    "srcSet": "/responsive/Scrapiz-App-Screenshot-320w.webp 320w, /responsive/Scrapiz-App-Screenshot-640w.webp 640w, /responsive/Scrapiz-App-Screenshot-768w.webp 768w, /responsive/Scrapiz-App-Screenshot-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 324,
+        "src": "/responsive/Scrapiz-App-Screenshot-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 648,
+        "src": "/responsive/Scrapiz-App-Screenshot-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 778,
+        "src": "/responsive/Scrapiz-App-Screenshot-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 1037,
+        "src": "/responsive/Scrapiz-App-Screenshot-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Bandra-East": {
+    "original": "/Scrapiz-Bandra-East.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Bandra-East-320w.webp 320w, /responsive/Scrapiz-Bandra-East-640w.webp 640w, /responsive/Scrapiz-Bandra-East-768w.webp 768w, /responsive/Scrapiz-Bandra-East-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Bandra-East-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Bandra-East-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Bandra-East-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Bandra-East-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Bandra": {
+    "original": "/Scrapiz-Bandra.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Bandra-320w.webp 320w, /responsive/Scrapiz-Bandra-640w.webp 640w, /responsive/Scrapiz-Bandra-768w.webp 768w, /responsive/Scrapiz-Bandra-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Bandra-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Bandra-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Bandra-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Bandra-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Goregaon": {
+    "original": "/Scrapiz-Goregaon.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Goregaon-320w.webp 320w, /responsive/Scrapiz-Goregaon-640w.webp 640w, /responsive/Scrapiz-Goregaon-768w.webp 768w, /responsive/Scrapiz-Goregaon-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Goregaon-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Goregaon-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Goregaon-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Goregaon-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Jogeshwari": {
+    "original": "/Scrapiz-Jogeshwari.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Jogeshwari-320w.webp 320w, /responsive/Scrapiz-Jogeshwari-640w.webp 640w, /responsive/Scrapiz-Jogeshwari-768w.webp 768w, /responsive/Scrapiz-Jogeshwari-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Jogeshwari-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Jogeshwari-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Jogeshwari-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Jogeshwari-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Kandivali": {
+    "original": "/Scrapiz-Kandivali.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Kandivali-320w.webp 320w, /responsive/Scrapiz-Kandivali-640w.webp 640w, /responsive/Scrapiz-Kandivali-768w.webp 768w, /responsive/Scrapiz-Kandivali-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Kandivali-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Kandivali-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Kandivali-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Kandivali-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-Nalasopara": {
+    "original": "/Scrapiz-Nalasopara.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-Nalasopara-320w.webp 320w, /responsive/Scrapiz-Nalasopara-640w.webp 640w, /responsive/Scrapiz-Nalasopara-768w.webp 768w, /responsive/Scrapiz-Nalasopara-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-Nalasopara-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-Nalasopara-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-Nalasopara-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-Nalasopara-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-dharavi": {
+    "original": "/Scrapiz-dharavi.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Scrapiz-dharavi-320w.webp 320w, /responsive/Scrapiz-dharavi-640w.webp 640w, /responsive/Scrapiz-dharavi-768w.webp 768w, /responsive/Scrapiz-dharavi-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Scrapiz-dharavi-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Scrapiz-dharavi-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Scrapiz-dharavi-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Scrapiz-dharavi-1024w.webp"
+      }
+    ]
+  },
+  "Scrapiz-logo": {
+    "original": "/Scrapiz-logo.webp",
+    "width": 703,
+    "height": 249,
+    "srcSet": "/responsive/Scrapiz-logo-320w.webp 320w, /responsive/Scrapiz-logo-640w.webp 640w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 113,
+        "src": "/responsive/Scrapiz-logo-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 227,
+        "src": "/responsive/Scrapiz-logo-640w.webp"
+      }
+    ]
+  },
+  "Sell My Unused Junk For Cash": {
+    "original": "/Sell My Unused Junk For Cash.webp",
+    "width": 1280,
+    "height": 720,
+    "srcSet": "/responsive/Sell My Unused Junk For Cash-320w.webp 320w, /responsive/Sell My Unused Junk For Cash-640w.webp 640w, /responsive/Sell My Unused Junk For Cash-768w.webp 768w, /responsive/Sell My Unused Junk For Cash-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/responsive/Sell My Unused Junk For Cash-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "src": "/responsive/Sell My Unused Junk For Cash-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 432,
+        "src": "/responsive/Sell My Unused Junk For Cash-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 576,
+        "src": "/responsive/Sell My Unused Junk For Cash-1024w.webp"
+      }
+    ]
+  },
+  "Sell Your Scrap Online In Mumbai": {
+    "original": "/Sell Your Scrap Online In Mumbai.webp",
+    "width": 1280,
+    "height": 720,
+    "srcSet": "/responsive/Sell Your Scrap Online In Mumbai-320w.webp 320w, /responsive/Sell Your Scrap Online In Mumbai-640w.webp 640w, /responsive/Sell Your Scrap Online In Mumbai-768w.webp 768w, /responsive/Sell Your Scrap Online In Mumbai-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/responsive/Sell Your Scrap Online In Mumbai-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "src": "/responsive/Sell Your Scrap Online In Mumbai-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 432,
+        "src": "/responsive/Sell Your Scrap Online In Mumbai-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 576,
+        "src": "/responsive/Sell Your Scrap Online In Mumbai-1024w.webp"
+      }
+    ]
+  },
+  "Selling Scrap Online With Scrapiz": {
+    "original": "/Selling Scrap Online With Scrapiz.webp",
+    "width": 1280,
+    "height": 720,
+    "srcSet": "/responsive/Selling Scrap Online With Scrapiz-320w.webp 320w, /responsive/Selling Scrap Online With Scrapiz-640w.webp 640w, /responsive/Selling Scrap Online With Scrapiz-768w.webp 768w, /responsive/Selling Scrap Online With Scrapiz-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/responsive/Selling Scrap Online With Scrapiz-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "src": "/responsive/Selling Scrap Online With Scrapiz-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 432,
+        "src": "/responsive/Selling Scrap Online With Scrapiz-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 576,
+        "src": "/responsive/Selling Scrap Online With Scrapiz-1024w.webp"
+      }
+    ]
+  },
+  "Shop-No-07-Dharavi": {
+    "original": "/Shop-No-07-Dharavi.webp",
+    "width": 1200,
+    "height": 600,
+    "srcSet": "/responsive/Shop-No-07-Dharavi-320w.webp 320w, /responsive/Shop-No-07-Dharavi-640w.webp 640w, /responsive/Shop-No-07-Dharavi-768w.webp 768w, /responsive/Shop-No-07-Dharavi-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 160,
+        "src": "/responsive/Shop-No-07-Dharavi-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 320,
+        "src": "/responsive/Shop-No-07-Dharavi-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 384,
+        "src": "/responsive/Shop-No-07-Dharavi-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 512,
+        "src": "/responsive/Shop-No-07-Dharavi-1024w.webp"
+      }
+    ]
+  },
+  "scrapiz-facility": {
+    "original": "/scrapiz-facility.webp",
+    "width": 1170,
+    "height": 654,
+    "srcSet": "/responsive/scrapiz-facility-320w.webp 320w, /responsive/scrapiz-facility-640w.webp 640w, /responsive/scrapiz-facility-768w.webp 768w, /responsive/scrapiz-facility-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 179,
+        "src": "/responsive/scrapiz-facility-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 358,
+        "src": "/responsive/scrapiz-facility-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 429,
+        "src": "/responsive/scrapiz-facility-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 572,
+        "src": "/responsive/scrapiz-facility-1024w.webp"
+      }
+    ]
+  },
+  "scrapiz-logo1": {
+    "original": "/scrapiz-logo1.webp",
+    "width": 1291,
+    "height": 754,
+    "srcSet": "/responsive/scrapiz-logo1-320w.webp 320w, /responsive/scrapiz-logo1-640w.webp 640w, /responsive/scrapiz-logo1-768w.webp 768w, /responsive/scrapiz-logo1-1024w.webp 1024w, /responsive/scrapiz-logo1-1280w.webp 1280w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 187,
+        "src": "/responsive/scrapiz-logo1-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 374,
+        "src": "/responsive/scrapiz-logo1-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 449,
+        "src": "/responsive/scrapiz-logo1-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 598,
+        "src": "/responsive/scrapiz-logo1-1024w.webp"
+      },
+      {
+        "width": 1280,
+        "height": 748,
+        "src": "/responsive/scrapiz-logo1-1280w.webp"
+      }
+    ]
+  },
+  "sell-scrap-online-in-Mumbai-Scrapiz": {
+    "original": "/sell-scrap-online-in-Mumbai-Scrapiz.webp",
+    "width": 1070,
+    "height": 626,
+    "srcSet": "/responsive/sell-scrap-online-in-Mumbai-Scrapiz-320w.webp 320w, /responsive/sell-scrap-online-in-Mumbai-Scrapiz-640w.webp 640w, /responsive/sell-scrap-online-in-Mumbai-Scrapiz-768w.webp 768w, /responsive/sell-scrap-online-in-Mumbai-Scrapiz-1024w.webp 1024w",
+    "sizes": "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+    "responsive": [
+      {
+        "width": 320,
+        "height": 187,
+        "src": "/responsive/sell-scrap-online-in-Mumbai-Scrapiz-320w.webp"
+      },
+      {
+        "width": 640,
+        "height": 374,
+        "src": "/responsive/sell-scrap-online-in-Mumbai-Scrapiz-640w.webp"
+      },
+      {
+        "width": 768,
+        "height": 449,
+        "src": "/responsive/sell-scrap-online-in-Mumbai-Scrapiz-768w.webp"
+      },
+      {
+        "width": 1024,
+        "height": 599,
+        "src": "/responsive/sell-scrap-online-in-Mumbai-Scrapiz-1024w.webp"
+      }
+    ]
+  }
+}

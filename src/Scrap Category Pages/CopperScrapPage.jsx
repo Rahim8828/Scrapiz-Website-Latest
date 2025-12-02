@@ -52,7 +52,16 @@ const CopperScrapPage = ({ openModal }) => {
           "@type": "LocalBusiness",
           "name": "Scrapiz",
           "telephone": "+91-8828700630",
-          "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" }
+          "email": "contact@scrapiz.in",
+          "priceRange": "₹₹",
+          "address": { 
+            "@type": "PostalAddress", 
+            "streetAddress": "Shop No. 07, Dharavi",
+            "addressLocality": "Mumbai", 
+            "addressRegion": "Maharashtra",
+            "postalCode": "400017",
+            "addressCountry": "IN" 
+          }
         },
         "areaServed": { "@type": "City", "name": "Mumbai" }
       },

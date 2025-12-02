@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-30T19:53:52.041Z","level":"INFO","message":"Logger initialized","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.048Z","level":"INFO","message":"Backup directory initialized","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.048Z","level":"INFO","message":"GSC Fix System initialized successfully","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.048Z","level":"INFO","message":"Test info message","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.048Z","level":"WARN","message":"Test warning message","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.049Z","level":"DEBUG","message":"Test debug message","sessionId":1764532432041}
+{"timestamp":"2025-11-30T19:53:52.049Z","level":"ERROR","message":"Error in test-context","sessionId":1764532432041,"data":{"message":"Test error","stack":"Error: Test error\n    at testSetup (file:///Users/founderscrapiz/Desktop/Scrapiz%20Website/scripts/gsc-fixes/test-setup.js:25:23)","code":"ENOENT"}}
+{"timestamp":"2025-11-30T19:53:52.049Z","level":"WARN","message":"Skipping test-context due to error: Test error","sessionId":1764532432041}

@@ -74,6 +74,7 @@ const SocietyTieUpPage = ({ openModal }) => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <link rel="canonical" href="https://www.scrapiz.in/services/society-tie-up" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

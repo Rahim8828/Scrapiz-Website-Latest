@@ -14,6 +14,7 @@ const Locations = () => {
       <Helmet>
         <title>Our Locations - Scrapiz Scrap Buyers in Mumbai</title>
         <meta name="description" content="Find Scrapiz scrap buyers across Mumbai. We serve Bandra, Dharavi, Goregaon, Jogeshwari, Kandivali, Mahim, Nalasopara and more with doorstep pickup and best rates." />
+        <link rel="canonical" href="https://www.scrapiz.in/locations" />
       </Helmet>
       <div className="bg-white">
         <motion.div 
@@ -59,8 +60,11 @@ const Locations = () => {
                     <img
                       src={location.images.hero}
                       alt={location.images.alt}
+                      width="600"
+                      height="400"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                       loading="lazy"
+                      style={{ aspectRatio: '3/2' }}
                     />
                   </div>
 

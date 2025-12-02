@@ -1,0 +1,6 @@
+{"timestamp":"2025-12-02T15:41:16.172Z","level":"INFO","message":"Logger initialized","sessionId":1764690076172}
+{"timestamp":"2025-12-02T15:41:16.172Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690076172}
+{"timestamp":"2025-12-02T15:41:16.175Z","level":"INFO","message":"Validating sitemap directive in robots.txt","sessionId":1764690076172}
+{"timestamp":"2025-12-02T15:41:16.175Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076172}
+{"timestamp":"2025-12-02T15:41:16.177Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764690076172,"data":{"userAgents":1,"sitemaps":1}}
+{"timestamp":"2025-12-02T15:41:16.177Z","level":"INFO","message":"Sitemap directive validation: valid","sessionId":1764690076172}

@@ -27,7 +27,7 @@ const postsBySlug = Object.entries(postImports).reduce((acc, [filepath, module])
 const BlogPost = () => {
   const { slug } = useParams();
   const post = postsBySlug[slug];
-  const blogUrl = `https://www.scrapiz.com/blog/${slug}`;
+  const blogUrl = `https://www.scrapiz.in/blog/${slug}`;
 
   if (!post) {
     return <Navigate to="/404" />;
@@ -51,7 +51,7 @@ const BlogPost = () => {
       "name": "Scrapiz",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.scrapiz.com/logo.png"
+        "url": "https://www.scrapiz.in/logo.png"
       }
     }
   };
@@ -132,8 +132,11 @@ const BlogPost = () => {
                     <img 
                     src={post.featuredImage} 
                     alt={post.title}
+                    width="800"
+                    height="500"
                     className="w-full h-auto object-cover"
                     loading="lazy"
+                    style={{ aspectRatio: '8/5' }}
                     />
                 </motion.div>
             )}

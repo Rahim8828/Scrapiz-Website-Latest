@@ -1,0 +1,30 @@
+[
+  {
+    "executionId": "fix-1764537006740",
+    "timestamp": "2025-11-30T21:10:06.741Z",
+    "summary": {
+      "totalFixed": 1,
+      "totalFailed": 2,
+      "totalSkipped": 0,
+      "byType": {
+        "soft404": {
+          "fixed": 0,
+          "failed": 1,
+          "skipped": 0
+        },
+        "canonical": {
+          "fixed": 0,
+          "failed": 1,
+          "skipped": 0
+        },
+        "redirects": {
+          "fixed": 1,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    "duration": 2,
+    "masterBackupPath": "/Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/master-1764537006740"
+  }
+]

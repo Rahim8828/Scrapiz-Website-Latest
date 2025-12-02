@@ -1,0 +1,25 @@
+{"timestamp":"2025-12-02T15:24:45.383Z","level":"INFO","message":"Logger initialized","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Logger initialized","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Cleaning sitemap: removing 1 URLs","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/sitemap.test.xml.backup.1764689085384","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.384Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Validating robots.txt","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Generating sitemap for 0 pages","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Sitemap cleaned: removed 1 URLs","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.385Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.386Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.387Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.390Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.390Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.392Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.392Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.392Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.392Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689085383}
+{"timestamp":"2025-12-02T15:24:45.393Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689085383,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-12-02T15:24:45.393Z","level":"INFO","message":"Robots.txt validation: invalid","sessionId":1764689085383,"data":{"issueCount":1}}

@@ -1,0 +1,6 @@
+{"timestamp":"2025-11-30T20:24:48.722Z","level":"INFO","message":"Logger initialized","sessionId":1764534288722}
+{"timestamp":"2025-11-30T20:24:48.727Z","level":"INFO","message":"Backup directory initialized","sessionId":1764534288722}
+{"timestamp":"2025-11-30T20:24:48.733Z","level":"INFO","message":"Starting noindex fixes for 1 issues (dry run: true)","sessionId":1764534288722}
+{"timestamp":"2025-11-30T20:24:48.733Z","level":"INFO","message":"Fixing noindex: http://example.com/page1 (sources: meta-tag)","sessionId":1764534288722}
+{"timestamp":"2025-11-30T20:24:48.733Z","level":"INFO","message":"1 of 1 issues are fixable","sessionId":1764534288722}
+{"timestamp":"2025-11-30T20:24:48.733Z","level":"ERROR","message":"Fix failed: noindex","sessionId":1764534288722,"data":{"fixType":"noindex","url":"http://example.com/page1","success":false,"details":{"url":"http://example.com/page1","status":"dry-run","success":false,"message":"Could not find source file for URL","actions":[{"action":"remove-meta-noindex","status":"failed","message":"Could not find source file for URL"}]}}}

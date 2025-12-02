@@ -77,6 +77,7 @@ const AppPromotionSection = () => {
                   alt="Get it on Google Play" 
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                   loading="lazy"
+                  style={{ aspectRatio: '150/56' }}
                 />
               </motion.button>
               <motion.button 
@@ -92,6 +93,7 @@ const AppPromotionSection = () => {
                   alt="Download on the App Store" 
                   src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                   loading="lazy"
+                  style={{ aspectRatio: '150/56' }}
                 />
               </motion.button>
             </div>
@@ -117,6 +119,7 @@ const AppPromotionSection = () => {
                   alt="Scrapiz App Interface - Schedule pickups and track earnings"
                   className="relative rounded-3xl lg:rounded-[2.5rem] shadow-2xl w-full object-cover hover:shadow-3xl transition-shadow duration-300"
                   loading="lazy"
+                  style={{ aspectRatio: '1/2' }}
                 />
                 
                 {/* Decorative elements */}

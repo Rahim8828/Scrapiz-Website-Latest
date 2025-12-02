@@ -1,6 +1,14 @@
+import { Helmet } from 'react-helmet';
+
 export default function RequestAccountDeletion() {
   return (
-    <div className="bg-gray-50 pt-24 pb-12">
+    <>
+      <Helmet>
+        <title>Request Account Deletion - Scrapiz</title>
+        <meta name="description" content="Request deletion of your Scrapiz account and personal data. Learn how to permanently delete your account through the app or by contacting us." />
+        <link rel="canonical" href="https://www.scrapiz.in/request-account-deletion" />
+      </Helmet>
+      <div className="bg-gray-50 pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
@@ -153,5 +161,6 @@ export default function RequestAccountDeletion() {
         </div>
       </div>
     </div>
+    </>
   );
 }

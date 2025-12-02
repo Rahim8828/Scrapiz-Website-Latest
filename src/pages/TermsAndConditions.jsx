@@ -8,6 +8,7 @@ const TermsAndConditions = () => {
             <Helmet>
                 <title>Terms & Conditions - Scrapiz</title>
                 <meta name="description" content="Read the Terms and Conditions for using the Scrapiz website and mobile application services." />
+                <link rel="canonical" href="https://www.scrapiz.in/terms-and-conditions" />
             </Helmet>
             <div className="bg-white">
                 <motion.div

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 const WorkGallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -131,13 +132,14 @@ const WorkGallerySection = () => {
                 onClick={() => setSelectedImage(item)}
               >
                 <div className="relative overflow-hidden rounded-xl shadow-md">
-                  <img
+                  <OptimizedImage
                     src={item.beforeImage}
-                    width="600"
-                    height="400"
+                    width={600}
+                    height={400}
                     alt={item.title}
                     className="w-full h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                   
                   {/* Overlay */}
@@ -211,13 +213,14 @@ const WorkGallerySection = () => {
               className="max-w-4xl w-full bg-white rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <OptimizedImage
                 src={selectedImage.beforeImage}
-                width="800"
-                height="600"
+                width={800}
+                height={600}
                 alt={selectedImage.title}
                 className="w-full h-96 object-cover"
-                loading="lazy"
+                loading="eager"
+                sizes="(max-width: 1024px) 100vw, 800px"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedImage.title}</h3>

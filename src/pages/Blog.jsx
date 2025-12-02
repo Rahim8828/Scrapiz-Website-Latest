@@ -64,6 +64,23 @@ const Blog = () => {
         <title>Blog - Scrapiz</title>
         <meta name="description" content="Expert advice on scrap management, recycling best practices, and industry insights from the Scrapiz team." />
         <link rel="canonical" href="https://www.scrapiz.in/blog" />
+        <script type="application/ld+json">
+          {`
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Scrapiz Blog",
+            "description": "Expert advice on scrap management, recycling best practices, and industry insights",
+            "url": "https://www.scrapiz.in/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Scrapiz",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.scrapiz.in/Scrapiz-logo.webp"
+              }
+            }
+          `}
+        </script>
       </Helmet>
       
       <header className="bg-gray-50 hero-pattern pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16 text-center">
@@ -110,9 +127,12 @@ const Blog = () => {
                     <Link to={`/blog/${post.slug}`} className="block">
                       <img 
                         src={post.featuredImage} 
-                        alt={post.title} 
+                        alt={post.title}
+                        width="400"
+                        height="250"
                         className="w-full h-44 sm:h-48 md:h-56 object-cover transform group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
+                        style={{ aspectRatio: '8/5' }}
                       />
                        <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
                     </Link>

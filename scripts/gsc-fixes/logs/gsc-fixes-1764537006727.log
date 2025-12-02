@@ -1,0 +1,194 @@
+{"timestamp":"2025-11-30T21:10:06.727Z","level":"INFO","message":"Logger initialized","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.732Z","level":"INFO","message":"Backup directory initialized","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.732Z","level":"INFO","message":"No existing fix history found, starting fresh","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.732Z","level":"INFO","message":"Fix executor initialized","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Starting fix execution (dry run: true, batch size: 5)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Processing 1 soft 404 issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Processing 1 batches for soft404","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Starting soft 404 fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"INFO","message":"Fixing soft 404: https://example.com/thin-page (reason: thin-content)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.733Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764537006727,"data":{"fixType":"soft404","url":"https://example.com/thin-page","details":{"url":"https://example.com/thin-page","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Soft 404 fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Processing 1 canonical issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Processing 1 batches for canonical","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Starting canonical fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"INFO","message":"Fixing canonical: https://example.com/page1 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.734Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page1","details":{"url":"https://example.com/page1","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Processing 1 redirect issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Processing 1 batches for redirects","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Fixing redirect: https://example.com/old-page","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Starting redirect fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.735Z","level":"INFO","message":"Fix applied: redirect","sessionId":1764537006727,"data":{"fixType":"redirect","url":"https://example.com/old-page","success":true,"details":{"url":"https://example.com/old-page","status":"dry-run","success":true,"message":"Would apply fixes: Flatten chain: https://example.com/old-page -> https://example.com/new-page","redirectRule":{"from":"https://example.com/old-page","to":"https://example.com/new-page","fromPath":"/old-page","toPath":"/new-page","statusCode":301,"rule":"RewriteRule ^old-page/?$ /new-page [R=301,L]","pattern":"old-page"},"fixes":["Flatten chain: https://example.com/old-page -> https://example.com/new-page"]}}}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Redirect fixes complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Batch 1 complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Fix execution complete: 1 fixed, 2 failed, 0 skipped (4ms)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Starting fix execution (dry run: true, batch size: 10)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Processing 25 canonical issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Processing batch 1/3 (10 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Processing 3 batches for canonical","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Starting canonical fixes for 10 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Fixing canonical: https://example.com/page1 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page1","details":{"url":"https://example.com/page1","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Fixing canonical: https://example.com/page2 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page2","details":{"url":"https://example.com/page2","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Fixing canonical: https://example.com/page3 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page3","details":{"url":"https://example.com/page3","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"INFO","message":"Fixing canonical: https://example.com/page4 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.737Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page4","details":{"url":"https://example.com/page4","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page5 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page5","details":{"url":"https://example.com/page5","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page6 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page6","details":{"url":"https://example.com/page6","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page7 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page7","details":{"url":"https://example.com/page7","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page8 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page8","details":{"url":"https://example.com/page8","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page9 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page9","details":{"url":"https://example.com/page9","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page10 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page10","details":{"url":"https://example.com/page10","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 10 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 10 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Processing batch 2/3 (10 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Starting canonical fixes for 10 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page11 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page11","details":{"url":"https://example.com/page11","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.738Z","level":"INFO","message":"Fixing canonical: https://example.com/page12 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page12","details":{"url":"https://example.com/page12","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page13","details":{"url":"https://example.com/page13","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page13 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page14 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page14","details":{"url":"https://example.com/page14","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page15 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page15","details":{"url":"https://example.com/page15","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page16 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page16","details":{"url":"https://example.com/page16","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page17 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page17","details":{"url":"https://example.com/page17","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page18 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page18","details":{"url":"https://example.com/page18","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page19 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page19","details":{"url":"https://example.com/page19","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page20 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page20","details":{"url":"https://example.com/page20","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 10 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Batch 2 complete: 0 fixed, 10 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Processing batch 3/3 (5 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Starting canonical fixes for 5 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page21 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page21","details":{"url":"https://example.com/page21","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page22 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page22","details":{"url":"https://example.com/page22","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page23 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page23","details":{"url":"https://example.com/page23","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"INFO","message":"Fixing canonical: https://example.com/page24 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.739Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page24","details":{"url":"https://example.com/page24","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Fixing canonical: https://example.com/page25 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page25","details":{"url":"https://example.com/page25","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 5 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Batch 3 complete: 0 fixed, 5 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Fix execution complete: 0 fixed, 25 failed, 0 skipped (3ms)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Starting fix execution (dry run: false, batch size: 10)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Backed up: public/.htaccess","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.740Z","level":"INFO","message":"Backed up: public/sitemap.xml","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Backed up: public/robots.txt","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Master backup created: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/master-1764537006740","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 soft 404 issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 batches for soft404","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Starting soft 404 fixes for 1 issues (dry run: false)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Fixing soft 404: https://example.com/thin-page (reason: thin-content)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764537006727,"data":{"fixType":"soft404","url":"https://example.com/thin-page","details":{"url":"https://example.com/thin-page","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Soft 404 fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 canonical issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 batches for canonical","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Fixing canonical: https://example.com/page1 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/page1","details":{"url":"https://example.com/page1","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Starting canonical fixes for 1 issues (dry run: false)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 redirect issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing 1 batches for redirects","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Starting redirect fixes for 1 issues (dry run: false)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Fixing redirect: https://example.com/old-page","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Fix applied: redirect","sessionId":1764537006727,"data":{"fixType":"redirect","url":"https://example.com/old-page","success":true,"details":{"url":"https://example.com/old-page","status":"fixed","success":true,"message":"Applied fixes: Flatten chain: https://example.com/old-page -> https://example.com/new-page","redirectRule":{"from":"https://example.com/old-page","to":"https://example.com/new-page","fromPath":"/old-page","toPath":"/new-page","statusCode":301,"rule":"RewriteRule ^old-page/?$ /new-page [R=301,L]","pattern":"old-page"},"fixes":["Flatten chain: https://example.com/old-page -> https://example.com/new-page"]}}}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/.htaccess.backup.1764537006741","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.741Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/.htaccess.backup.1764537006741","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Updated .htaccess with 1 redirect rules","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Redirect fixes complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Batch 1 complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Fix history saved","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Fix execution tracked: fix-1764537006740","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.742Z","level":"INFO","message":"Fix execution complete: 1 fixed, 2 failed, 0 skipped (2ms)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.743Z","level":"INFO","message":"Backed up: public/.htaccess","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.743Z","level":"INFO","message":"Backed up: public/sitemap.xml","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.743Z","level":"INFO","message":"Master backup created: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/master-1764537006742","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.743Z","level":"INFO","message":"Backed up: public/robots.txt","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Restored: .htaccess","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Restored: robots.txt","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Restored: sitemap.xml","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Master backup rollback complete","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Starting fix execution (dry run: true, batch size: 5)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Processing 1 soft 404 issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.744Z","level":"INFO","message":"Processing 1 batches for soft404","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Starting soft 404 fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Fixing soft 404: https://example.com/thin1 (reason: thin-content)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764537006727,"data":{"fixType":"soft404","url":"https://example.com/thin1","details":{"url":"https://example.com/thin1","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 canonical issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Soft 404 fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 batches for canonical","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Starting canonical fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Fixing canonical: https://example.com/dup1 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"ERROR","message":"Fix failed: canonical","sessionId":1764537006727,"data":{"fixType":"canonical","url":"https://example.com/dup1","details":{"url":"https://example.com/dup1","status":"failed","message":"Could not find source file for URL"}}}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Canonical fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 redirect issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 batches for redirects","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Starting redirect fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Fix applied: redirect","sessionId":1764537006727,"data":{"fixType":"redirect","url":"https://example.com/old","success":true,"details":{"url":"https://example.com/old","status":"dry-run","success":true,"message":"Would apply fixes: Ensure redirect is in .htaccess","redirectRule":{"from":"https://example.com/old","to":"https://example.com/new","fromPath":"/old","toPath":"/new","statusCode":301,"rule":"RewriteRule ^old/?$ /new [R=301,L]","pattern":"old"},"fixes":["Ensure redirect is in .htaccess"]}}}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Fixing redirect: https://example.com/old","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Redirect fixes complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Batch 1 complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 noindex issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing 1 batches for noindex","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Starting noindex fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"1 of 1 issues are fixable","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"INFO","message":"Fixing noindex: https://example.com/valuable (sources: meta-tag)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.745Z","level":"ERROR","message":"Fix failed: noindex","sessionId":1764537006727,"data":{"fixType":"noindex","url":"https://example.com/valuable","success":false,"details":{"url":"https://example.com/valuable","status":"dry-run","success":false,"message":"Could not find source file for URL","actions":[{"action":"remove-meta-noindex","status":"failed","message":"Could not find source file for URL"}]}}}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Noindex fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing 1 duplicate content issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing 1 batches for duplicates","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fixing duplicate content for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fixing canonical: https://example.com/dup2 (type: missing)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Duplicate content fixes complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Batch 1 complete: 0 fixed, 1 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing 1 404 issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing 1 batches for notFound","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing batch 1/1 (1 issues)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Starting 404 fixes for 1 issues (dry run: true)","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Valuable 404s (need redirects): 1","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Valueless 404s (can be ignored): 0","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fixing valuable 404: https://example.com/missing","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fix applied: 404","sessionId":1764537006727,"data":{"fixType":"404","url":"https://example.com/missing","success":true,"details":{"url":"https://example.com/missing","status":"dry-run","success":true,"message":"Would add redirect: https://example.com/missing -> https://example.com/similar","redirectRule":{"from":"https://example.com/missing","to":"https://example.com/similar","fromPath":"/missing","toPath":"/similar","statusCode":301,"rule":"RewriteRule ^missing/?$ /similar [R=301,L]","pattern":"missing"},"redirectTarget":"https://example.com/similar"}}}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Updating 3 internal links to 404: https://example.com/missing","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"404 fixes complete: 1 fixed, 0 failed, 0 links updated","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Batch 1 complete: 1 fixed, 0 failed","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Processing 1 schema issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fixing 1 schema issues","sessionId":1764537006727}
+{"timestamp":"2025-11-30T21:10:06.746Z","level":"INFO","message":"Fix execution complete: 2 fixed, 4 failed, 1 skipped (2ms)","sessionId":1764537006727}

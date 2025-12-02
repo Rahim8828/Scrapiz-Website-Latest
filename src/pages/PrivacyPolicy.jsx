@@ -8,6 +8,7 @@ const PrivacyPolicy = () => {
             <Helmet>
                 <title>Privacy Policy - Scrapiz</title>
                 <meta name="description" content="Read the Privacy Policy for Scrapiz. Understand how we collect, use, and protect your personal information." />
+                <link rel="canonical" href="https://www.scrapiz.in/privacy-policy" />
             </Helmet>
             <div className="bg-white">
                 <motion.div

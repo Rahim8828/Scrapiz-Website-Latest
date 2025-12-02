@@ -4,14 +4,39 @@
 # ======================================================================
 
 # ----------------------------------------------------------------------
-# GZIP COMPRESSION (Faster Loading)
+# BROTLI COMPRESSION (Best compression, fallback to Gzip)
+# ----------------------------------------------------------------------
+<IfModule mod_brotli.c>
+  # Enable Brotli compression
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml application/xhtml+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/rss+xml application/atom+xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/font-woff application/font-woff2
+  AddOutputFilterByType BROTLI_COMPRESS font/woff font/woff2
+</IfModule>
+
+# ----------------------------------------------------------------------
+# GZIP COMPRESSION (Fallback for browsers without Brotli support)
 # ----------------------------------------------------------------------
 <IfModule mod_deflate.c>
+  # Enable Gzip compression
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript
   AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
   AddOutputFilterByType DEFLATE application/rss+xml application/atom+xml
   AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/font-woff application/font-woff2
+  AddOutputFilterByType DEFLATE font/woff font/woff2
+  
+  # Compress all text-based content
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/*
+  </IfModule>
+  
+  # Don't compress already-compressed files
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|woff2?|mp4|webm|mp3|ogg)$ no-gzip
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -20,51 +45,120 @@
 <IfModule mod_expires.c>
   ExpiresActive On
   
-  # Images
+  # Images - 1 year cache (immutable assets)
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
   
-  # CSS and JavaScript
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/x-javascript "access plus 1 month"
+  # CSS and JavaScript with content hashes - 1 year cache (immutable)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
   
-  # Fonts
+  # Fonts - 1 year cache (immutable assets)
   ExpiresByType font/woff "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType application/font-woff "access plus 1 year"
   ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
   
-  # HTML
+  # Media files - 1 year cache
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType audio/mp3 "access plus 1 year"
+  ExpiresByType audio/ogg "access plus 1 year"
+  
+  # Data files - 1 week cache
+  ExpiresByType application/json "access plus 1 week"
+  ExpiresByType application/xml "access plus 1 week"
+  ExpiresByType text/xml "access plus 1 week"
+  
+  # HTML - no cache, must revalidate
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
 # ----------------------------------------------------------------------
-# CACHE CONTROL HEADERS
+# CACHE CONTROL HEADERS (More granular control)
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
-  # Cache static assets
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2)$">
-    Header set Cache-Control "max-age=31536000, public"
+  # Immutable assets with content hashes (JS/CSS from build)
+  # These files have hashes in their names, so they can be cached forever
+  <FilesMatch "\.(js|css)\?.*$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
   
-  # Don't cache HTML
+  # Versioned static assets (images, fonts, media)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf|eot|mp4|webm|mp3|ogg)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+  
+  # HTML files - must revalidate on every request
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
-    Header set Expires 0
+    Header set Expires "0"
   </FilesMatch>
+  
+  # JSON and XML data - shorter cache with revalidation
+  <FilesMatch "\.(json|xml)$">
+    Header set Cache-Control "max-age=604800, must-revalidate"
+  </FilesMatch>
+  
+  # Sitemap and robots.txt - 1 day cache with revalidation
+  <FilesMatch "^(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "max-age=86400, must-revalidate"
+  </FilesMatch>
+  
+  # Add ETag support for better cache validation
+  Header unset ETag
+  FileETag MTime Size
 </IfModule>
 
 <IfModule mod_rewrite.c>
 
   RewriteEngine On
   RewriteBase /
+
+  # ----------------------------------------------------------------------
+  # FORCE HTTPS (Security)
+  # ----------------------------------------------------------------------
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # ----------------------------------------------------------------------
+  # TRAILING SLASH NORMALIZATION
+  # ----------------------------------------------------------------------
+  # Remove trailing slash from all URLs except homepage
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # ----------------------------------------------------------------------
+  # 301 REDIRECTS - SERVICE PAGES (Old URLs to New /services/ prefix)
+  # ----------------------------------------------------------------------
+  RewriteRule ^scrap-collection-page/?$ /services/scrap-collection [R=301,L]
+  RewriteRule ^scrap-collection/?$ /services/scrap-collection [R=301,L]
+  RewriteRule ^demolition-service-page/?$ /services/demolition-service [R=301,L]
+  RewriteRule ^demolition-service/?$ /services/demolition-service [R=301,L]
+  RewriteRule ^demolition/?$ /services/demolition-service [R=301,L]
+  RewriteRule ^dismantling-page/?$ /services/dismantling [R=301,L]
+  RewriteRule ^dismantling-service/?$ /services/dismantling [R=301,L]
+  RewriteRule ^paper-shredding-page/?$ /services/paper-shredding [R=301,L]
+  RewriteRule ^paper-shredding-service/?$ /services/paper-shredding [R=301,L]
+  RewriteRule ^society-tie-up-page/?$ /services/society-tie-up [R=301,L]
+  RewriteRule ^society-tieup/?$ /services/society-tie-up [R=301,L]
+  RewriteRule ^junk-removal-service-page/?$ /services/junk-removal-service [R=301,L]
+  RewriteRule ^junk-removal/?$ /services/junk-removal-service [R=301,L]
+  RewriteRule ^vehicle-scrapping-page/?$ /services/vehicle-scrapping [R=301,L]
+  RewriteRule ^vehicle-scrap/?$ /services/vehicle-scrapping [R=301,L]
 
   # ----------------------------------------------------------------------
   # 301 REDIRECTS (Old WordPress to New React)
@@ -83,7 +177,7 @@
   RewriteRule ^sell-scrap-online-in-mumbai-instant-pickup-call-now/?$ /blog/sell-scrap-online-in-mumbai-instant-pickup-call-now [R=301,L]
   
   # ----------------------------------------------------------------------
-  # REACT ROUTER HANDLER (Yeh hamesha AAKHIR me hona chahiye)
+  # REACT ROUTER HANDLER (Must be last)
   # ----------------------------------------------------------------------
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f

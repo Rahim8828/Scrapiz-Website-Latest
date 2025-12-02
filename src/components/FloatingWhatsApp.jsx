@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle, X, Phone } from 'lucide-react';
 
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +18,24 @@ const FloatingWhatsApp = () => {
     window.open(url, '_blank');
   };
 
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+918828700630';
+  };
+
   return (
-    <div className="fixed bottom-24 right-6 z-50">
+    <div className="fixed bottom-24 right-6 z-50 flex flex-col gap-4">
+      {/* Phone Call Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handlePhoneClick}
+        className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-2xl flex items-center justify-center transition-all relative"
+        aria-label="Call us"
+      >
+        <Phone className="w-7 h-7 text-white" />
+        <span className="absolute -top-1 -right-1 w-4 h-4 bg-orange-500 rounded-full animate-pulse"></span>
+      </motion.button>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -32,7 +48,7 @@ const FloatingWhatsApp = () => {
             <div className="bg-green-600 p-3 text-white">
               <div className="flex items-center gap-2">
                 <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center">
-                  <img src="/scrapiz-logo1.webp" alt="Scrapiz" width="28" height="28" className="w-7 h-7 object-contain" loading="lazy" />
+                  <img src="/scrapiz-logo1.webp" alt="Scrapiz" width="28" height="28" className="w-7 h-7 object-contain" loading="eager" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm">Scrapiz Support</h4>

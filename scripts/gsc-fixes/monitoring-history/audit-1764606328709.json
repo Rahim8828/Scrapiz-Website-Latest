@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-11-30T16:25:28.709Z",
+  "timestampMs": 1764606328709,
+  "totalPages": 50,
+  "summary": {
+    "totalIssues": 45,
+    "criticalIssues": 12,
+    "warningIssues": 33,
+    "fixableIssues": 40
+  },
+  "issueCounts": {
+    "soft404": 1,
+    "canonical": 0,
+    "redirects": 0,
+    "noindex": 0,
+    "duplicates": 0,
+    "crawled": 0,
+    "discovered": 0,
+    "notFound": 1,
+    "invalidSchema": 0
+  },
+  "issues": {
+    "soft404": [
+      {
+        "url": "https://example.com/page1"
+      }
+    ],
+    "canonical": [],
+    "redirects": [],
+    "noindex": [],
+    "duplicates": [],
+    "crawled": [],
+    "discovered": [],
+    "notFound": [
+      {
+        "url": "https://example.com/404",
+        "hasBacklinks": true
+      }
+    ],
+    "invalidSchema": []
+  }
+}

@@ -1,0 +1,15 @@
+{"timestamp":"2025-12-02T15:34:35.112Z","level":"INFO","message":"Logger initialized","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.112Z","level":"INFO","message":"Logger initialized","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.113Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.113Z","level":"INFO","message":"Adding 1 URLs to sitemap","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.113Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.114Z","level":"INFO","message":"Generating robots.txt","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.114Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.114Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/sitemap.test.xml.backup.1764689675113","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.114Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.115Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.115Z","level":"INFO","message":"Generating sitemap for 2 pages","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.115Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.118Z","level":"INFO","message":"Added 1 URLs to sitemap","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.120Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689675112}
+{"timestamp":"2025-12-02T15:34:35.123Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689675112}

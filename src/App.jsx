@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import { Toaster } from './components/ui/toaster';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import PerformanceMonitor from './components/PerformanceMonitor';
+import { preconnect, dnsPrefetch } from './utils/thirdPartyScripts';
 
 // Lazy load all pages for better code splitting
 const Home = lazy(() => import('./pages/Home'));
@@ -95,6 +97,15 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [initialService, setInitialService] = useState('');
 
+  // Preconnect to third-party domains for better performance
+  useEffect(() => {
+    // Preconnect to WhatsApp API domain
+    preconnect('https://wa.me');
+    dnsPrefetch('https://wa.me');
+    
+    // Already preconnected in HTML: GTM and Google Fonts
+  }, []);
+
   const openModal = (service = '') => {
     setInitialService(service);
     setIsModalOpen(true);
@@ -113,6 +124,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <PerformanceMonitor />
       <div className="min-h-screen flex flex-col bg-white">
         <Header openModal={openModal} />
         <main className="flex-grow">

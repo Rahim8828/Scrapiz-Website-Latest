@@ -22,13 +22,13 @@ const routes = {
   ],
   
   services: [
-    { path: '/scrap-collection-page', priority: '0.9', changefreq: 'weekly' },
-    { path: '/demolition-service-page', priority: '0.8', changefreq: 'weekly' },
-    { path: '/dismantling-page', priority: '0.8', changefreq: 'weekly' },
-    { path: '/paper-shredding-page', priority: '0.8', changefreq: 'weekly' },
-    { path: '/society-tie-up-page', priority: '0.8', changefreq: 'weekly' },
-    { path: '/junk-removal-service-page', priority: '0.8', changefreq: 'weekly' },
-    { path: '/vehicle-scrapping-page', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/scrap-collection', priority: '0.9', changefreq: 'weekly' },
+    { path: '/services/demolition-service', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/dismantling', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/paper-shredding', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/society-tie-up', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/junk-removal-service', priority: '0.8', changefreq: 'weekly' },
+    { path: '/services/vehicle-scrapping', priority: '0.8', changefreq: 'weekly' },
   ],
   
   mainLocations: [

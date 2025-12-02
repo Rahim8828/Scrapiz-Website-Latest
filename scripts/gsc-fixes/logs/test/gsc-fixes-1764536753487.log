@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-30T21:05:53.487Z","level":"INFO","message":"Logger initialized","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.488Z","level":"INFO","message":"Report directory initialized","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.488Z","level":"INFO","message":"Generating complete report package...","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.488Z","level":"INFO","message":"Report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/test-complete-summary.txt","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.489Z","level":"INFO","message":"Report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/test-complete-detailed.txt","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.490Z","level":"INFO","message":"CSV report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/test-complete.csv","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.490Z","level":"INFO","message":"JSON report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/test-complete.json","sessionId":1764536753487}
+{"timestamp":"2025-11-30T21:05:53.490Z","level":"INFO","message":"Complete report package generated","sessionId":1764536753487}

@@ -1,0 +1,10 @@
+{"timestamp":"2025-11-30T21:04:30.352Z","level":"INFO","message":"Logger initialized","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.358Z","level":"INFO","message":"Report directory initialized","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.359Z","level":"INFO","message":"CSV report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-issues.csv","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.360Z","level":"INFO","message":"JSON report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-issues.json","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.360Z","level":"INFO","message":"Generating complete report package...","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.360Z","level":"INFO","message":"Report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-complete-audit-summary.txt","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.361Z","level":"INFO","message":"Report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-complete-audit-detailed.txt","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.361Z","level":"INFO","message":"CSV report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-complete-audit.csv","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.361Z","level":"INFO","message":"JSON report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/example-complete-audit.json","sessionId":1764536670351}
+{"timestamp":"2025-11-30T21:04:30.361Z","level":"INFO","message":"Complete report package generated","sessionId":1764536670351}

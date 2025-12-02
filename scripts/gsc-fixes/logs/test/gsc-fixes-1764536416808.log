@@ -1,0 +1,18 @@
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Logger initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Generating robots.txt","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Logger initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Generating robots.txt","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Logger initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Generating robots.txt","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.808Z","level":"INFO","message":"Logger initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.809Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.809Z","level":"INFO","message":"Validating sitemap directive in robots.txt","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.809Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416808}
+{"timestamp":"2025-11-30T21:00:16.809Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416808,"data":{"userAgents":1,"sitemaps":0}}
+{"timestamp":"2025-11-30T21:00:16.809Z","level":"INFO","message":"Sitemap directive validation: invalid","sessionId":1764536416808}

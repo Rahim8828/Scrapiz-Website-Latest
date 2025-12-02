@@ -3,7 +3,7 @@ title: "Sell My Unused Junk for Cash in Mumbai – Easy, Smart & Profitable with
 description: "Looking to sell my unused junk for cash in Mumbai? Scrapiz offers doorstep pickup, transparent pricing, instant payments, and eco-friendly recycling to make scrap selling easier."
 date: "2025-09-16"
 author: "Scrapiz Team"
-featuredImage: "/Sell My Unused Junk For Cash.webp"
+featuredImage: "/optimized/Sell My Unused Junk For Cash.webp"
 readTime: "7 min read"
 category: "Recycling"
 ---

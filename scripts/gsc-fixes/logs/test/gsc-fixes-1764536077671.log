@@ -1,0 +1,4 @@
+{"timestamp":"2025-11-30T20:54:37.672Z","level":"INFO","message":"Logger initialized","sessionId":1764536077671}
+{"timestamp":"2025-11-30T20:54:37.672Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536077671}
+{"timestamp":"2025-11-30T20:54:37.672Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764536077671}
+{"timestamp":"2025-11-30T20:54:37.672Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764536077671}
