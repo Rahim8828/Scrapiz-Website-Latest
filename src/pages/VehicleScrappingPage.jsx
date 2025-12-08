@@ -57,7 +57,43 @@ const VehicleScrappingPage = ({ openModal }) => {
     "areaServed": { "@type": "City", "name": "Mumbai" },
     "name": "RTO Certified Vehicle Scrapping",
     "description": "Safe, legal, and eco-friendly scrapping for cars, bikes, and commercial vehicles in Mumbai. We handle all paperwork and provide a Certificate of Destruction.",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150" }
+    "aggregateRating": { 
+      "@type": "AggregateRating", 
+      "ratingValue": "4.9", 
+      "reviewCount": "2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Rajesh Sharma"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "My 18-year-old car was just sitting and rusting. Scrapiz made the entire scrapping process seamless. They handled all the RTO work, and I got the certificate as promised. Highly professional service.",
+        "datePublished": "2024-11-01"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Priya Singh"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        },
+        "reviewBody": "I was worried about the paperwork, but the Scrapiz team was incredibly helpful. They explained everything clearly and took care of all formalities. It was completely hassle-free.",
+        "datePublished": "2024-10-20"
+      }
+    ]
   };
   
   const faqs = [

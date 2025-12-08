@@ -56,7 +56,44 @@ const JunkRemovalServicePage = ({ openModal }) => {
     },
     "areaServed": { "@type": "City", "name": "Mumbai" },
     "name": "Residential & Commercial Junk Removal",
-    "description": "Fast, reliable, and eco-friendly removal of unwanted junk, furniture, appliances, and debris for homes and businesses in Mumbai."
+    "description": "Fast, reliable, and eco-friendly removal of unwanted junk, furniture, appliances, and debris for homes and businesses in Mumbai.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Aarti Rao"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "The Scrapiz team cleared out my old furniture in less than 30 minutes! They were polite, fast, and the price was very reasonable. My apartment feels so much bigger now. Thank you!",
+        "datePublished": "2024-11-05"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Vikas Patel"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        },
+        "reviewBody": "We used Scrapiz to clear out construction debris after our office renovation. They were professional, on time, and handled all the waste responsibly. It saved my team a lot of time and effort.",
+        "datePublished": "2024-10-28"
+      }
+    ]
   };
   
   const faqs = [

@@ -56,7 +56,43 @@ const SocietyTieUpPage = ({ openModal }) => {
     "areaServed": { "@type": "City", "name": "Mumbai" },
     "name": "Housing Society Recycling and Scrap Collection Tie-Up",
     "description": "A comprehensive waste management partnership for housing societies, including regular collections, e-waste drives, and transparent revenue sharing.",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150" }
+    "aggregateRating": { 
+      "@type": "AggregateRating", 
+      "ratingValue": "4.9", 
+      "reviewCount": "2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mr. S. K. Sharma"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Partnering with Scrapiz has been fantastic. The collection drives are well-organized, and the revenue we generate helps fund our children's play area. Highly recommended!",
+        "datePublished": "2024-11-08"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mrs. Maria D'Souza"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        },
+        "reviewBody": "The best part is the transparency. Scrapiz provides a full breakdown of the collection, and the funds are transferred promptly. They also conducted a great e-waste awareness session.",
+        "datePublished": "2024-10-30"
+      }
+    ]
   };
   
   const faqs = [

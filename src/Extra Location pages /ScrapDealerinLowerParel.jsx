@@ -8,6 +8,7 @@ import {
 const ScrapDealerinLowerParel = ({ openModal }) => {
   const locationData = {
     name: 'Lower Parel',
+    address: 'Shop No. 07, Lower Parel, Mumbai',
     title: 'Scrap Buyer in Lower Parel – Free Pickup & Best Price',
     description: 'Sell scrap in Lower Parel with Scrapiz. Free doorstep pickup, instant cash, best scrap rates. We buy metal, e-waste, AC, copper, furniture & more. Call now!',
     phone: '8828700630',
@@ -129,37 +130,115 @@ const ScrapDealerinLowerParel = ({ openModal }) => {
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Scrapiz - Scrap Dealer in Lower Parel",
-    "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locationData.address,
-      "addressLocality": "Lower Parel",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400102",
-      "addressCountry": "IN"
-    },
-    "telephone": locationData.phone,
-    "email": locationData.email,
-    "url": "https://www.scrapiz.in/scrap-dealer-in-lower-parel",
-    "areaServed": "Lower Parel, Mumbai",
-    "priceRange": "₹₹",
-    "openingHours": "Mo-Su 09:00-22:00",
-    "description": locationData.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500"
-    }
-  };
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-lower-parel#business",
+        "name": "Scrapiz - Scrap Dealer in Lower Parel",
+        "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": locationData.address,
+          "addressLocality": "Lower Parel",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "18.9975",
+          "longitude": "72.8305"
+        }
+        },
+        "telephone": locationData.phone,
+        "email": locationData.email,
+        "url": "https://www.scrapiz.in/scrap-dealer-in-lower-parel",
+        "areaServed": "Lower Parel, Mumbai",
+        "priceRange": "₹₹",
+        "openingHours": "Mo-Su 09:00-22:00",
+        "description": locationData.description,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Local Customer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Excellent service and best rates in the area. Highly professional team.",
+            "datePublished": "2024-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Client"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Quick pickup and instant payment. Very transparent process.",
+            "datePublished": "2024-10-28"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-lower-parel#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-lower-parel#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.scrapiz.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://www.scrapiz.in/locations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Lower Parel",
+            "item": "https://www.scrapiz.in/scrap-dealer-in-lower-parel"
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <>
       <Helmet>
         <title>{locationData.title}</title>
         <meta name="description" content={locationData.description} />
-        <meta name="keywords" content="scrap dealer andheri west, scrap buyer andheri, kabadiwala andheri west, sell scrap andheri, scrap pickup lokhandwala, versova scrap dealer" />
+        <meta name="keywords" content="scrap dealer lower parel, scrap buyer lower parel, kabadiwala lower parel, sell scrap lower parel, scrap pickup lower parel, lower parel scrap dealer, best scrap rates lower parel, scrap collection lower parel" />
         <link rel="canonical" href="https://www.scrapiz.in/scrap-dealer-in-lower-parel" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

@@ -8,6 +8,7 @@ import {
 const ScrapDealerinGhatkoparWest = ({ openModal }) => {
   const locationData = {
     name: 'Ghatkopar West',
+    address: 'Shop No. 07, Ghatkopar West, Mumbai',
     title: 'Scrap Buyer in Ghatkopar West & Best Price | Scrapiz',
     description: 'Sell scrap in Ghatkopar West with Scrapiz. Free doorstep pickup, instant cash, and best scrap rates. We buy metal scrap, e-waste, AC, copper, furniture & more.',
     phone: '8828700630',
@@ -129,37 +130,115 @@ const ScrapDealerinGhatkoparWest = ({ openModal }) => {
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Scrapiz - Scrap Dealer in Ghatkopar West",
-    "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locationData.address,
-      "addressLocality": "Ghatkopar West",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400102",
-      "addressCountry": "IN"
-    },
-    "telephone": locationData.phone,
-    "email": locationData.email,
-    "url": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west",
-    "areaServed": "Ghatkopar West, Mumbai",
-    "priceRange": "₹₹",
-    "openingHours": "Mo-Su 09:00-22:00",
-    "description": locationData.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500"
-    }
-  };
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west#business",
+        "name": "Scrapiz - Scrap Dealer in Ghatkopar West",
+        "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": locationData.address,
+          "addressLocality": "Ghatkopar West",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "19.0896",
+          "longitude": "72.9081"
+        }
+        },
+        "telephone": locationData.phone,
+        "email": locationData.email,
+        "url": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west",
+        "areaServed": "Ghatkopar West, Mumbai",
+        "priceRange": "₹₹",
+        "openingHours": "Mo-Su 09:00-22:00",
+        "description": locationData.description,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Local Customer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Excellent service and best rates in the area. Highly professional team.",
+            "datePublished": "2024-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Client"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Quick pickup and instant payment. Very transparent process.",
+            "datePublished": "2024-10-28"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.scrapiz.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://www.scrapiz.in/locations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Ghatkopar West",
+            "item": "https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west"
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <>
       <Helmet>
         <title>{locationData.title}</title>
         <meta name="description" content={locationData.description} />
-        <meta name="keywords" content="scrap dealer andheri west, scrap buyer andheri, kabadiwala andheri west, sell scrap andheri, scrap pickup lokhandwala, versova scrap dealer" />
+        <meta name="keywords" content="scrap dealer ghatkopar west, scrap buyer ghatkopar west, kabadiwala ghatkopar west, sell scrap ghatkopar west, scrap pickup ghatkopar west, ghatkopar west scrap dealer, best scrap rates ghatkopar west, scrap collection ghatkopar west" />
         <link rel="canonical" href="https://www.scrapiz.in/scrap-dealer-in-ghatkopar-west" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

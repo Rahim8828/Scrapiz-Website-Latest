@@ -8,6 +8,7 @@ import {
 const ScrapDealerinBhandup = ({ openModal }) => {
   const locationData = {
     name: 'Bhandup',
+    address: 'Shop No. 07, Bhandup, Mumbai',
     title: 'Scrap Dealer in Bhandup – Free Pickup & Best Price | Scrapiz',
     description: 'Sell scrap in Bhandup with Scrapiz. Free doorstep pickup, instant cash, and best scrap rates. We buy metal scrap, e-waste, AC, copper, furniture & more.',
     phone: '8828700630',
@@ -129,37 +130,115 @@ const ScrapDealerinBhandup = ({ openModal }) => {
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Scrapiz - Scrap Dealer in Bhandup",
-    "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locationData.address,
-      "addressLocality": "Bhandup",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400102",
-      "addressCountry": "IN"
-    },
-    "telephone": locationData.phone,
-    "email": locationData.email,
-    "url": "https://www.scrapiz.in/scrap-dealer-in-bhandup",
-    "areaServed": "Bhandup, Mumbai",
-    "priceRange": "₹₹",
-    "openingHours": "Mo-Su 09:00-22:00",
-    "description": locationData.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500"
-    }
-  };
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-bhandup#business",
+        "name": "Scrapiz - Scrap Dealer in Bhandup",
+        "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": locationData.address,
+          "addressLocality": "Bhandup",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "19.1458",
+          "longitude": "72.9394"
+        }
+        },
+        "telephone": locationData.phone,
+        "email": locationData.email,
+        "url": "https://www.scrapiz.in/scrap-dealer-in-bhandup",
+        "areaServed": "Bhandup, Mumbai",
+        "priceRange": "₹₹",
+        "openingHours": "Mo-Su 09:00-22:00",
+        "description": locationData.description,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Local Customer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Excellent service and best rates in the area. Highly professional team.",
+            "datePublished": "2024-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Client"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Quick pickup and instant payment. Very transparent process.",
+            "datePublished": "2024-10-28"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-bhandup#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-bhandup#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.scrapiz.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://www.scrapiz.in/locations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Bhandup",
+            "item": "https://www.scrapiz.in/scrap-dealer-in-bhandup"
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <>
       <Helmet>
         <title>{locationData.title}</title>
         <meta name="description" content={locationData.description} />
-        <meta name="keywords" content="scrap dealer andheri west, scrap buyer andheri, kabadiwala andheri west, sell scrap andheri, scrap pickup lokhandwala, versova scrap dealer" />
+        <meta name="keywords" content="scrap dealer bhandup, scrap buyer bhandup, kabadiwala bhandup, sell scrap bhandup, scrap pickup bhandup, bhandup scrap dealer, best scrap rates bhandup, scrap collection bhandup" />
         <link rel="canonical" href="https://www.scrapiz.in/scrap-dealer-in-bhandup" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

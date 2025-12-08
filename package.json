@@ -29,7 +29,16 @@
     "lhci:test-setup": "node scripts/testLighthouseCISetup.js",
     "test:slow-network": "node scripts/testSlowNetworkPerformance.js",
     "validate:performance": "node scripts/finalPerformanceValidation.js",
-    "validate:quick": "node scripts/quickPerformanceCheck.js"
+    "validate:quick": "node scripts/quickPerformanceCheck.js",
+    "validate:reviews": "node scripts/validate-review-schema.mjs",
+    "validate:faqs": "node scripts/validate-faq-schema.mjs",
+    "validate:location-seo": "node scripts/validate-location-seo.mjs",
+    "fix:location-keywords": "node scripts/fix-location-keywords.mjs",
+    "enhance:location-schema": "node scripts/enhance-location-schema.mjs",
+    "add:faq-schema-locations": "node scripts/add-faq-schema-locations.mjs",
+    "add:geo-coordinates": "node scripts/add-geo-coordinates.mjs",
+    "add:address-field": "node scripts/add-address-field.mjs",
+    "validate:all": "node scripts/final-validation-check.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",

@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Phone, IndianRupee, Clock, Truck, Scale, CheckCircle, MapPin, Recycle, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// SEO-optimized FAQ Accordion with Schema markup support
+// SEO-optimized FAQ Accordion
 const AccordionItem = ({ question, answer, isOpen, onClick }) => (
-  <div className="border border-gray-200 rounded-lg mb-3 overflow-hidden" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+  <div className="border border-gray-200 rounded-lg mb-3 overflow-hidden">
     <button
       className="w-full flex justify-between items-center text-left p-4 md:p-5 bg-white hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-inset"
       onClick={onClick}
       aria-expanded={isOpen}
     >
-      <span className="font-semibold text-gray-800 text-base md:text-lg pr-4" itemProp="name">{question}</span>
+      <span className="font-semibold text-gray-800 text-base md:text-lg pr-4">{question}</span>
       <ChevronDown className={`w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
     </button>
     <motion.div
@@ -20,9 +20,8 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => (
       animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="overflow-hidden"
-      itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
     >
-      <p className="px-4 md:px-5 pb-4 md:pb-5 text-gray-600 text-sm md:text-base leading-relaxed" itemProp="text">{answer}</p>
+      <p className="px-4 md:px-5 pb-4 md:pb-5 text-gray-600 text-sm md:text-base leading-relaxed">{answer}</p>
     </motion.div>
   </div>
 );
@@ -496,7 +495,7 @@ const AluminiumScrapPage = ({ openModal }) => {
       </section>
 
       {/* FAQ Section - SEO Optimized */}
-      <section className="py-12 md:py-20 bg-white" itemScope itemType="https://schema.org/FAQPage">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">

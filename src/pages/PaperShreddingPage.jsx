@@ -58,7 +58,43 @@ const PaperShreddingPage = ({ openModal }) => {
     "areaServed": { "@type": "City", "name": "Mumbai" },
     "name": "Secure Document & Paper Shredding",
     "description": "NAID-certified shredding services for businesses and individuals to ensure confidential data is securely destroyed and recycled.",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "120" }
+    "aggregateRating": { 
+      "@type": "AggregateRating", 
+      "ratingValue": "5.0", 
+      "reviewCount": "2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Adv. Priya Sharma"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "As a law firm, document confidentiality is non-negotiable. Scrapiz provides a reliable and certified shredding service that meets our compliance needs. Their professionalism is commendable.",
+        "datePublished": "2024-11-12"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "CA. Rajesh Gupta"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "We use their on-site shredding service quarterly. The mobile shredding truck is impressive and gives us complete peace of mind watching our sensitive financial documents being destroyed right before our eyes.",
+        "datePublished": "2024-10-25"
+      }
+    ]
   };
   
   const faqs = [

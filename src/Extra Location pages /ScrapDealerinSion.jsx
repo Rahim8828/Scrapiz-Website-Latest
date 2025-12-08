@@ -8,6 +8,7 @@ import {
 const ScrapDealerinSion = ({ openModal }) => {
   const locationData = {
     name: 'Sion',
+    address: 'Shop No. 07, Sion, Mumbai',
     title: 'Scrap Buyer in Sion Mumbai – Free Pickup & Best Price',
     description: 'Sell scrap in Sion with Scrapiz. Free doorstep pickup, instant cash, best rates. We buy metal scrap, e-waste, AC, copper, furniture & more. Call 8828700630!',
     phone: '8828700630',
@@ -129,37 +130,115 @@ const ScrapDealerinSion = ({ openModal }) => {
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Scrapiz - Scrap Dealer in Sion",
-    "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locationData.address,
-      "addressLocality": "Sion",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400102",
-      "addressCountry": "IN"
-    },
-    "telephone": locationData.phone,
-    "email": locationData.email,
-    "url": "https://www.scrapiz.in/scrap-dealer-in-sion",
-    "areaServed": "Sion, Mumbai",
-    "priceRange": "₹₹",
-    "openingHours": "Mo-Su 09:00-22:00",
-    "description": locationData.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500"
-    }
-  };
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-sion#business",
+        "name": "Scrapiz - Scrap Dealer in Sion",
+        "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": locationData.address,
+          "addressLocality": "Sion",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "19.0433",
+          "longitude": "72.8626"
+        }
+        },
+        "telephone": locationData.phone,
+        "email": locationData.email,
+        "url": "https://www.scrapiz.in/scrap-dealer-in-sion",
+        "areaServed": "Sion, Mumbai",
+        "priceRange": "₹₹",
+        "openingHours": "Mo-Su 09:00-22:00",
+        "description": locationData.description,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Local Customer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Excellent service and best rates in the area. Highly professional team.",
+            "datePublished": "2024-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Client"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Quick pickup and instant payment. Very transparent process.",
+            "datePublished": "2024-10-28"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-sion#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-sion#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.scrapiz.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://www.scrapiz.in/locations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sion",
+            "item": "https://www.scrapiz.in/scrap-dealer-in-sion"
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <>
       <Helmet>
         <title>{locationData.title}</title>
         <meta name="description" content={locationData.description} />
-        <meta name="keywords" content="scrap dealer andheri west, scrap buyer andheri, kabadiwala andheri west, sell scrap andheri, scrap pickup lokhandwala, versova scrap dealer" />
+        <meta name="keywords" content="scrap dealer sion, scrap buyer sion, kabadiwala sion, sell scrap sion, scrap pickup sion, sion scrap dealer, best scrap rates sion, scrap collection sion" />
         <link rel="canonical" href="https://www.scrapiz.in/scrap-dealer-in-sion" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

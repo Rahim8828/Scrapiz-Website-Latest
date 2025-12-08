@@ -57,7 +57,43 @@ const DemolitionServicePage = ({ openModal }) => {
     "areaServed": { "@type": "City", "name": "Mumbai" },
     "name": "Building and Office Demolition Service",
     "description": "Safe, compliant, and efficient demolition services for structures of all sizes in the Mumbai metropolitan area.",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "75" }
+    "aggregateRating": { 
+      "@type": "AggregateRating", 
+      "ratingValue": "4.8", 
+      "reviewCount": "2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Ravi Kumar"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Scrapiz handled the demolition of our old office building in Bandra with utmost professionalism. The project was completed ahead of schedule, and their focus on safety was impressive.",
+        "datePublished": "2024-11-15"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Sunita Desai"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6",
+          "bestRating": "5"
+        },
+        "reviewBody": "I needed to demolish an old structure on my plot. The Scrapiz team was efficient, clean, and gave me a fair price for the salvaged scrap metal. I couldn't have asked for a smoother process.",
+        "datePublished": "2024-10-22"
+      }
+    ]
   };
   
   const faqs = [

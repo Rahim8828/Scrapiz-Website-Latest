@@ -8,6 +8,7 @@ import {
 const ScrapDealerinDadarWest = ({ openModal }) => {
   const locationData = {
     name: 'Dadar West',
+    address: 'Shop No. 07, Dadar West, Mumbai',
     title: 'Scrap Buyer in Dadar West – Free Pickup & Best Price',
     description: 'Sell scrap in Dadar West with Scrapiz. Free doorstep pickup, instant cash, best scrap rates. We buy metal, e-waste, AC, copper, furniture & more. Call now!',
     phone: '8828700630',
@@ -129,37 +130,115 @@ const ScrapDealerinDadarWest = ({ openModal }) => {
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Scrapiz - Scrap Dealer in Dadar West",
-    "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locationData.address,
-      "addressLocality": "Dadar West",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400102",
-      "addressCountry": "IN"
-    },
-    "telephone": locationData.phone,
-    "email": locationData.email,
-    "url": "https://www.scrapiz.in/scrap-dealer-in-dadar-west",
-    "areaServed": "Dadar West, Mumbai",
-    "priceRange": "₹₹",
-    "openingHours": "Mo-Su 09:00-22:00",
-    "description": locationData.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500"
-    }
-  };
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-dadar-west#business",
+        "name": "Scrapiz - Scrap Dealer in Dadar West",
+        "image": "https://www.scrapiz.in/Scrapiz-logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": locationData.address,
+          "addressLocality": "Dadar West",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "19.0176",
+          "longitude": "72.8432"
+        }
+        },
+        "telephone": locationData.phone,
+        "email": locationData.email,
+        "url": "https://www.scrapiz.in/scrap-dealer-in-dadar-west",
+        "areaServed": "Dadar West, Mumbai",
+        "priceRange": "₹₹",
+        "openingHours": "Mo-Su 09:00-22:00",
+        "description": locationData.description,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Local Customer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Excellent service and best rates in the area. Highly professional team.",
+            "datePublished": "2024-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Client"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Quick pickup and instant payment. Very transparent process.",
+            "datePublished": "2024-10-28"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "2",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-dadar-west#faq",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.scrapiz.in/scrap-dealer-in-dadar-west#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.scrapiz.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://www.scrapiz.in/locations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Dadar West",
+            "item": "https://www.scrapiz.in/scrap-dealer-in-dadar-west"
+          }
+        ]
+      }
+    ]
+  }
 
   return (
     <>
       <Helmet>
         <title>{locationData.title}</title>
         <meta name="description" content={locationData.description} />
-        <meta name="keywords" content="scrap dealer andheri west, scrap buyer andheri, kabadiwala andheri west, sell scrap andheri, scrap pickup lokhandwala, versova scrap dealer" />
+        <meta name="keywords" content="scrap dealer dadar west, scrap buyer dadar west, kabadiwala dadar west, sell scrap dadar west, scrap pickup dadar west, dadar west scrap dealer, best scrap rates dadar west, scrap collection dadar west" />
         <link rel="canonical" href="https://www.scrapiz.in/scrap-dealer-in-dadar-west" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

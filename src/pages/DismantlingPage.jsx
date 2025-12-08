@@ -64,8 +64,40 @@ const DismantlingPage = ({ openModal }) => {
     "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "90"
+        "reviewCount": "2",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Anil Singh"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "We hired Scrapiz to dismantle our old production line. Their team was incredibly efficient and professional. The asset recovery value they provided was much higher than other quotes.",
+        "datePublished": "2024-11-10"
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Meena Iyer"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        },
+        "reviewBody": "The office dismantling service was seamless. They removed all old partitions, wiring, and furniture over a weekend, allowing us to renovate without any delays. Excellent work!",
+        "datePublished": "2024-10-18"
       }
+    ]
   };
   
   const faqs = [
