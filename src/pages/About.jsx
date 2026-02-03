@@ -5,17 +5,19 @@ import { Target, Eye, Gem, Award, Users, TrendingUp } from 'lucide-react';
 
 const About = () => {
   const milestones = [
-    { year: '2024', event: 'The Idea Took Shape', description: 'Started planning Scrapiz to transform the unorganized scrap industry into a digital and eco-friendly ecosystem.' },
-    { year: '2025', event: 'Company Founded', description: 'Scrapiz GreenTech Pvt. Ltd. officially came into existence with a mission to revolutionize scrap collection and recycling in India.' },
-    { year: '2025', event: 'Recognized by Startup India', description: 'Soon after incorporation, Scrapiz was recognized under the Startup India initiative, validating our innovative business model.' },
-    { year: '2025', event: '1000 Tons Recycled', description: 'Successfully recycled over 1000 tons of scrap, making a significant environmental impact.' },
+    { year: '2024', event: 'The Vision Begins', description: 'Identified the need to digitize India\'s unorganized scrap industry and create a transparent, technology-driven ecosystem for waste management.' },
+    { year: '2025', event: 'Scrapiz Founded', description: 'Scrapiz GreenTech Pvt. Ltd. officially incorporated with a mission to revolutionize scrap collection and recycling across India.' },
+    { year: '2025', event: 'Startup India Recognition', description: 'Achieved official recognition under the Startup India initiative, validating our innovative approach to circular economy and waste management.' },
+    { year: '2025', event: 'Platform Launch', description: 'Successfully launched our online platform with advanced features including real-time pricing, doorstep pickup scheduling, and instant payments.' },
+    { year: '2025', event: '1000+ Tons Milestone', description: 'Crossed the milestone of recycling over 1000 tons of scrap materials, making a significant positive environmental impact.' },
+    { year: '2025', event: 'Mumbai Expansion', description: 'Expanded services across multiple Mumbai locations including Bandra, Dharavi, Goregaon, Jogeshwari, Kandivali, and Mahim.' },
   ];
 
   const coreValues = [
-    { icon: Gem, title: 'Integrity', description: 'We operate with honesty and transparency in all our dealings.' },
-    { icon: Award, title: 'Excellence', description: 'We strive for the highest quality in our services and customer support.' },
-    { icon: TrendingUp, title: 'Innovation', description: 'We continuously seek better ways to serve our customers and protect the planet.' },
-    { icon: Users, title: 'Customer-Centric', description: 'Our customers are at the heart of everything we do.' },
+    { icon: Gem, title: 'Integrity', description: 'We operate with complete honesty, transparency, and ethical practices in all our business dealings and customer interactions.' },
+    { icon: Award, title: 'Excellence', description: 'We strive for the highest quality in our services, technology, and customer support, continuously raising industry standards.' },
+    { icon: TrendingUp, title: 'Innovation', description: 'We embrace cutting-edge technology and creative solutions to continuously improve our platform and services.' },
+    { icon: Users, title: 'Customer-Centric', description: 'Our customers are at the heart of everything we do. We prioritize their needs, convenience, and satisfaction above all.' },
   ];
 
   const schema = {
@@ -91,10 +93,13 @@ const About = () => {
               >
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Our Story</h2>
                 <p className="text-base sm:text-lg text-gray-600">
-                  Founded in 2025, Scrapiz emerged from a simple idea: to make scrap selling as easy as online shopping. We saw a fragmented, inefficient industry and envisioned a platform that could bring transparency, convenience, and fair pricing to everyone.
+                  Founded in 2025, Scrapiz emerged from a simple yet powerful idea: to make scrap selling as convenient as online shopping while promoting environmental sustainability. We recognized the challenges in India's fragmented scrap industry - lack of transparency, unfair pricing, and inconvenient processes - and envisioned a digital platform that could transform this entire ecosystem.
                 </p>
                 <p className="text-gray-600">
-                  Today, Scrapiz is a leading name in the online scrap management industry, trusted by thousands of households and businesses across India. Our technology-driven approach simplifies the entire process, from booking a pickup to instant payment, all while promoting responsible recycling.
+                  Today, Scrapiz stands as a pioneering force in India's circular economy, trusted by thousands of households and businesses across Mumbai and beyond. Our technology-driven approach has revolutionized the entire scrap management process - from instant online booking and transparent pricing to doorstep pickup and immediate payments. We're not just a scrap collection service; we're building a sustainable future where waste becomes a valuable resource.
+                </p>
+                <p className="text-gray-600">
+                  With official recognition under the Startup India initiative and having successfully recycled over 1000 tons of materials, we continue to expand our impact, making responsible waste management accessible to everyone while contributing to India's environmental goals.
                 </p>
               </motion.div>
             </div>
@@ -116,7 +121,7 @@ const About = () => {
                   </div>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Our Vision</h3>
                 </div>
-                <p className="text-sm sm:text-base text-gray-600">To be India's most trusted and comprehensive circular economy platform, creating a zero-waste ecosystem for a sustainable future.</p>
+                <p className="text-sm sm:text-base text-gray-600">To be India's most trusted and comprehensive circular economy platform, creating a zero-waste ecosystem that transforms how the nation manages resources for a sustainable future.</p>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -131,7 +136,7 @@ const About = () => {
                   </div>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Our Mission</h3>
                 </div>
-                <p className="text-sm sm:text-base text-gray-600">To empower individuals and businesses to manage waste responsibly by providing a seamless, transparent, and rewarding platform for selling scrap.</p>
+                <p className="text-sm sm:text-base text-gray-600">To empower individuals and businesses to manage waste responsibly by providing a seamless, transparent, and rewarding digital platform that makes scrap selling convenient while promoting environmental sustainability.</p>
               </motion.div>
             </div>
           </div>
