@@ -1,8 +1,0 @@
-{"timestamp":"2025-12-02T15:44:25.534Z","level":"INFO","message":"Logger initialized","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.538Z","level":"INFO","message":"Logger initialized","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.558Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.558Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.558Z","level":"INFO","message":"Generating robots.txt","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.558Z","level":"INFO","message":"Robots.txt generated successfully","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.559Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764690265533}
-{"timestamp":"2025-12-02T15:44:25.561Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764690265533}

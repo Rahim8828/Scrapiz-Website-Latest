@@ -1,9 +1,0 @@
-{"timestamp":"2025-12-02T15:34:35.124Z","level":"INFO","message":"Logger initialized","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.125Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.126Z","level":"INFO","message":"Adding 1 URLs to sitemap","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.127Z","level":"INFO","message":"Created backup: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/backups/sitemap.test.xml.backup.1764689675126","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.127Z","level":"INFO","message":"Parsing sitemap XML","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.128Z","level":"INFO","message":"Sitemap parsed successfully","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.128Z","level":"INFO","message":"Generating sitemap for 1 pages","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.129Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764689675123}
-{"timestamp":"2025-12-02T15:34:35.129Z","level":"INFO","message":"Added 0 URLs to sitemap","sessionId":1764689675123}

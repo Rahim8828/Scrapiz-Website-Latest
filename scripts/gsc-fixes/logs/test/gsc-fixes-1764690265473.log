@@ -1,8 +1,0 @@
-{"timestamp":"2025-12-02T15:44:25.474Z","level":"INFO","message":"Logger initialized","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.474Z","level":"INFO","message":"Logger initialized","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"INFO","message":"Generating sitemap for 0 pages","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"INFO","message":"Sitemap generated successfully","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690265473}
-{"timestamp":"2025-12-02T15:44:25.478Z","level":"WARN","message":"Robots.txt file not found","sessionId":1764690265473}

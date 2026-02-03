@@ -1,5 +1,0 @@
-{"timestamp":"2025-11-30T20:02:46.657Z","level":"INFO","message":"Logger initialized","sessionId":1764532966656}
-{"timestamp":"2025-11-30T20:02:46.661Z","level":"INFO","message":"Backup directory initialized","sessionId":1764532966656}
-{"timestamp":"2025-11-30T20:02:46.668Z","level":"INFO","message":"Fixing soft 404: http://example.com/thin (reason: thin-content)","sessionId":1764532966656}
-{"timestamp":"2025-11-30T20:02:46.668Z","level":"INFO","message":"Starting soft 404 fixes for 1 issues (dry run: true)","sessionId":1764532966656}
-{"timestamp":"2025-11-30T20:02:46.668Z","level":"ERROR","message":"Fix failed: soft404","sessionId":1764532966656,"data":{"fixType":"soft404","url":"http://example.com/thin","details":{"url":"http://example.com/thin","status":"failed","message":"Could not find source file for URL"}}}

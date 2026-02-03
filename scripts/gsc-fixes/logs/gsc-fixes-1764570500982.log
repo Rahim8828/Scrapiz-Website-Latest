@@ -1,3 +1,0 @@
-{"timestamp":"2025-12-01T06:28:20.982Z","level":"INFO","message":"Logger initialized","sessionId":1764570500982}
-{"timestamp":"2025-12-01T06:28:20.984Z","level":"INFO","message":"Validating schemas for 30 URLs","sessionId":1764570500982}
-{"timestamp":"2025-12-01T06:28:26.089Z","level":"INFO","message":"Schema validation complete. Found 30 pages with issues","sessionId":1764570500982}

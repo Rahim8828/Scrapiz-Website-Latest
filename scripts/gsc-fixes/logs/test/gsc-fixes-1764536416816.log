@@ -1,8 +1,0 @@
-{"timestamp":"2025-11-30T21:00:16.816Z","level":"INFO","message":"Logger initialized","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.816Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.816Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.816Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764536416816,"data":{"userAgents":2,"sitemaps":1}}
-{"timestamp":"2025-11-30T21:00:16.816Z","level":"INFO","message":"Logger initialized","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.817Z","level":"INFO","message":"Backup directory initialized","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.817Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764536416816}
-{"timestamp":"2025-11-30T21:00:16.817Z","level":"WARN","message":"Robots.txt file not found","sessionId":1764536416816}

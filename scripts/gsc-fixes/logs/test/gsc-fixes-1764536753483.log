@@ -1,3 +1,0 @@
-{"timestamp":"2025-11-30T21:05:53.483Z","level":"INFO","message":"Logger initialized","sessionId":1764536753483}
-{"timestamp":"2025-11-30T21:05:53.484Z","level":"INFO","message":"Report directory initialized","sessionId":1764536753483}
-{"timestamp":"2025-11-30T21:05:53.484Z","level":"INFO","message":"CSV report exported to: /Users/founderscrapiz/Desktop/Scrapiz Website/scripts/gsc-fixes/reports/test-export.csv","sessionId":1764536753483}

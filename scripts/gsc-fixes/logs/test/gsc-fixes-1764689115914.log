@@ -1,6 +1,0 @@
-{"timestamp":"2025-12-02T15:25:15.915Z","level":"INFO","message":"Logger initialized","sessionId":1764689115914}
-{"timestamp":"2025-12-02T15:25:15.915Z","level":"INFO","message":"Backup directory initialized","sessionId":1764689115914}
-{"timestamp":"2025-12-02T15:25:15.916Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115914}
-{"timestamp":"2025-12-02T15:25:15.918Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115914,"data":{"userAgents":1,"sitemaps":0}}
-{"timestamp":"2025-12-02T15:25:15.918Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764689115914}
-{"timestamp":"2025-12-02T15:25:15.921Z","level":"INFO","message":"Robots.txt parsed successfully","sessionId":1764689115914,"data":{"userAgents":1,"sitemaps":0}}

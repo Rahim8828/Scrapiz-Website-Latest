@@ -1,4 +1,0 @@
-{"timestamp":"2025-12-02T15:41:16.238Z","level":"INFO","message":"Logger initialized","sessionId":1764690076237}
-{"timestamp":"2025-12-02T15:41:16.245Z","level":"INFO","message":"Backup directory initialized","sessionId":1764690076237}
-{"timestamp":"2025-12-02T15:41:16.245Z","level":"INFO","message":"Parsing robots.txt file","sessionId":1764690076237}
-{"timestamp":"2025-12-02T15:41:16.247Z","level":"WARN","message":"Robots.txt file not found","sessionId":1764690076237}
