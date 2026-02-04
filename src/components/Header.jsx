@@ -80,7 +80,7 @@ const Header = ({ openModal }) => {
             <Button 
               onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
               variant="outline"
-              className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+              className="border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700"
             >
               <Download className="mr-2 h-5 w-5" /> 
               Download Now
@@ -125,7 +125,7 @@ const Header = ({ openModal }) => {
               <Button 
                 onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
                 variant="outline"
-                className="mx-4 mt-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                className="mx-4 mt-2 border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Now
