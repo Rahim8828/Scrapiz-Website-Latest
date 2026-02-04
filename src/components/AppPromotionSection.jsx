@@ -10,8 +10,8 @@ const AppPromotionSection = () => {
   };
 
   const handlePlayStoreClick = () => {
-    // Replace with actual Play Store link when available
-    window.open('https://play.google.com/store/apps/details?id=com.scrapiz', '_blank');
+    // Updated with actual Play Store link
+    window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank');
   };
 
   const features = [
@@ -106,26 +106,26 @@ const AppPromotionSection = () => {
             transition={{ duration: 0.8, type: 'spring', bounce: 0.3 }}
             className="flex justify-center items-center order-1 lg:order-2"
           >
-            <div className="relative w-full max-w-md lg:max-w-lg">
+            <div className="relative w-full max-w-lg lg:max-w-xl">
               {/* Animated gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/30 via-cyan-400/20 to-blue-500/30 rounded-[3rem] blur-3xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/30 via-cyan-400/20 to-blue-500/30 rounded-3xl blur-3xl animate-pulse"></div>
               
-              {/* Phone mockup container */}
-              <div className="relative">
+              {/* Square image container */}
+              <div className="relative bg-white rounded-3xl lg:rounded-[2.5rem] shadow-2xl p-4 lg:p-6 hover:shadow-3xl transition-shadow duration-300">
                 <img
-                  src="/Scrapiz-App-Screenshot.webp"
-                  width="300"
-                  height="600"
-                  alt="Scrapiz App Interface - Schedule pickups and track earnings"
-                  className="relative rounded-3xl lg:rounded-[2.5rem] shadow-2xl w-full object-cover hover:shadow-3xl transition-shadow duration-300"
+                  src="/optimized/Playstore-Onboarding.png"
+                  width="500"
+                  height="500"
+                  alt="Scrapiz App Playstore Onboarding - Download and start selling scrap easily"
+                  className="w-full h-auto rounded-2xl lg:rounded-3xl object-contain"
                   loading="lazy"
-                  style={{ aspectRatio: '1/2' }}
+                  style={{ aspectRatio: '1/1' }}
                 />
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-green-500/20 rounded-full blur-2xl animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl animate-pulse delay-75"></div>
               </div>
+                
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-green-500/20 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl animate-pulse delay-75"></div>
             </div>
           </motion.div>
 

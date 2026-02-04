@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X, Calendar, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -76,13 +76,22 @@ const Header = ({ openModal }) => {
             ))}
           </nav>
 
-          <Button 
-            onClick={() => openModal()} // Use openModal prop
-            className="hidden md:flex"
-          >
-            <Calendar className="mr-2 h-5 w-5" /> 
-            Book Now
-          </Button>
+          <div className="hidden md:flex items-center space-x-3">
+            <Button 
+              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
+              variant="outline"
+              className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+            >
+              <Download className="mr-2 h-5 w-5" /> 
+              Download Now
+            </Button>
+            <Button 
+              onClick={() => openModal()} // Use openModal prop
+            >
+              <Calendar className="mr-2 h-5 w-5" /> 
+              Book Now
+            </Button>
+          </div>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -114,8 +123,16 @@ const Header = ({ openModal }) => {
                 </NavLink>
               ))}
               <Button 
+                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
+                variant="outline"
+                className="mx-4 mt-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Now
+              </Button>
+              <Button 
                 onClick={() => openModal()} // Use openModal prop
-                className="mx-4 mt-4"
+                className="mx-4 mt-2"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Now
