@@ -1,148 +1,146 @@
+import { useEffect, useState } from "react"
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Calendar, Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { NavLink, useLocation } from 'react-router-dom';
-
-const Header = ({ openModal }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+export default function Navbar() {
+  const [show, setShow] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      const currentScrollY = window.scrollY
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Locations', path: '/locations' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Blog', path: '/blog' },
-  ];
-
-  const NavItem = ({ to, children }) => (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        `text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 relative group ${
-          isActive ? 'text-green-600' : ''
-        }`
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShow(false)
+      } else {
+        setShow(true)
       }
-    >
-      {children}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
-    </NavLink>
-  );
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
+
+  const handleNavClick = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+    setMobileMenuOpen(false)
+  }
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || location.pathname !== '/' ? 'glass-effect shadow-lg' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <NavLink to="/">
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <img 
-                src="/optimized/scrapiz-logo1.webp" 
-                alt="Scrapiz Logo" 
-                width="120"
-                height="96"
-                className="h-20 md:h-24 w-auto object-contain"
-                loading="eager"
-              />
-            </motion.div>
-          </NavLink>
-
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <NavItem key={link.name} to={link.path}>
-                {link.name}
-              </NavItem>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center space-x-3">
-            <Button 
-              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
-              variant="outline"
-              className="border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700"
+    <>
+      {/* Desktop Navbar */}
+      <div
+        className={`hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50 
+                    transition-all duration-500 ease-in-out
+                    ${show ? "translate-y-0 opacity-100" : "-translate-y-32 opacity-0"}`}
+      >
+        <div className="bg-white shadow-md rounded-full px-6 lg:px-10 py-3 lg:py-4 flex items-center gap-4 lg:gap-10">
+          <div className="flex gap-3 lg:gap-5 text-gray-700 text-sm lg:text-lg font-medium">
+            <button 
+              onClick={() => handleNavClick('services')}
+              className="hover:text-green-600 transition whitespace-nowrap"
             >
-              <Download className="mr-2 h-5 w-5" /> 
-              Download Now
-            </Button>
-            <Button 
-              onClick={() => openModal()} // Use openModal prop
+              Services
+            </button>
+            <button 
+              onClick={() => handleNavClick('how-it-works')}
+              className="hover:text-green-600 transition whitespace-nowrap"
             >
-              <Calendar className="mr-2 h-5 w-5" /> 
-              Book Now
-            </Button>
+              How it works
+            </button>
           </div>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          <button 
+            onClick={() => handleNavClick('scrapiz')}
+            className="text-2xl lg:text-4xl font-extrabold text-green-600 tracking-tight hover:scale-105 transition-transform"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            Scrapiz
+          </button>
+
+          <div className="flex gap-3 lg:gap-5 text-gray-700 text-sm lg:text-lg font-medium">
+            <button 
+              onClick={() => handleNavClick('faqs')}
+              className="hover:text-green-600 transition whitespace-nowrap"
+            >
+              FAQs
+            </button>
+            <button 
+              onClick={() => handleNavClick('contact-us')}
+              className="hover:text-green-600 transition whitespace-nowrap"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div className="flex justify-between items-center px-4 py-4">
+          <button 
+            onClick={() => handleNavClick('scrapiz')}
+            className="text-2xl font-extrabold text-green-600"
+          >
+            Scrapiz
+          </button>
+          
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-gray-700"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
           </button>
         </div>
 
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200 py-4"
-          >
-            <nav className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `text-left px-4 py-2 font-medium transition-colors duration-200 ${
-                      isActive ? 'text-green-600 bg-green-50 rounded-md' : 'text-gray-700 hover:text-green-600'
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-              <Button 
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.scrapiz.app', '_blank')}
-                variant="outline"
-                className="mx-4 mt-2 border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700"
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="bg-white border-t border-gray-200 px-4 py-4">
+            <div className="flex flex-col gap-4">
+              <button 
+                onClick={() => handleNavClick('services')}
+                className="text-left text-gray-700 hover:text-green-600 transition py-2"
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Now
-              </Button>
-              <Button 
-                onClick={() => openModal()} // Use openModal prop
-                className="mx-4 mt-2"
+                Services
+              </button>
+              <button 
+                onClick={() => handleNavClick('how-it-works')}
+                className="text-left text-gray-700 hover:text-green-600 transition py-2"
               >
-                <Calendar className="mr-2 h-5 w-5" />
-                Book Now
-              </Button>
-            </nav>
-          </motion.div>
+                How it works
+              </button>
+              <button 
+                onClick={() => handleNavClick('faqs')}
+                className="text-left text-gray-700 hover:text-green-600 transition py-2"
+              >
+                FAQs
+              </button>
+              <button 
+                onClick={() => handleNavClick('contact-us')}
+                className="text-left text-gray-700 hover:text-green-600 transition py-2"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
         )}
       </div>
-    </motion.header>
-  );
-};
-
-export default Header;
+    </>
+  )
+}

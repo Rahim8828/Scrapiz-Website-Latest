@@ -219,3 +219,11 @@ input, select, textarea, button {
   z-index: 40;
   contain: layout;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
