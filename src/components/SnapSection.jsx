@@ -26,7 +26,7 @@ export default function SnapSection() {
           <motion.img
             src={phones}
             alt="Scrapiz App Preview"
-            className="h-full w-auto object-contain"   // prevents container stretching
+            className="h-full w-auto object-contain scale-150" 
             animate={{ y: [0, -12, 0] }}
             transition={{
               duration: 4,

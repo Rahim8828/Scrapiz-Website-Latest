@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { CardStack } from "@/components/ui/card-stack";
+
+// IMPORT IMAGES FROM ASSETS
 import copperImg from "../assets/step1.png";
 import addImg from "../assets/step2.png";
 import scheduleImg from "../assets/step3.png";
@@ -23,7 +25,7 @@ export default function HowItWorks() {
 
         {/* Card Stack */}
         <div className="flex justify-center">
-          <div className="w-full max-w-5xl min-h-[20rem] md:min-h-[26rem]">
+          <div className="w-full max-w-5xl min-h-[26rem] md:min-h-[rem]">
             <CardStack items={SCRAPIZ_STEPS} />
           </div>
         </div>
@@ -36,25 +38,35 @@ export default function HowItWorks() {
 const StepCard = ({ step, img, title, description }) => {
   return (
     <div
-      className="bg-white shadow-2xl rounded-3xl 
-                    px-10 py-10 
-                    flex gap-10 items-center 
-                    w-full"
+      className="
+        bg-white shadow-2xl rounded-3xl 
+        px-6 py-8 md:px-10 md:py-10
+        flex flex-col md:flex-row
+        gap-8 md:gap-10 items-center 
+        w-full h-auto md:h-full
+      "
     >
       {/* Image */}
-      <div className="w-56 h-56 rounded-3xl overflow-hidden flex-shrink-0">
+      <div
+        className="
+        w-40 h-40 md:w-56 md:h-56 
+        rounded-3xl overflow-hidden flex-shrink-0
+      "
+      >
         <img src={img} alt={title} className="object-cover w-full h-full" />
       </div>
 
       {/* Text */}
-      <div className="flex-1">
+      <div className="flex-1 text-center md:text-left">
         <span className="bg-green-700 text-white text-sm px-5 py-1.5 rounded-full font-semibold">
           Step {step}
         </span>
 
-        <h3 className="text-3xl font-bold text-gray-900 mt-5">{title}</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-5">
+          {title}
+        </h3>
 
-        <p className="text-gray-600 mt-4 text-base leading-relaxed max-w-xl">
+        <p className="text-gray-600 mt-4 text-base leading-relaxed md:max-w-xl">
           {description}
         </p>
       </div>

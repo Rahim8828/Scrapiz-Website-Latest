@@ -1,117 +1,128 @@
-import { useRef } from "react"
-import { motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+"use client";
 
-import verifiedImg from "../assets/verfied.jpeg"
-import pricingImg from "../assets/pricing.jpeg"
-import pickupImg from "../assets/pickup.jpeg"
-import img4 from "../assets/whyus.jpeg"
-import img5 from "../assets/img5.jpeg"
+import * as React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import { Card, CardContent } from "@/components/ui/card";
+
+import verifiedImg from "../assets/verfied.jpeg";
+import pricingImg from "../assets/pricing.jpeg";
+import pickupImg from "../assets/pickup.jpeg";
+import img4 from "../assets/whyus.jpeg";
+import img5 from "../assets/img5.jpeg";
 
 export default function WhyChooseScrapiz() {
-  const scrollRef = useRef(null)
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const { current } = scrollRef
-      const scrollAmount = 350
-
-      if (direction === "left") {
-        current.scrollBy({ left: -scrollAmount, behavior: "smooth" })
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: "smooth" })
-      }
-    }
-  }
-
-  const cards = [
+  const slideData = [
     {
-      img: verifiedImg,
       title: "VERIFIED & TRAINED PICKUP PARTNERS",
-      desc: "Verified experts for safe and reliable scrap collection",
+      desc: "Verified experts for safe and reliable scrap collection.",
+      src: verifiedImg,
     },
     {
-      img: pricingImg,
       title: "TRANSPARENT LIVE PRICING",
       desc: "100% transparent pricing with live rate estimates.",
+      src: pricingImg,
     },
     {
-      img: pickupImg,
       title: "DOORSTEP PICKUP & HEAVY LIFTING",
-      desc: "Sit back while we handle the pickup, lifting, and disposal.",
+      desc: "Sit back while we handle the lifting and disposal.",
+      src: pickupImg,
     },
     {
-      img: img4,
       title: "INSTANT BOOKING",
-      desc: "Book scrap pickup within seconds through our platform.",
+      desc: "Book scrap pickup within seconds.",
+      src: img4,
     },
     {
-      img: img5,
       title: "ECO-FRIENDLY RECYCLING",
       desc: "We ensure responsible recycling and waste management.",
+      src: img5,
     },
-  ]
+  ];
 
   return (
-    <section className="bg-white mt-24 px-6 relative">
-      <div className="max-w-7xl mx-auto text-center">
-
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-gray-900"
-        >
-          Why choose <span className="text-green-600">Scrapiz?</span>
-        </motion.h2>
-
-        {/* Arrows */}
-        <div className="flex justify-end gap-4 mt-10">
-          <button
-            onClick={() => scroll("left")}
-            className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition"
-          >
-            <ChevronLeft />
-          </button>
-
-          <button
-            onClick={() => scroll("right")}
-            className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition"
-          >
-            <ChevronRight />
-          </button>
-        </div>
-
-        {/* Carousel */}
-        <div
-          ref={scrollRef}
-          className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar mt-10"
-        >
-          {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="min-w-[320px] bg-[#f7f7f7] rounded-3xl overflow-hidden flex-shrink-0"
-            >
-              <img
-                src={card.img}
-                alt={card.title}
-                className="w-full h-[220px] object-cover"
-              />
-
-              <div className="p-6 text-left">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600">{card.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section className="mt-24 px-6 md:px-10">
+      {/* Heading */}
+      <div className="text-center mb-14">
+        <h2 className="text-4xl md:text-6xl font-bold">
+          Why choose <span className="font-league text-5xl md:text-7xl font-extrabold text-green-700 tracking-tight hover:scale-105 transition-transform">Scrapiz?</span>
+        </h2>
+        <p className="text-gray-600 mt-4 text-lg">
+          Trusted by thousands for sustainable scrap recycling.
+        </p>
       </div>
+
+      {/* Carousel */}
+      <Carousel opts={{ align: "start" }} className="w-full px-6 sm:px-8">
+        <CarouselContent className="-ml-4">
+          {slideData.map((item, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+            >
+              <div className="p-1 group">
+                <Card
+                  className="
+                    rounded-3xl overflow-hidden
+                    shadow-md
+                    transition-all duration-500 ease-out
+                    group-hover:-translate-y-3
+                    group-hover:shadow-2xl
+                    group-hover:scale-[1.02]
+                    h-[420px] flex flex-col
+                  "
+                >
+                  {/* Image */}
+                  <div className="overflow-hidden">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="
+                        h-60 w-full object-cover
+                        transition-transform duration-700 ease-out
+                        group-hover:scale-110
+                      "
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <CardContent className="p-6 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold uppercase">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 mt-2">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        {/* Arrows — exact same as ServicesSection */}
+        <CarouselPrevious
+          className="
+            absolute 
+            -left-4 sm:-left-6 
+            top-1/2 -translate-y-1/2 
+            z-30
+          "
+        />
+
+        <CarouselNext
+          className="
+            absolute 
+            -right-4 sm:-right-6 
+            top-1/2 -translate-y-1/2 
+            z-30
+          "
+        />
+      </Carousel>
     </section>
-  )
+  );
 }

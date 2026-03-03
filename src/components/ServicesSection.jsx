@@ -47,7 +47,7 @@ export default function ServicesSection() {
       </div>
 
       {/* Carousel */}
-      <Carousel opts={{ align: "start" }} className="w-full">
+      <Carousel opts={{ align: "start" }} className="w-full px-6 sm:px-8">
         <CarouselContent className="-ml-4">
           {slideData.map((service, index) => (
             <CarouselItem
@@ -85,8 +85,23 @@ export default function ServicesSection() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious
+          className="
+    absolute 
+    -left-4 sm:-left-6 
+    top-1/2 -translate-y-1/2 
+    z-30
+  "
+        />
+
+        <CarouselNext
+          className="
+    absolute 
+    -right-4 sm:-right-6 
+    top-1/2 -translate-y-1/2 
+    z-30
+  "
+        />
       </Carousel>
     </section>
   );

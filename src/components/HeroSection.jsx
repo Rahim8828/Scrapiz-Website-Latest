@@ -71,10 +71,8 @@ import appStore from "../assets/apple.png";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-
       {/* Content Wrapper */}
       <div className="max-w-7xl mx-auto px-6 pt-40 relative z-10 text-center w-full">
-
         {/* Heading Animation */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -103,18 +101,31 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-8 flex justify-center gap-4"
         >
-          <img
-            src={googlePlay}
-            alt="Google Play"
-            className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-          <img
-            src={appStore}
-            alt="App Store"
-            className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
+          {/* Google Play Link */}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={googlePlay}
+              alt="Google Play"
+              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={appStore}
+              alt="App Store"
+              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </a>
         </motion.div>
       </div>
 
@@ -147,7 +158,6 @@ export default function Hero() {
           loading="lazy"
         />
       </motion.div>
-
     </section>
   );
 }
