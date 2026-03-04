@@ -1,50 +1,47 @@
 import { motion } from "framer-motion";
-import phones from "../assets/phones.png";
+import ResponsiveAssetImage from "./ResponsiveAssetImage";
 
 export default function SnapSection() {
   return (
-    <section className="px-6 md:px-10 mt-16">
+    <section className="px-4 sm:px-6 md:px-10 mt-4 md:mt-16">
       <div
-        className="bg-[#D9F1E1] rounded-[40px]
-                   px-8 md:px-14 py-8 md:py-6
+        className="snap-section-box bg-[#D9F1E1] rounded-[32px] md:rounded-[40px]
                    flex flex-col md:flex-row 
-                   items-center justify-center
-                   gap-10 md:gap-6
+                   items-center justify-between md:justify-center
                    overflow-hidden relative
-                   h-[380px] md:h-[420px] lg:h-[460px]"  // FIXED HEIGHT
+                   md:px-14 md:py-6
+                   md:h-[500px] lg:h-[560px]
+                   md:gap-6"
       >
-        {/* Phones Image (inside fixed box) */}
+        {/* Phones Image — takes ~70% of box on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex justify-center 
-                     max-h-full max-w-[450px] 
-                     overflow-hidden"
+          className="snap-phones-wrapper flex justify-center
+                     w-full md:max-w-[550px] lg:max-w-[600px]
+                     md:overflow-hidden"
         >
-          <motion.img
-            src={phones}
+          <ResponsiveAssetImage
+            src="phones.png"
             alt="Scrapiz App Preview"
-            className="h-full w-auto object-contain scale-150" 
-            animate={{ y: [0, -12, 0] }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            className="snap-phones-img w-auto object-contain
+                       md:h-full md:scale-[1.35] lg:scale-150"
+            loading="lazy"
           />
         </motion.div>
 
-        {/* Text */}
+        {/* Text — takes ~20-25% of box on mobile */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-lg text-center md:text-left"
+          className="snap-text-wrapper text-center md:text-left
+                     w-full md:max-w-lg"
         >
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+          <h2 className="snap-heading text-3xl sm:text-4xl md:text-6xl font-bold leading-tight text-black">
             Sell your <span className="text-green-700">Scrap</span>
             <br />
             in a Snap!

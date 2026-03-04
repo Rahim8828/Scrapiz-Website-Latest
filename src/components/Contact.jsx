@@ -5,7 +5,7 @@ import appStore from "../assets/apple.png";
 
 export default function DownloadCTA() {
   return (
-    <section className="mt-32 text-center">
+    <section id="contact-us" className="mt-32 text-center">
       <div className="max-w-4xl mx-auto px-6">
         {/* Heading */}
         <motion.h2

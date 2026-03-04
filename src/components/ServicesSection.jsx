@@ -10,30 +10,41 @@ import {
 } from "@/components/ui/carousel";
 
 import { Card, CardContent } from "@/components/ui/card";
-import serviceImg from "../assets/service.jpg";
+import ResponsiveAssetImage from "./ResponsiveAssetImage";
 
 export default function ServicesSection() {
   const slideData = [
     {
       title: "Scrap Pickup",
       desc: "Doorstep scrap collection made easy.",
-      src: serviceImg,
+      src: "service.jpg",
     },
     {
-      title: "Bulk Scrap Collection",
+      title: "Demolition Service",
       desc: "For apartments, offices & industries.",
-      src: serviceImg,
+      src: "services_2.png",
     },
     {
-      title: "E-Waste Recycling",
+      title: "Dismantling",
       desc: "Safe disposal of electronic waste.",
-      src: serviceImg,
+      src: "services_3.png",
     },
     {
-      title: "Industrial Scrap",
+      title: "Society Tie-up",
       desc: "Efficient scrap handling solutions.",
-      src: serviceImg,
+      src: "services_4.png",
     },
+    {
+      title: "Paper Shredding",
+      desc: "Secure shredding of documents and papers.",
+      src: "services_5.png",
+    },
+    {
+      title: "Junk Removal",
+      desc: "Quick and efficient removal of unwanted items.",
+      src: "services_6.png",
+    },
+    
   ];
 
   return (
@@ -65,12 +76,13 @@ export default function ServicesSection() {
                 >
                   {/* Image */}
                   <div className="overflow-hidden">
-                    <img
+                    <ResponsiveAssetImage
                       src={service.src}
                       alt={service.title}
                       className="h-60 w-full object-cover 
                      transition-transform duration-700 ease-out
                      group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
 

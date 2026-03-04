@@ -12,7 +12,7 @@
 
 //         {/* Heading */}
 //         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-//           India’s Smart Scrap <br />
+//           India's Smart Scrap <br />
 //           Pickup & Recycling Platform
 //         </h1>
 
@@ -63,24 +63,23 @@
 // }
 
 import { motion } from "framer-motion";
-import personImg from "../assets/man.png";
-import truckImg from "../assets/truck.png";
+import ResponsiveAssetImage from "../components/ResponsiveAssetImage";
 import googlePlay from "../assets/google.png";
 import appStore from "../assets/apple.png";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="hero-section relative overflow-hidden bg-gradient-to-b from-gray-50 to-white md:min-h-screen">
       {/* Content Wrapper */}
-      <div className="max-w-7xl mx-auto px-6 pt-40 relative z-10 text-center w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-40 relative z-10 text-center w-full">
         {/* Heading Animation */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+          className="hero-title text-3xl md:text-5xl font-bold text-gray-900 leading-tight px-2"
         >
-          India’s Smart Scrap <br />
+          India's Smart Scrap <br />
           Pickup & Recycling Platform
         </motion.h1>
 
@@ -89,19 +88,64 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 text-3xl text-gray-600 max-w-xl mx-auto"
+          className="hero-subtitle mt-3 md:mt-6 text-lg md:text-3xl text-gray-600 max-w-xl mx-auto px-4"
         >
           Sell your scrap in minutes with instant doorstep pickup.
         </motion.p>
 
-        {/* App Buttons Animation */}
+        {/* Mobile Layout: Person Image + App Buttons Side by Side */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 md:hidden flex items-center justify-center gap-4 px-4"
+        >
+          {/* Person Image on Left */}
+          <div className="flex-shrink-0">
+            <ResponsiveAssetImage
+              src="man.png"
+              alt="Scrapiz Representative"
+              className="hero-man-img w-40 h-auto object-contain"
+              loading="eager"
+            />
+          </div>
+
+          {/* App Buttons on Right */}
+          <div className="flex flex-col gap-3">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={googlePlay}
+                alt="Get it on Google Play"
+                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={appStore}
+                alt="Download on the App Store"
+                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Desktop App Buttons - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 flex justify-center gap-4"
+          className="mt-8 hidden md:flex justify-center items-center gap-4"
         >
-          {/* Google Play Link */}
           <a
             href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
             target="_blank"
@@ -109,7 +153,7 @@ export default function Hero() {
           >
             <img
               src={googlePlay}
-              alt="Google Play"
+              alt="Get it on Google Play"
               className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
@@ -121,7 +165,7 @@ export default function Hero() {
           >
             <img
               src={appStore}
-              alt="App Store"
+              alt="Download on the App Store"
               className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
@@ -129,30 +173,30 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Left Person Image Animation */}
+      {/* Desktop Left Person Image Animation - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         className="absolute bottom-0 left-10 hidden md:block"
       >
-        <img
-          src={personImg}
+        <ResponsiveAssetImage
+          src="man.png"
           alt="Scrapiz Representative"
           className="w-[380px] md:w-[350px] h-[500px]"
-          loading="lazy"
+          loading="eager"
         />
       </motion.div>
 
-      {/* Right Truck Image Animation */}
+      {/* Desktop Right Truck Image Animation - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
         className="absolute bottom-0 right-0 hidden md:block"
       >
-        <img
-          src={truckImg}
+        <ResponsiveAssetImage
+          src="truck.png"
           alt="Scrapiz Truck"
           className="w-[550px] md:w-[500px] h-[340px]"
           loading="lazy"

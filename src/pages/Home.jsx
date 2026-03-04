@@ -1,3 +1,4 @@
+import TopInfoBar from '../components/TopInfoBar';
 import Navbar from '../components/Header';
 import Hero from '../components/HeroSection';
 import SnapSection from '../components/SnapSection';
@@ -12,6 +13,7 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <div className="min-h-screen">
+    
       <Navbar />
       <Hero />
       <SnapSection />

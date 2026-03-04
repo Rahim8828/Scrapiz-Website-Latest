@@ -10,39 +10,34 @@ import {
 } from "@/components/ui/carousel";
 
 import { Card, CardContent } from "@/components/ui/card";
-
-import verifiedImg from "../assets/verfied.jpeg";
-import pricingImg from "../assets/pricing.jpeg";
-import pickupImg from "../assets/pickup.jpeg";
-import img4 from "../assets/whyus.jpeg";
-import img5 from "../assets/img5.jpeg";
+import ResponsiveAssetImage from "./ResponsiveAssetImage";
 
 export default function WhyChooseScrapiz() {
   const slideData = [
     {
       title: "VERIFIED & TRAINED PICKUP PARTNERS",
       desc: "Verified experts for safe and reliable scrap collection.",
-      src: verifiedImg,
+      src: "verfied.jpeg",
     },
     {
       title: "TRANSPARENT LIVE PRICING",
       desc: "100% transparent pricing with live rate estimates.",
-      src: pricingImg,
+      src: "pricing.jpeg",
     },
     {
       title: "DOORSTEP PICKUP & HEAVY LIFTING",
       desc: "Sit back while we handle the lifting and disposal.",
-      src: pickupImg,
+      src: "pickup.jpeg",
     },
     {
       title: "INSTANT BOOKING",
       desc: "Book scrap pickup within seconds.",
-      src: img4,
+      src: "whyus.jpeg",
     },
     {
       title: "ECO-FRIENDLY RECYCLING",
       desc: "We ensure responsible recycling and waste management.",
-      src: img5,
+      src: "img5.jpeg",
     },
   ];
 
@@ -80,7 +75,7 @@ export default function WhyChooseScrapiz() {
                 >
                   {/* Image */}
                   <div className="overflow-hidden">
-                    <img
+                    <ResponsiveAssetImage
                       src={item.src}
                       alt={item.title}
                       className="
@@ -88,6 +83,7 @@ export default function WhyChooseScrapiz() {
                         transition-transform duration-700 ease-out
                         group-hover:scale-110
                       "
+                      loading="lazy"
                     />
                   </div>
 
