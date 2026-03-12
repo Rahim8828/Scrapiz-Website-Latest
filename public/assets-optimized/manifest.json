@@ -1,0 +1,452 @@
+{
+  "generatedAt": "2026-03-04T18:56:47.085Z",
+  "config": {
+    "inputDir": "C:\\Users\\Ayaan\\Desktop\\scrapiz_greentech\\scrapiz_website\\Scrapiz-Website-Latest\\src\\assets",
+    "outputDir": "C:\\Users\\Ayaan\\Desktop\\scrapiz_greentech\\scrapiz_website\\Scrapiz-Website-Latest\\public\\assets-optimized",
+    "quality": 85,
+    "formats": [
+      "webp"
+    ],
+    "breakpoints": [
+      320,
+      640,
+      768,
+      1024,
+      1280,
+      1920
+    ],
+    "minCompressionRatio": 0.6
+  },
+  "images": [
+    {
+      "original": "apple.png",
+      "originalSize": 13556,
+      "optimized": "\\apple.webp",
+      "optimizedSize": 6754,
+      "compressionRatio": 0.5017704337562703,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\apple-320w.webp",
+          "size": 5036
+        }
+      ]
+    },
+    {
+      "original": "google.png",
+      "originalSize": 14132,
+      "optimized": "\\google.webp",
+      "optimizedSize": 6784,
+      "compressionRatio": 0.519954712708746,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\google-320w.webp",
+          "size": 4936
+        }
+      ]
+    },
+    {
+      "original": "img5.jpeg",
+      "originalSize": 298588,
+      "optimized": "\\img5.webp",
+      "optimizedSize": 128354,
+      "compressionRatio": 0.5701300789047115,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\img5-320w.webp",
+          "size": 15914
+        },
+        {
+          "width": 640,
+          "path": "\\img5-640w.webp",
+          "size": 40750
+        },
+        {
+          "width": 768,
+          "path": "\\img5-768w.webp",
+          "size": 52490
+        },
+        {
+          "width": 1024,
+          "path": "\\img5-1024w.webp",
+          "size": 76872
+        },
+        {
+          "width": 1280,
+          "path": "\\img5-1280w.webp",
+          "size": 101298
+        }
+      ]
+    },
+    {
+      "original": "man.png",
+      "originalSize": 261194,
+      "optimized": "\\man.webp",
+      "optimizedSize": 22538,
+      "compressionRatio": 0.9137116472813311,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\man-320w.webp",
+          "size": 18986
+        }
+      ]
+    },
+    {
+      "original": "phones.png",
+      "originalSize": 1341313,
+      "optimized": "\\phones.webp",
+      "optimizedSize": 125662,
+      "compressionRatio": 0.9063141861742934,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\phones-320w.webp",
+          "size": 16842
+        },
+        {
+          "width": 640,
+          "path": "\\phones-640w.webp",
+          "size": 43720
+        },
+        {
+          "width": 768,
+          "path": "\\phones-768w.webp",
+          "size": 56522
+        },
+        {
+          "width": 1024,
+          "path": "\\phones-1024w.webp",
+          "size": 81358
+        },
+        {
+          "width": 1280,
+          "path": "\\phones-1280w.webp",
+          "size": 107740
+        }
+      ]
+    },
+    {
+      "original": "pickup.jpeg",
+      "originalSize": 357922,
+      "optimized": "\\pickup.webp",
+      "optimizedSize": 164530,
+      "compressionRatio": 0.5403188404177446,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\pickup-320w.webp",
+          "size": 18864
+        },
+        {
+          "width": 640,
+          "path": "\\pickup-640w.webp",
+          "size": 53474
+        },
+        {
+          "width": 768,
+          "path": "\\pickup-768w.webp",
+          "size": 68508
+        },
+        {
+          "width": 1024,
+          "path": "\\pickup-1024w.webp",
+          "size": 102784
+        },
+        {
+          "width": 1280,
+          "path": "\\pickup-1280w.webp",
+          "size": 131806
+        }
+      ]
+    },
+    {
+      "original": "pricing.jpeg",
+      "originalSize": 345330,
+      "optimized": "\\pricing.webp",
+      "optimizedSize": 163960,
+      "compressionRatio": 0.5252077722757942,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\pricing-320w.webp",
+          "size": 20840
+        },
+        {
+          "width": 640,
+          "path": "\\pricing-640w.webp",
+          "size": 55638
+        },
+        {
+          "width": 768,
+          "path": "\\pricing-768w.webp",
+          "size": 71832
+        },
+        {
+          "width": 1024,
+          "path": "\\pricing-1024w.webp",
+          "size": 100390
+        },
+        {
+          "width": 1280,
+          "path": "\\pricing-1280w.webp",
+          "size": 131734
+        }
+      ]
+    },
+    {
+      "original": "service.jpg",
+      "originalSize": 340030,
+      "optimized": "\\service.webp",
+      "optimizedSize": 133822,
+      "compressionRatio": 0.606440608181631,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\service-320w.webp",
+          "size": 24038
+        },
+        {
+          "width": 640,
+          "path": "\\service-640w.webp",
+          "size": 64328
+        },
+        {
+          "width": 768,
+          "path": "\\service-768w.webp",
+          "size": 81204
+        },
+        {
+          "width": 1024,
+          "path": "\\service-1024w.webp",
+          "size": 113256
+        }
+      ]
+    },
+    {
+      "original": "services_2.png",
+      "originalSize": 436415,
+      "optimized": "\\services_2.webp",
+      "optimizedSize": 56468,
+      "compressionRatio": 0.8706093970188926,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\services_2-320w.webp",
+          "size": 34102
+        }
+      ]
+    },
+    {
+      "original": "services_3.png",
+      "originalSize": 376691,
+      "optimized": "\\services_3.webp",
+      "optimizedSize": 36894,
+      "compressionRatio": 0.9020576546824851,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\services_3-320w.webp",
+          "size": 24270
+        }
+      ]
+    },
+    {
+      "original": "services_4.png",
+      "originalSize": 404775,
+      "optimized": "\\services_4.webp",
+      "optimizedSize": 42880,
+      "compressionRatio": 0.8940646037922303,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\services_4-320w.webp",
+          "size": 26152
+        }
+      ]
+    },
+    {
+      "original": "services_5.png",
+      "originalSize": 389120,
+      "optimized": "\\services_5.webp",
+      "optimizedSize": 44718,
+      "compressionRatio": 0.8850791529605263,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\services_5-320w.webp",
+          "size": 25404
+        }
+      ]
+    },
+    {
+      "original": "services_6.png",
+      "originalSize": 398420,
+      "optimized": "\\services_6.webp",
+      "optimizedSize": 40378,
+      "compressionRatio": 0.8986546860097384,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\services_6-320w.webp",
+          "size": 23746
+        }
+      ]
+    },
+    {
+      "original": "step1.png",
+      "originalSize": 160598,
+      "optimized": "\\step1.webp",
+      "optimizedSize": 13176,
+      "compressionRatio": 0.9179566370689548,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\step1-320w.webp",
+          "size": 5110
+        }
+      ]
+    },
+    {
+      "original": "step2.png",
+      "originalSize": 56240,
+      "optimized": "\\step2.webp",
+      "optimizedSize": 7298,
+      "compressionRatio": 0.8702347083926032,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\step2-320w.webp",
+          "size": 5130
+        }
+      ]
+    },
+    {
+      "original": "step3.png",
+      "originalSize": 285579,
+      "optimized": "\\step3.webp",
+      "optimizedSize": 20142,
+      "compressionRatio": 0.9294696038574265,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\step3-320w.webp",
+          "size": 6962
+        },
+        {
+          "width": 640,
+          "path": "\\step3-640w.webp",
+          "size": 15650
+        },
+        {
+          "width": 768,
+          "path": "\\step3-768w.webp",
+          "size": 18752
+        }
+      ]
+    },
+    {
+      "original": "step4.png",
+      "originalSize": 303011,
+      "optimized": "\\step4.webp",
+      "optimizedSize": 16444,
+      "compressionRatio": 0.9457313430865546,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\step4-320w.webp",
+          "size": 5650
+        },
+        {
+          "width": 640,
+          "path": "\\step4-640w.webp",
+          "size": 12376
+        },
+        {
+          "width": 768,
+          "path": "\\step4-768w.webp",
+          "size": 15592
+        }
+      ]
+    },
+    {
+      "original": "truck.png",
+      "originalSize": 304899,
+      "optimized": "\\truck.webp",
+      "optimizedSize": 36560,
+      "compressionRatio": 0.8800914401162352,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\truck-320w.webp",
+          "size": 15998
+        },
+        {
+          "width": 640,
+          "path": "\\truck-640w.webp",
+          "size": 39620
+        }
+      ]
+    },
+    {
+      "original": "verfied.jpeg",
+      "originalSize": 153275,
+      "optimized": "\\verfied.webp",
+      "optimizedSize": 43162,
+      "compressionRatio": 0.7184015658130811,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\verfied-320w.webp",
+          "size": 10448
+        },
+        {
+          "width": 640,
+          "path": "\\verfied-640w.webp",
+          "size": 25166
+        },
+        {
+          "width": 768,
+          "path": "\\verfied-768w.webp",
+          "size": 31528
+        }
+      ]
+    },
+    {
+      "original": "whyus.jpeg",
+      "originalSize": 320440,
+      "optimized": "\\whyus.webp",
+      "optimizedSize": 84102,
+      "compressionRatio": 0.7375421295718387,
+      "responsive": [
+        {
+          "width": 320,
+          "path": "\\whyus-320w.webp",
+          "size": 8984
+        },
+        {
+          "width": 640,
+          "path": "\\whyus-640w.webp",
+          "size": 23106
+        },
+        {
+          "width": 768,
+          "path": "\\whyus-768w.webp",
+          "size": 29370
+        },
+        {
+          "width": 1024,
+          "path": "\\whyus-1024w.webp",
+          "size": 44942
+        },
+        {
+          "width": 1280,
+          "path": "\\whyus-1280w.webp",
+          "size": 61742
+        }
+      ]
+    }
+  ]
+}

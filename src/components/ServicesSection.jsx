@@ -1,108 +1,120 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Recycle, Hammer, Cog, ShieldCheck, Home, Truck, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+"use client";
 
-const ServicesSection = () => {
-  const services = [
+import * as React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import { Card, CardContent } from "@/components/ui/card";
+import ResponsiveAssetImage from "./ResponsiveAssetImage";
+
+export default function ServicesSection() {
+  const slideData = [
     {
-      icon: Recycle,
-      title: 'Scrap Collection',
-      description: 'Efficient and timely collection of all types of scrap materials from your doorstep.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/scrap-collection'
+      title: "Scrap Pickup",
+      desc: "Doorstep scrap collection made easy.",
+      src: "service.jpg",
     },
     {
-      icon: Hammer,
-      title: 'Demolition Service',
-      description: 'Safe and professional demolition services for buildings and industrial sites.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/demolition-service'
+      title: "Demolition Service",
+      desc: "For apartments, offices & industries.",
+      src: "services_2.png",
     },
     {
-      icon: Cog,
-      title: 'Dismantling',
-      description: 'Expert dismantling of machinery, industrial equipment, and large structures.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/dismantling'
+      title: "Dismantling",
+      desc: "Safe disposal of electronic waste.",
+      src: "services_3.png",
     },
     {
-      icon: ShieldCheck,
-      title: 'Paper Shredding',
-      description: 'Secure and confidential paper shredding services for businesses and individuals.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/paper-shredding'
+      title: "Society Tie-up",
+      desc: "Efficient scrap handling solutions.",
+      src: "services_4.png",
     },
     {
-      icon: Home,
-      title: 'Society Tie-Up',
-      description: 'Exclusive scrap collection programs for residential societies and communities.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/society-tie-up'
+      title: "Paper Shredding",
+      desc: "Secure shredding of documents and papers.",
+      src: "services_5.png",
     },
     {
-      icon: Truck,
-      title: 'Vehicle Scrapping',
-      description: 'RTO-certified scrapping for old cars, bikes, and commercial vehicles.',
-      color: 'from-green-500 to-green-600',
-      path: '/services/vehicle-scrapping'
-    }
+      title: "Junk Removal",
+      desc: "Quick and efficient removal of unwanted items.",
+      src: "services_6.png",
+    },
+    
   ];
 
   return (
-    <section className="py-12 lg:py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
-            Our <span className="text-gradient">Services</span>
-          </h2>
-          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive solutions for all your scrap management needs.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className={`bg-white rounded-xl p-6 text-center border border-gray-100 flex flex-col ${index === 0 ? 'shadow-lg' : 'shadow-md'}`}>
-              <div className={`w-14 h-14 lg:w-16 lg:h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
-                <service.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
-              </div>
-              <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-3">{service.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed flex-grow">{service.description}</p>
-              <Button asChild variant="outline" className="mt-5">
-                <Link to={service.path}>
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          ))}
-        </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-10"
-        >
-          <Button asChild size="lg">
-            <Link to="/services">View All Services</Link>
-          </Button>
-        </motion.div>
+    <section className="mt-24 px-6 md:px-10">
+      {/* Heading */}
+      <div className="text-center mb-14">
+        <h2 className="text-4xl md:text-6xl font-bold">Our Services</h2>
+        <p className="text-gray-600 mt-4 text-lg">
+          Smart, reliable and hassle-free scrap solutions.
+        </p>
       </div>
+
+      {/* Carousel */}
+      <Carousel opts={{ align: "start" }} className="w-full px-6 sm:px-8">
+        <CarouselContent className="-ml-4">
+          {slideData.map((service, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+            >
+              <div className="p-1 group">
+                <Card
+                  className="rounded-3xl overflow-hidden 
+                 shadow-md 
+                 transition-all duration-500 ease-out
+                 group-hover:-translate-y-3
+                 group-hover:shadow-2xl
+                 group-hover:scale-[1.02]"
+                >
+                  {/* Image */}
+                  <div className="overflow-hidden">
+                    <ResponsiveAssetImage
+                      src={service.src}
+                      alt={service.title}
+                      className="h-60 w-full object-cover 
+                     transition-transform duration-700 ease-out
+                     group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <CardContent className="p-6 transition-colors duration-300">
+                    <h3 className="text-2xl font-semibold">{service.title}</h3>
+                    <p className="text-gray-600 mt-2">{service.desc}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <CarouselPrevious
+          className="
+    absolute 
+    -left-4 sm:-left-6 
+    top-1/2 -translate-y-1/2 
+    z-30
+  "
+        />
+
+        <CarouselNext
+          className="
+    absolute 
+    -right-4 sm:-right-6 
+    top-1/2 -translate-y-1/2 
+    z-30
+  "
+        />
+      </Carousel>
     </section>
   );
-};
-
-export default ServicesSection;
+}
