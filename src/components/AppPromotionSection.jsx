@@ -63,37 +63,35 @@ const AppPromotionSection = () => {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 lg:gap-4">
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4">
               <motion.button 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }} 
                 onClick={handlePlayStoreClick}
-                className="w-auto"
+                className="inline-flex"
               >
                 <img 
-                  width="150"
-                  height="56"
-                  className="h-14 lg:h-16 w-auto rounded-xl" 
+                  width="160"
+                  height="52"
+                  className="h-14 sm:h-16 lg:h-16 w-auto object-contain" 
                   alt="Get it on Google Play" 
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                   loading="lazy"
-                  style={{ aspectRatio: '150/56' }}
                 />
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }} 
                 onClick={handleAppStoreClick}
-                className="w-auto"
+                className="inline-flex"
               >
                 <img 
-                  width="150"
-                  height="56"
-                  className="h-14 lg:h-16 w-auto rounded-xl" 
+                  width="160"
+                  height="52"
+                  className="h-14 sm:h-16 lg:h-16 w-auto object-contain" 
                   alt="Download on the App Store" 
                   src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                   loading="lazy"
-                  style={{ aspectRatio: '150/56' }}
                 />
               </motion.button>
             </div>

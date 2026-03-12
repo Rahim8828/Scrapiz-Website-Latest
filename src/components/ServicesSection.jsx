@@ -48,7 +48,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="mt-24 px-6 md:px-10">
+    <section id="services" className="mt-24 px-6 md:px-10">
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-6xl font-bold">Our Services</h2>

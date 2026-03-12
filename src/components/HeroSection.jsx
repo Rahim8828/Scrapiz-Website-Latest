@@ -74,9 +74,9 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-40 relative z-10 text-center w-full">
         {/* Heading Animation */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
           className="hero-title text-3xl md:text-5xl font-bold text-gray-900 leading-tight px-2"
         >
           India's Smart Scrap <br />
@@ -85,9 +85,9 @@ export default function Hero() {
 
         {/* Subtext Animation */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="hero-subtitle mt-3 md:mt-6 text-lg md:text-3xl text-gray-600 max-w-xl mx-auto px-4"
         >
           Sell your scrap in minutes with instant doorstep pickup.
@@ -95,9 +95,9 @@ export default function Hero() {
 
         {/* Mobile Layout: Person Image + App Buttons Side by Side */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="mt-6 md:hidden flex items-center justify-center gap-4 px-4"
         >
           {/* Person Image on Left */}
@@ -105,22 +105,23 @@ export default function Hero() {
             <ResponsiveAssetImage
               src="man.png"
               alt="Scrapiz Representative"
-              className="hero-man-img w-40 h-auto object-contain"
+              className="hero-man-img w-32 h-auto object-contain"
               loading="eager"
             />
           </div>
 
           {/* App Buttons on Right */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 flex-shrink-0">
             <a
               href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={googlePlay}
                 alt="Get it on Google Play"
-                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto object-contain"
                 loading="lazy"
               />
             </a>
@@ -128,11 +129,12 @@ export default function Hero() {
               href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={appStore}
                 alt="Download on the App Store"
-                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto object-contain"
                 loading="lazy"
               />
             </a>
@@ -141,20 +143,21 @@ export default function Hero() {
 
         {/* Desktop App Buttons - Hidden on mobile */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-8 hidden md:flex justify-center items-center gap-4"
         >
           <a
             href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
           >
             <img
               src={googlePlay}
               alt="Get it on Google Play"
-              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="h-14 lg:h-16 w-auto object-contain"
               loading="lazy"
             />
           </a>
@@ -162,11 +165,12 @@ export default function Hero() {
             href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
           >
             <img
               src={appStore}
               alt="Download on the App Store"
-              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="h-14 lg:h-16 w-auto object-contain"
               loading="lazy"
             />
           </a>

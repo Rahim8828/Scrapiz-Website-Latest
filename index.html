@@ -6,15 +6,15 @@
     <link rel="icon" type="image/svg+xml" href="/splashScreen.svg" />
     <meta name="generator" content="Hostinger Horizons" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scrapiz is India's smart scrap pickup and recycling platform. Sell scrap online in Mumbai with instant doorstep pickup. Best prices for metal, paper, plastic, e-waste & more. Book free pickup now!" />
     
-    <!-- Preconnect to external domains for faster loading -->
+    <!-- Preconnect to critical external domains only (max 2-3) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://wa.me" />
-    <link rel="preconnect" href="https://horizons-cdn.hostinger.com" />
+    <!-- Use dns-prefetch for non-critical origins -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://horizons-cdn.hostinger.com" />
     
     <!-- Preload critical fonts for above-the-fold content -->
     <!-- Poppins 700 (Bold) - Used for main headings above the fold -->
@@ -34,12 +34,13 @@
       crossorigin
     />
     
-    <!-- Preload hero image (Startup India logo) -->
+    <!-- Preload LCP hero image -->
     <link
       rel="preload"
       href="https://horizons-cdn.hostinger.com/4ac3079d-8cee-4c39-b363-0d9dc8e58a65/3c8b5158057f3cfa9cb1ef802827f1dc.png"
       as="image"
       type="image/png"
+      fetchpriority="high"
     />
     
     <!-- Load optimized fonts with display=swap for better performance -->
@@ -47,14 +48,14 @@
     <!-- Using &text parameter for subsetting would require per-page optimization -->
     <!-- display=swap ensures text is visible immediately with fallback fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=League+Spartan:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=League+Spartan:wght@400;600;700;800;900&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -63,9 +64,8 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     
-    <!-- Load Google Tag Manager after page interactive (deferred) -->
+    <!-- Load Google Tag Manager after page is fully loaded + 3s delay -->
     <script>
-      // Defer GTM loading until after page is interactive
       function loadGTM() {
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
@@ -79,11 +79,11 @@
         })(window, document, "script", "dataLayer", "GTM-PV656BH3");
       }
       
-      // Load GTM after page is interactive
+      // Delay GTM by 3s after load to not compete with LCP
       if (document.readyState === 'complete') {
-        loadGTM();
+        setTimeout(loadGTM, 3000);
       } else {
-        window.addEventListener('load', loadGTM);
+        window.addEventListener('load', function() { setTimeout(loadGTM, 3000); });
       }
     </script>
     
