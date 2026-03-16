@@ -21,15 +21,19 @@ import JunkRemovalServicePage from './pages/JunkRemovalServicePage';
 import VehicleScrappingPage from './pages/VehicleScrappingPage';
 
 // Location Pages
-import Bandra from './pages/Bandra';
-import BandraEast from './pages/BandraEast';
-import Dharavi from './pages/Dharavi';
-import DharaviKoliwada from './pages/DharaviKoliwada';
-import Goregaon from './pages/Goregaon';
-import Jogeshwari from './pages/Jogeshwari';
-import Kandivali from './pages/Kandivali';
-import Mahim from './pages/Mahim';
-import Nalasopara from './pages/Nalasopara';
+// import Bandra from './pages/Bandra';
+// import BandraEast from './pages/BandraEast';
+// import Dharavi from './pages/Dharavi';
+// import DharaviKoliwada from './pages/DharaviKoliwada';
+// import Goregaon from './pages/Goregaon';
+// import Jogeshwari from './pages/Jogeshwari';
+// import Kandivali from './pages/Kandivali';
+// import Mahim from './pages/Mahim';
+// import Nalasopara from './pages/Nalasopara';
+
+// seo Routes
+import ScrapDynamicPage from "./pages/ScrapDynamicPage";
+import LocationTemplate from "./pages/LocationPage";
 
 function App() {
   return (
@@ -57,7 +61,7 @@ function App() {
         <Route path="/services/vehicle-scrapping" element={<VehicleScrappingPage />} />
         
         {/* Location Routes */}
-        <Route path="/locations/bandra" element={<Bandra />} />
+        {/* <Route path="/locations/bandra" element={<Bandra />} />
         <Route path="/locations/bandra-east" element={<BandraEast />} />
         <Route path="/locations/dharavi" element={<Dharavi />} />
         <Route path="/locations/dharavi-koliwada" element={<DharaviKoliwada />} />
@@ -65,8 +69,10 @@ function App() {
         <Route path="/locations/jogeshwari" element={<Jogeshwari />} />
         <Route path="/locations/kandivali" element={<Kandivali />} />
         <Route path="/locations/mahim" element={<Mahim />} />
-        <Route path="/locations/nalasopara" element={<Nalasopara />} />
-        
+        <Route path="/locations/nalasopara" element={<Nalasopara />} /> */}
+        <Route path="/locations/:locationSlug" element={<LocationTemplate />} />
+        {/* <Route path="/:material-scrap-:service-:city" element={<ScrapDynamicPage />} /> */}
+        <Route path="/:slug" element={<ScrapDynamicPage />} />
         {/* 404 Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
