@@ -47,14 +47,6 @@ const ScrapDynamicPage = () => {
     : serviceData[service];
 
 
-    // if (!slug) return <div>Page not found</div>;
-  
-    // const parts = slug.split("-");
-  
-    // const material = parts[0];
-    // const service = parts[2];
-    // const city = parts.slice(3).join("-");
-
 
     console.log({
       slug,
@@ -69,8 +61,11 @@ const ScrapDynamicPage = () => {
       if (!scrap || !location || !serviceType) {
         return <div>Page not found</div>;
       }
-  
-    const title = `${scrap.name} ${serviceType.name} in ${location.displayName} | Scrapiz`;
+
+    const title =
+    service === "sell"
+    ? `Sell ${scrap.name} Scrap in ${location.displayName} | Scrapiz`
+    : `${scrap.name} ${serviceType.name} in ${location.displayName} | Scrapiz`;
   
     const description = `Looking for ${scrap.name.toLowerCase()} ${serviceType.slug} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and best scrap rates in ${location.displayName}.`;
 
