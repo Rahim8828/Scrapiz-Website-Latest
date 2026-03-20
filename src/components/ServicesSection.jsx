@@ -48,7 +48,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="mt-24 px-6 md:px-10">
+    <section id="services" className="mt-24 px-6 md:px-10">
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-6xl font-bold">Our Services</h2>
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                   className="rounded-3xl overflow-hidden 
                  shadow-md 
                  transition-all duration-500 ease-out
-                 group-hover:-translate-y-3
+                 group-hover:-translate-y-1
                  group-hover:shadow-2xl
                  group-hover:scale-[1.02]"
                 >
@@ -79,9 +79,7 @@ export default function ServicesSection() {
                     <ResponsiveAssetImage
                       src={service.src}
                       alt={service.title}
-                      className="h-60 w-full object-cover 
-                     transition-transform duration-700 ease-out
-                     group-hover:scale-110"
+                      className="h-60 w-full object-cover"
                       loading="lazy"
                     />
                   </div>

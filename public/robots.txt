@@ -1,6 +1,10 @@
-# Allow all search engines to crawl the entire site.
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Point search engines to the sitemap for a list of all pages.
+# Disallow admin/internal paths
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Point search engines to the sitemap for a list of all pages
 Sitemap: https://www.scrapiz.in/sitemap.xml

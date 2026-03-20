@@ -51,6 +51,7 @@ const ResponsiveAssetImage = ({
       alt={alt}
       className={className}
       loading={loading}
+      fetchPriority={loading === 'eager' ? 'high' : undefined}
       style={style}
       {...props}
     />
