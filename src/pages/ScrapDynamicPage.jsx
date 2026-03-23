@@ -6,6 +6,11 @@ import { scrapData } from "../data/scrapData";
 import { locationData } from "../data/locationData";
 import { serviceData } from "../data/serviceData";
 
+import TopInfoBar from "../components/TopInfoBar";
+import Navbar from "../components/Header";
+import Footer from "../components/Footer";
+import HowItWorks from "../components/HowItWorks";
+
 import LocationHero from "../components/LocationHero";
 import LocationWhyChoose from "../components/LocationWhyChoose";
 import LocationServices from "../components/LocationServices";
@@ -83,16 +88,20 @@ const ScrapDynamicPage = () => {
         </Helmet>
   
         <div className="bg-white text-gray-800">
+            <TopInfoBar />
+            <Navbar />
             <LocationHero 
             location={location}
             scrap={scrap}
             service={serviceType}/>
             <LocationWhyChoose location={location} />
             <LocationServices location={location} />
+            <HowItWorks />
             <LocationContact location={location} />
             <LocationMap location={location} />
             <LocationNearby location={location} />
             <LocationFAQ location={location} />
+            <Footer />
         </div>
       </>
     );
