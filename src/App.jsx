@@ -25,9 +25,12 @@ const SocietyTieUpPage = lazy(() => import('./pages/SocietyTieUpPage'));
 const JunkRemovalServicePage = lazy(() => import('./pages/JunkRemovalServicePage'));
 const VehicleScrappingPage = lazy(() => import('./pages/VehicleScrappingPage'));
 
+<<<<<<< HEAD
 // SEO Dynamic Pages
 const ScrapDynamicPage = lazy(() => import('./pages/ScrapDynamicPage'));
 const LocationTemplate = lazy(() => import('./pages/LocationPage'));
+=======
+>>>>>>> b62106b (Resolved merge conflict: merged SEO dynamic routing with main layout system)
 
 const fallback = (
   <div className="min-h-screen flex items-center justify-center">
@@ -38,6 +41,7 @@ const fallback = (
 function App() {
   return (
     <Router>
+<<<<<<< HEAD
       <ScrollToTop />
       <Suspense fallback={fallback}>
         <Routes>
@@ -78,6 +82,38 @@ function App() {
 
         </Routes>
       </Suspense>
+=======
+      <Routes>
+        {/* Static Routes FIRST */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/request-account-deletion" element={<RequestAccountDeletion />} />
+        
+        {/* Service Routes */}
+        <Route path="/services/scrap-collection" element={<ScrapCollectionPage />} />
+        <Route path="/services/demolition" element={<DemolitionServicePage />} />
+        <Route path="/services/demolition-service" element={<DemolitionServicePage />} />
+        <Route path="/services/dismantling" element={<DismantlingPage />} />
+        <Route path="/services/paper-shredding" element={<PaperShreddingPage />} />
+        <Route path="/services/society-tie-up" element={<SocietyTieUpPage />} />
+        <Route path="/services/junk-removal" element={<JunkRemovalServicePage />} />
+        <Route path="/services/vehicle-scrapping" element={<VehicleScrappingPage />} />
+        
+        {/* Dynamic Routes */}
+        <Route path="/locations/:locationSlug" element={<LocationTemplate />} />
+        <Route path="/:slug" element={<ScrapDynamicPage />} />
+        
+        {/* 404 Route */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+>>>>>>> b62106b (Resolved merge conflict: merged SEO dynamic routing with main layout system)
     </Router>
   );
 }
