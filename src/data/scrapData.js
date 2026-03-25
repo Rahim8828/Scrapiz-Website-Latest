@@ -2,6 +2,8 @@ export const scrapData = {
   copper: {
     name: "Copper",
     slug: "copper",
+    pricePerKg: "450-480",
+    unit: "kg",
     keywords: [
       "copper scrap buyers",
       "copper scrap pickup",
@@ -14,6 +16,8 @@ export const scrapData = {
   aluminium: {
     name: "Aluminium",
     slug: "aluminium",
+    pricePerKg: "110-120",
+    unit: "kg",
     keywords: [
       "aluminium scrap buyers",
       "aluminium scrap pickup",
@@ -24,6 +28,8 @@ export const scrapData = {
   brass: {
     name: "Brass",
     slug: "brass",
+    pricePerKg: "320-340",
+    unit: "kg",
     keywords: [
       "brass scrap buyers",
       "brass scrap pickup",
@@ -32,8 +38,10 @@ export const scrapData = {
   },
 
   iron: {
-    name: "Iron",
+    name: "Iron & Steel",
     slug: "iron",
+    pricePerKg: "28-32",
+    unit: "kg",
     keywords: [
       "iron scrap buyers",
       "iron scrap pickup",
@@ -44,6 +52,8 @@ export const scrapData = {
   stainless: {
     name: "Stainless Steel",
     slug: "stainless",
+    pricePerKg: "50-60",
+    unit: "kg",
     keywords: [
       "stainless steel scrap buyers",
       "ss scrap pickup",
@@ -54,6 +64,8 @@ export const scrapData = {
   ewaste: {
     name: "E-Waste",
     slug: "ewaste",
+    pricePerKg: "50-500",
+    unit: "pc",
     keywords: [
       "e waste buyers",
       "electronic scrap pickup",
@@ -62,8 +74,10 @@ export const scrapData = {
   },
 
   ac: {
-    name: "AC",
+    name: "AC Scrap",
     slug: "ac",
+    pricePerKg: "2000-8000",
+    unit: "pc",
     keywords: [
       "ac scrap buyers",
       "old ac scrap dealer",
@@ -74,6 +88,8 @@ export const scrapData = {
   refrigerator: {
     name: "Refrigerator",
     slug: "refrigerator",
+    pricePerKg: "800-2500",
+    unit: "pc",
     keywords: [
       "fridge scrap buyers",
       "refrigerator scrap dealer",
@@ -84,6 +100,8 @@ export const scrapData = {
   washingmachine: {
     name: "Washing Machine",
     slug: "washingmachine",
+    pricePerKg: "500-1500",
+    unit: "pc",
     keywords: [
       "washing machine scrap buyer",
       "sell old washing machine"
@@ -93,6 +111,8 @@ export const scrapData = {
   microwave: {
     name: "Microwave",
     slug: "microwave",
+    pricePerKg: "200-500",
+    unit: "pc",
     keywords: [
       "microwave scrap buyer",
       "sell old microwave"

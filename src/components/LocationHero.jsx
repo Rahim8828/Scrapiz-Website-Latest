@@ -20,11 +20,7 @@ const LocationHero = ({ location, scrap, service }) => {
       className="pt-24 pb-16 text-center bg-gradient-to-br from-green-600 to-green-700 text-white"
     >
       <div className="container mx-auto px-4">
-        {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-        {scrap && service
-        ? `${scrap.name} ${service.name} in ${location.displayName}`
-        : content.heroTitle}
-        </h1> */}
+
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
         {scrap && service
         ? service.slug === "sell"
@@ -32,11 +28,7 @@ const LocationHero = ({ location, scrap, service }) => {
         : `${scrap.name} ${service.name} in ${location.displayName}`
         : content.heroTitle}
         </h1>
-        {/* <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-        {scrap && service
-        ? `Looking to sell ${scrap.name.toLowerCase()} in ${location.displayName}? Scrapiz provides doorstep ${service.name.toLowerCase()} with instant payment and the best scrap rates in ${location.displayName}.`
-        : content.heroDescription}
-        </p> */}
+
         <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
         {scrap && service
         ? service.slug === "sell"

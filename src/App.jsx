@@ -38,6 +38,9 @@ const fallback = (
   </div>
 );
 
+
+
+
 function App() {
   return (
     <Router>
@@ -108,8 +111,10 @@ function App() {
         
         {/* Dynamic Routes */}
         <Route path="/locations/:locationSlug" element={<LocationTemplate />} />
+
         <Route path="/:slug" element={<ScrapDynamicPage />} />
         
+
         {/* 404 Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>

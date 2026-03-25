@@ -18,11 +18,23 @@ import LocationContact from "../components/LocationContact";
 import LocationMap from "../components/LocationMap";
 import LocationNearby from "../components/LocationNearby";
 import LocationFAQ from "../components/LocationFAQ";
+import SEOCTASection from "@/components/SEOCTASection";
+import Testimonials from "@/components/TestimonialsSection";
+
+import ScrapRatePage from "./ScrapRatePage";
 
 const ScrapDynamicPage = () => {
     const { slug } = useParams();
 
-    const parts = slug.split("-");
+    const isRatePage =
+    slug.includes("rate") ||
+    slug.includes("price");
+  
+  if (isRatePage) {
+    return <ScrapRatePage />;
+  }
+
+    const parts = slug?.split("-") || [];
 
     let material;
     let service;
@@ -51,17 +63,6 @@ const ScrapDynamicPage = () => {
     ? { name: "Sell Scrap", slug: "sell" }
     : serviceData[service];
 
-
-
-    console.log({
-      slug,
-      material,
-      service,
-      city,
-      scrap,
-      location,
-      serviceType
-    });
       
       if (!scrap || !location || !serviceType) {
         return <div>Page not found</div>;
@@ -74,17 +75,18 @@ const ScrapDynamicPage = () => {
   
     const description = `Looking for ${scrap.name.toLowerCase()} ${serviceType.slug} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and best scrap rates in ${location.displayName}.`;
 
-    
-  
+    const canonicalUrl =
+  service === "sell"
+    ? `https://www.scrapiz.in/sell-${material}-scrap-${city}`
+    : `https://www.scrapiz.in/${material}-scrap-${service}-${city}`;
+
+
     return (
       <>
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
-          <link
-            rel="canonical"
-            href={`https://www.scrapiz.in/${material}-scrap-${service}-${city}`}
-          />
+          <link rel="canonical" href={canonicalUrl} />
         </Helmet>
   
         <div className="bg-white text-gray-800">
@@ -101,6 +103,8 @@ const ScrapDynamicPage = () => {
             <LocationMap location={location} />
             <LocationNearby location={location} />
             <LocationFAQ location={location} />
+            <SEOCTASection scrap={scrap} location={location} />
+            <Testimonials />
             <Footer />
         </div>
       </>
