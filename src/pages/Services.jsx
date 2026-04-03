@@ -2,163 +2,212 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Recycle, Building, Wrench, FileText, Users, Package, ArrowRight, Car } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { locationData } from '../data/locationData';
+import servicesData from '../data/services/index';
+import ServicePageTemplate from '../components/ServicePageTemplate';
+import LocationContact from '../components/LocationContact';
+import LocationMap from '../components/LocationMap';
 
-const services = [
-  {
-    icon: Recycle,
-    title: 'Scrap Collection',
-    description: 'Efficient and timely collection of all types of scrap materials from your doorstep. We handle everything from segregation to transportation.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/scrap-collection'
-  },
-  {
-    icon: Building,
-    title: 'Demolition Service',
-    description: 'Safe and professional demolition services for buildings, structures, and industrial sites. We manage the entire process, including debris removal.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/demolition-service'
-  },
-  {
-    icon: Wrench,
-    title: 'Dismantling',
-    description: 'Expert dismantling of machinery, industrial equipment, and large structures. Our team ensures a safe and systematic process.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/dismantling'
-  },
-  {
-    icon: FileText,
-    title: 'Paper Shredding',
-    description: 'Secure and confidential paper shredding services for businesses and individuals. Protect your sensitive information while recycling.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/paper-shredding'
-  },
-  {
-    icon: Users,
-    title: 'Society Tie-Up',
-    description: 'Exclusive scrap collection programs for residential societies. We provide dedicated bins and regular collection schedules.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/society-tie-up'
-  },
-  {
-    icon: Package,
-    title: 'Junk Removal Service',
-    description: 'Hassle-free removal of all unwanted junk, old furniture, and appliances. Clear out your space with our quick and reliable service.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/junk-removal-service'
-  },
-  {
-    icon: Car,
-    title: 'Vehicle Scrapping',
-    description: 'RTO-certified scrapping for old cars, bikes, and commercial vehicles. We handle all paperwork and ensure eco-friendly disposal.',
-    color: 'from-green-500 to-green-600',
-    path: '/services/vehicle-scrapping'
-  }
+// ─── Service card definitions ─────────────────────────────────────────────────
+const SERVICE_CARDS = [
+  { icon: Recycle,   slug: 'scrap-collection',    title: 'Scrap Collection',     description: 'Doorstep scrap collection for metal, paper, plastic, e-waste, and more.' },
+  { icon: Building,  slug: 'demolition-service',  title: 'Demolition Service',   description: 'Safe building and industrial demolition with complete debris removal.' },
+  { icon: Wrench,    slug: 'dismantling',          title: 'Dismantling',          description: 'Professional dismantling of machinery, factories, and industrial equipment.' },
+  { icon: FileText,  slug: 'paper-shredding',      title: 'Paper Shredding',      description: 'Secure document shredding for offices with full confidentiality.' },
+  { icon: Users,     slug: 'society-tie-up',       title: 'Society Tie-Up',       description: 'Regular scrap collection programs for housing societies.' },
+  { icon: Package,   slug: 'junk-removal-service', title: 'Junk Removal',         description: 'Quick removal of old furniture, appliances, and unwanted junk.' },
+  { icon: Car,       slug: 'vehicle-scrapping',    title: 'Vehicle Scrapping',    description: 'RTO-approved scrapping for cars, bikes, and commercial vehicles.' },
 ];
 
-const Services = () => {
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/** "scrap-collection" → "Scrap Collection" */
+const toTitleCase = (str) =>
+  str.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
+/**
+ * Parse slug like "scrap-collection-service-bandra" or "demolition-service-wadala"
+ * Returns { serviceSlug, locationSlug }
+ */
+const parseSlug = (slug) => {
+  if (!slug) return { serviceSlug: null, locationSlug: null };
+
+  // Find the index of the word "service" in the parts
+  const parts = slug.split('-');
+  const serviceIdx = parts.lastIndexOf('service');
+
+  if (serviceIdx === -1) {
+    // No "service" keyword — treat whole thing as service slug, no location
+    return { serviceSlug: slug, locationSlug: null };
+  }
+
+  const serviceSlug = parts.slice(0, serviceIdx + 1).join('-'); // e.g. "scrap-collection-service"
+  const locationSlug = parts.slice(serviceIdx + 1).join('-') || null; // e.g. "bandra"
+
+  // Normalise: "scrap-collection-service" → try exact match, then strip "-service"
+  const normalised = servicesData[serviceSlug]
+    ? serviceSlug
+    : servicesData[serviceSlug.replace(/-service$/, '')]
+    ? serviceSlug.replace(/-service$/, '')
+    : serviceSlug;
+
+  return { serviceSlug: normalised, locationSlug };
+};
+
+/** Resolve location from slug, fallback to Mumbai stub */
+const resolveLocation = (locationSlug) => {
+  if (!locationSlug) return null;
+  return (
+    Object.values(locationData).find((l) => l.slug === locationSlug) || null
+  );
+};
+
+const MUMBAI_FALLBACK = { displayName: 'Mumbai', slug: 'mumbai' };
+
+// ─── Services listing page ────────────────────────────────────────────────────
+const ServicesListing = ({ locationSlug }) => {
+  const loc =
+    locationSlug
+      ? resolveLocation(locationSlug) || MUMBAI_FALLBACK
+      : MUMBAI_FALLBACK;
+
+  const locationName = loc.displayName;
+  const isDefault = locationName === 'Mumbai';
+
+  const title = isDefault
+    ? 'Scrap Collection & Recycling Services in Mumbai | Scrapiz'
+    : `Scrap Services in ${locationName} | Scrapiz`;
+
+  const description = isDefault
+    ? 'Scrapiz offers scrap collection, demolition, dismantling, junk removal, vehicle scrapping, and paper shredding across Mumbai with free pickup.'
+    : `Scrapiz offers scrap collection, demolition, junk removal, and more in ${locationName}. Free doorstep pickup and instant payment.`;
+
+  const canonical = isDefault
+    ? 'https://www.scrapiz.in/services'
+    : `https://www.scrapiz.in/services/${locationSlug}`;
+
   return (
     <>
       <Helmet>
-        <title>Our Services - Scrapiz</title>
-        <meta name="description" content="Explore the wide range of services offered by Scrapiz, including scrap collection, demolition, dismantling, paper shredding, and more." />
-        <link rel="canonical" href="https://www.scrapiz.in/services" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
       </Helmet>
-      <div className="bg-gray-50">
-        {/* Hero Section */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+
+      <div className="bg-white font-sans">
+        {/* HERO */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pb-16 text-center hero-pattern"
+          className="pt-28 pb-12 text-center bg-gradient-to-br from-green-600 via-green-700 to-teal-700 text-white"
         >
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.h1 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-3 sm:mb-4"
-            >
-              Our <span className="text-gradient">Services</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4"
-            >
-              Comprehensive solutions for all your scrap management and recycling needs. We are committed to providing reliable, efficient, and eco-friendly services.
-            </motion.p>
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+              Scrap Services in {locationName}
+            </h1>
+            <p className="text-lg text-green-100 max-w-2xl mx-auto">
+              Free doorstep pickup, instant payment, and the best rates — across {locationName}.
+            </p>
           </div>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="py-10 sm:py-12 lg:py-20">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-              {services.map((service, index) => (
+        {/* GRID */}
+        <div className="py-16 container mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICE_CARDS.map((svc, i) => {
+              const href = isDefault
+                ? `/services/${svc.slug}`
+                : `/services/${svc.slug}-${loc.slug}`;
+
+              return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
+                  key={svc.slug}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="group bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center border border-gray-100 flex flex-col transition-all duration-300 shadow-lg hover:shadow-xl"
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-md hover:shadow-xl transition group"
                 >
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-600 transition">
+                    <svc.icon className="w-8 h-8 text-green-600 group-hover:text-white transition" />
                   </div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow">{service.description}</p>
-                  
-                  <div className="mt-auto pt-5 sm:pt-6">
-                    <Link
-                      to={service.path}
-                      className="group/button w-full inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-center rounded-full transition-all duration-300 bg-green-500 hover:bg-green-600 text-white shadow-md hover:shadow-lg"
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/button:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">{svc.title}</h3>
+                  <p className="text-gray-500 text-sm mb-6 leading-relaxed">{svc.description}</p>
+                  <Link
+                    to={href}
+                    className="inline-flex items-center justify-center px-6 py-2.5 font-semibold rounded-full bg-green-600 hover:bg-green-700 text-white text-sm transition"
+                  >
+                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </div>
 
-        {/* CTA Section */}
-        <div className="pb-10 sm:pb-12 lg:pb-20">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 text-white text-center"
-            >
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
-                Have a Custom Requirement?
-              </h3>
-              <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                Our team is equipped to handle unique and large-scale projects. Contact us today for a personalized consultation and quote.
-              </p>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto text-base sm:text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-green-600 px-6 sm:px-8 h-12 sm:h-14 rounded-full"
-              >
-                <Link to="/contact" className="flex items-center justify-center">
-                  Get in Touch
-                  <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
+          <p className="text-center text-gray-500 mt-12 text-sm">
+            Looking for scrap services in another area?{' '}
+            <Link to="/locations" className="text-green-600 font-semibold">
+              Find dealers near you →
+            </Link>
+          </p>
         </div>
       </div>
     </>
   );
+};
+
+// ─── Main export ──────────────────────────────────────────────────────────────
+const Services = () => {
+  const { slug } = useParams();
+
+  // No slug → show listing for Mumbai
+  if (!slug) return <ServicesListing locationSlug={null} />;
+
+  const { serviceSlug, locationSlug } = parseSlug(slug);
+  const serviceData = servicesData[serviceSlug];
+
+  // Valid service slug → render service page template
+  if (serviceData) {
+    const loc = locationSlug ? resolveLocation(locationSlug) : null;
+    const locationName = loc?.displayName || (locationSlug ? toTitleCase(locationSlug) : null);
+
+    // Inject location into meta/hero if present
+    const data = locationName
+      ? {
+          ...serviceData,
+          serviceName: serviceData.serviceName,
+          meta: {
+            ...serviceData.meta,
+            title: `${serviceData.serviceName} in ${locationName} | Scrapiz`,
+            description: `${serviceData.serviceName} in ${locationName}. Free doorstep pickup, instant payment, and best rates with Scrapiz.`,
+            canonical: `https://www.scrapiz.in/services/${slug}`,
+          },
+          hero: {
+            ...serviceData.hero,
+            heading: `${serviceData.hero.heading.replace('in Mumbai', `in ${locationName}`).replace('Mumbai', locationName)}`,
+            subheading: serviceData.hero.subheading,
+          },
+        }
+      : serviceData;
+
+    const handleModal = (name) => {
+      window.open(
+        `https://wa.me/918828700630?text=Hi, I need help with ${encodeURIComponent(name)}${locationName ? ` in ${locationName}` : ''}`,
+        '_blank'
+      );
+    };
+
+    return <ServicePageTemplate data={data} openModal={handleModal} />;
+  }
+
+  // Slug looks like just a location (e.g. /services/bandra) → show listing for that location
+  const possibleLocation = resolveLocation(slug);
+  if (possibleLocation) return <ServicesListing locationSlug={slug} />;
+
+  // Fallback — unknown slug → Mumbai listing
+  return <ServicesListing locationSlug={null} />;
 };
 
 export default Services;

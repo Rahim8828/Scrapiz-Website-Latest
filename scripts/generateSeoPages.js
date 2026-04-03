@@ -39,7 +39,7 @@ Object.keys(scrapData).forEach(material => {
 });
 
 // =====================================================
-// 🚀 NEW: SCRAP RATE PAGES
+// 🚀 SCRAP RATE PAGES
 // =====================================================
 
 // ---------- SCRAP RATE (NO LOCATION) ----------
@@ -65,6 +65,37 @@ Object.keys(scrapData).forEach(material => {
 
     urls.push(url);
 
+  });
+});
+
+// =====================================================
+// 🚀 SERVICE + LOCATION PAGES (/services/...)
+// =====================================================
+
+// Primary service slugs (no aliases)
+const serviceSlugs = [
+  "scrap-collection",
+  "demolition-service",
+  "dismantling",
+  "paper-shredding",
+  "society-tie-up",
+  "junk-removal-service",
+  "vehicle-scrapping",
+];
+
+// /services (default Mumbai listing)
+urls.push(`${baseUrl}/services`);
+
+// /services/{service-slug} (no location)
+serviceSlugs.forEach(serviceSlug => {
+  urls.push(`${baseUrl}/services/${serviceSlug}`);
+});
+
+// /services/{service-slug}-{location-slug}
+serviceSlugs.forEach(serviceSlug => {
+  Object.values(locationData).forEach(loc => {
+    const slug = `${serviceSlug}-${loc.slug}`;
+    urls.push(`${baseUrl}/services/${slug}`);
   });
 });
 
