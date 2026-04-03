@@ -67,21 +67,19 @@ export default function WhyChooseScrapiz() {
                     rounded-3xl overflow-hidden
                     shadow-md
                     transition-all duration-500 ease-out
-                    group-hover:-translate-y-3
+                    group-hover:-translate-y-1
                     group-hover:shadow-2xl
                     group-hover:scale-[1.02]
                     h-[420px] flex flex-col
                   "
                 >
                   {/* Image */}
-                  <div className="overflow-hidden">
+                  <div className="h-60 w-full overflow-hidden flex items-center justify-center">
                     <ResponsiveAssetImage
                       src={item.src}
                       alt={item.title}
                       className="
-                        h-60 w-full object-cover
-                        transition-transform duration-700 ease-out
-                        group-hover:scale-110
+                        h-full w-full object-contain
                       "
                       loading="lazy"
                     />

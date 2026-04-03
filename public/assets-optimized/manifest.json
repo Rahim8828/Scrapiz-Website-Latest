@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-04T18:56:47.085Z",
+  "generatedAt": "2026-03-19T16:51:09.414Z",
   "config": {
-    "inputDir": "C:\\Users\\Ayaan\\Desktop\\scrapiz_greentech\\scrapiz_website\\Scrapiz-Website-Latest\\src\\assets",
-    "outputDir": "C:\\Users\\Ayaan\\Desktop\\scrapiz_greentech\\scrapiz_website\\Scrapiz-Website-Latest\\public\\assets-optimized",
+    "inputDir": "C:\\Users\\Khan Seemin\\Documents\\GitHub\\Scrapiz-Website-Latest\\src\\assets",
+    "outputDir": "C:\\Users\\Khan Seemin\\Documents\\GitHub\\Scrapiz-Website-Latest\\public\\assets-optimized",
     "quality": 85,
     "formats": [
       "webp"
@@ -392,59 +392,54 @@
     },
     {
       "original": "verfied.jpeg",
-      "originalSize": 153275,
+      "originalSize": 107531,
       "optimized": "\\verfied.webp",
-      "optimizedSize": 43162,
-      "compressionRatio": 0.7184015658130811,
+      "optimizedSize": 45294,
+      "compressionRatio": 0.5787819326519794,
       "responsive": [
         {
           "width": 320,
           "path": "\\verfied-320w.webp",
-          "size": 10448
+          "size": 12634
         },
         {
           "width": 640,
           "path": "\\verfied-640w.webp",
-          "size": 25166
+          "size": 30786
         },
         {
           "width": 768,
           "path": "\\verfied-768w.webp",
-          "size": 31528
+          "size": 40190
         }
       ]
     },
     {
       "original": "whyus.jpeg",
-      "originalSize": 320440,
+      "originalSize": 218310,
       "optimized": "\\whyus.webp",
-      "optimizedSize": 84102,
-      "compressionRatio": 0.7375421295718387,
+      "optimizedSize": 74156,
+      "compressionRatio": 0.660317896569099,
       "responsive": [
         {
           "width": 320,
           "path": "\\whyus-320w.webp",
-          "size": 8984
+          "size": 11568
         },
         {
           "width": 640,
           "path": "\\whyus-640w.webp",
-          "size": 23106
+          "size": 30454
         },
         {
           "width": 768,
           "path": "\\whyus-768w.webp",
-          "size": 29370
+          "size": 39758
         },
         {
           "width": 1024,
           "path": "\\whyus-1024w.webp",
-          "size": 44942
-        },
-        {
-          "width": 1280,
-          "path": "\\whyus-1280w.webp",
-          "size": 61742
+          "size": 58998
         }
       ]
     }

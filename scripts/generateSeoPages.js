@@ -38,14 +38,49 @@ Object.keys(scrapData).forEach(material => {
   });
 });
 
+// =====================================================
+// 🚀 NEW: SCRAP RATE PAGES
+// =====================================================
+
+// ---------- SCRAP RATE (NO LOCATION) ----------
+// {scrap}-scrap-rate
+
+Object.keys(scrapData).forEach(material => {
+
+  const slug = `${material}-scrap-rate`;
+  const url = `${baseUrl}/${slug}`;
+
+  urls.push(url);
+
+});
+
+// ---------- SCRAP RATE + LOCATION ----------
+// {scrap}-scrap-rate-{location}
+
+Object.keys(scrapData).forEach(material => {
+  Object.keys(locationData).forEach(city => {
+
+    const slug = `${material}-scrap-rate-${city}`;
+    const url = `${baseUrl}/${slug}`;
+
+    urls.push(url);
+
+  });
+});
+
+// =====================================================
+
 console.log(`Generated ${urls.length} URLs`);
+
+// ---------- REMOVE DUPLICATES (IMPORTANT) ----------
+const uniqueUrls = [...new Set(urls)];
 
 // ---------- SITEMAP ----------
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-${urls.map(url => `
+${uniqueUrls.map(url => `
   <url>
     <loc>${url}</loc>
     <lastmod>${today}</lastmod>
@@ -61,13 +96,10 @@ fs.writeFileSync("./public/sitemap-seo-pages.xml", sitemap);
 
 // ---------- MARKDOWN ----------
 
-const md = urls.map(url => `- ${url}`).join("\n");
+const md = uniqueUrls.map(url => `- ${url}`).join("\n");
 fs.writeFileSync("./seo-pages.md", md);
-
-
 
 console.log("✅ sitemap-seo-pages.xml generated");
 console.log("✅ seo-pages.md generated");
 
-
-export { urls };
+export { uniqueUrls as urls };

@@ -1,44 +1,47 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import Locations from './pages/Locations';
-import NotFound from './pages/NotFound';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsAndConditions from './pages/TermsAndConditions';
-import RequestAccountDeletion from './pages/RequestAccountDeletion';
+import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
+
+// Lazy-loaded pages
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const Locations = lazy(() => import('./pages/Locations'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const RequestAccountDeletion = lazy(() => import('./pages/RequestAccountDeletion'));
 
 // Service Pages
-import ScrapCollectionPage from './pages/ScrapCollectionPage';
-import DemolitionServicePage from './pages/DemolitionServicePage';
-import DismantlingPage from './pages/DismantlingPage';
-import PaperShreddingPage from './pages/PaperShreddingPage';
-import SocietyTieUpPage from './pages/SocietyTieUpPage';
-import JunkRemovalServicePage from './pages/JunkRemovalServicePage';
-import VehicleScrappingPage from './pages/VehicleScrappingPage';
+const ScrapCollectionPage = lazy(() => import('./pages/ScrapCollectionPage'));
+const DemolitionServicePage = lazy(() => import('./pages/DemolitionServicePage'));
+const DismantlingPage = lazy(() => import('./pages/DismantlingPage'));
+const PaperShreddingPage = lazy(() => import('./pages/PaperShreddingPage'));
+const SocietyTieUpPage = lazy(() => import('./pages/SocietyTieUpPage'));
+const JunkRemovalServicePage = lazy(() => import('./pages/JunkRemovalServicePage'));
+const VehicleScrappingPage = lazy(() => import('./pages/VehicleScrappingPage'));
+
 
 // Location Pages
-// import Bandra from './pages/Bandra';
-// import BandraEast from './pages/BandraEast';
-// import Dharavi from './pages/Dharavi';
-// import DharaviKoliwada from './pages/DharaviKoliwada';
-// import Goregaon from './pages/Goregaon';
-// import Jogeshwari from './pages/Jogeshwari';
-// import Kandivali from './pages/Kandivali';
-// import Mahim from './pages/Mahim';
-// import Nalasopara from './pages/Nalasopara';
-
-// seo Routes
-import ScrapDynamicPage from "./pages/ScrapDynamicPage";
-import LocationTemplate from "./pages/LocationPage";
+import Bandra from './pages/Bandra';
+import BandraEast from './pages/BandraEast';
+import Dharavi from './pages/Dharavi';
+import DharaviKoliwada from './pages/DharaviKoliwada';
+import Goregaon from './pages/Goregaon';
+import Jogeshwari from './pages/Jogeshwari';
+import Kandivali from './pages/Kandivali';
+import Mahim from './pages/Mahim';
+import Nalasopara from './pages/Nalasopara';
 
 function App() {
   return (
     <Router>
-      <Routes>
+       <Routes>
+        {/* Static Routes FIRST */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
@@ -60,19 +63,12 @@ function App() {
         <Route path="/services/junk-removal" element={<JunkRemovalServicePage />} />
         <Route path="/services/vehicle-scrapping" element={<VehicleScrappingPage />} />
         
-        {/* Location Routes */}
-        {/* <Route path="/locations/bandra" element={<Bandra />} />
-        <Route path="/locations/bandra-east" element={<BandraEast />} />
-        <Route path="/locations/dharavi" element={<Dharavi />} />
-        <Route path="/locations/dharavi-koliwada" element={<DharaviKoliwada />} />
-        <Route path="/locations/goregaon" element={<Goregaon />} />
-        <Route path="/locations/jogeshwari" element={<Jogeshwari />} />
-        <Route path="/locations/kandivali" element={<Kandivali />} />
-        <Route path="/locations/mahim" element={<Mahim />} />
-        <Route path="/locations/nalasopara" element={<Nalasopara />} /> */}
+        {/* Dynamic Routes */}
         <Route path="/locations/:locationSlug" element={<LocationTemplate />} />
-        {/* <Route path="/:material-scrap-:service-:city" element={<ScrapDynamicPage />} /> */}
+
         <Route path="/:slug" element={<ScrapDynamicPage />} />
+        
+
         {/* 404 Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>

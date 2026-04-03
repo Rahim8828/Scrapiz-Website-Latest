@@ -32,40 +32,40 @@ export default function DownloadCTA() {
         </motion.p>
 
         {/* Store Buttons */}
-        <div className="flex justify-center gap-6 mt-4">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 flex justify-center gap-4"
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-8 flex flex-wrap justify-center items-center gap-4"
+        >
+          {/* Google Play Link */}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
           >
-            {/* Google Play Link */}
-            <a
-              href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={googlePlay}
-                alt="Google Play"
-                className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            </a>
-            <a
-              href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={appStore}
-                alt="App Store"
-                className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            </a>
-          </motion.div>
-        </div>
+            <img
+              src={googlePlay}
+              alt="Google Play"
+              className="h-14 sm:h-16 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src={appStore}
+              alt="App Store"
+              className="h-14 sm:h-16 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
+        </motion.div>
 
         {/* Email pill */}
         <motion.div

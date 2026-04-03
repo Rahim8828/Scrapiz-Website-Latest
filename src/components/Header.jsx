@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,15 +25,45 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const handleNavClick = (sectionId) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 100;
+      const offset = 80;
       const top = element.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: "smooth" });
     }
-    setMobileMenuOpen(false);
   };
+
+  const handleNavClick = (sectionId) => {
+    setMobileMenuOpen(false);
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to home with hash, then scroll after page loads
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+  };
+
+  const handleLogoClick = () => {
+    setMobileMenuOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
+  // Handle scrolling after navigation to home page
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      // Small delay to let page render
+      const timer = setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
 
   return (
     <>
@@ -59,7 +92,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <button
-            onClick={() => handleNavClick("scrapiz")}
+            onClick={handleLogoClick}
             className="font-league text-3xl xl:text-4xl font-extrabold text-green-700 tracking-tight hover:scale-105 transition-transform"
           >
             Scrapiz
@@ -87,7 +120,7 @@ export default function Navbar() {
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <div className="flex justify-between items-center px-5 py-4">
           <button
-            onClick={() => handleNavClick("scrapiz")}
+            onClick={handleLogoClick}
             className="font-league text-3xl xl:text-4xl font-extrabold text-green-600 tracking-tight hover:scale-105 transition-transform"
           >
             Scrapiz

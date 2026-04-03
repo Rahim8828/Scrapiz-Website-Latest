@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&display=swap");
+/* League Spartan font loaded asynchronously via index.html to avoid render-blocking */
 
 @tailwind base;
 @tailwind components;
@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {

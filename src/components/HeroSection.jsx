@@ -1,67 +1,3 @@
-// import personImg from "../assets/man.jpg";
-// import truckImg from "../assets/truck.png";
-// import googlePlay from "../assets/google.png";
-// import appStore from "../assets/apple.png";
-
-// export default function Hero() {
-//   return (
-//     <section className="relative bg-[#f3f3f3] min-h-screen overflow-hidden">
-
-//       {/* Content Wrapper */}
-//       <div className="max-w-7xl mx-auto px-6 pt-40 relative z-10 text-center">
-
-//         {/* Heading */}
-//         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-//           India's Smart Scrap <br />
-//           Pickup & Recycling Platform
-//         </h1>
-
-//         {/* Subtext */}
-//         <p className="mt-6 text-3xl text-gray-600 max-w-xl mx-auto">
-//           Sell your scrap in minutes with instant doorstep pickup.
-//         </p>
-
-//         {/* App Buttons */}
-//         <div className="mt-8 flex justify-center gap-4">
-//           <img
-//             src={googlePlay}
-//             alt="Google Play"
-//             className="h-14 cursor-pointer"
-//             loading="lazy"
-//           />
-//           <img
-//             src={appStore}
-//             alt="App Store"
-//             className="h-14 cursor-pointer"
-//             loading="lazy"
-//           />
-//         </div>
-//       </div>
-
-//       {/* Left Person Image */}
-//       <div className="absolute bottom-0 left-10 hidden md:block">
-//         <img
-//           src={personImg}
-//           alt="Scrapiz Representative"
-//           className="w-[380px] md:w-[350px] h-[500px]"
-//           loading="lazy"
-//         />
-//       </div>
-
-//       {/* Right Truck Image */}
-//       <div className="absolute bottom-0 right-0 hidden md:block">
-//         <img
-//           src={truckImg}
-//           alt="Scrapiz Truck"
-//           className="w-[550px] md:w-[500px] h-[340px]"
-//           loading="lazy"
-//         />
-//       </div>
-
-//     </section>
-//   );
-// }
-
 import { motion } from "framer-motion";
 import ResponsiveAssetImage from "../components/ResponsiveAssetImage";
 import googlePlay from "../assets/google.png";
@@ -74,30 +10,34 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-40 relative z-10 text-center w-full">
         {/* Heading Animation */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
           className="hero-title text-3xl md:text-5xl font-bold text-gray-900 leading-tight px-2"
         >
-          India's Smart Scrap <br />
+          <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
+            Mumbai&apos;s Smart Scrap
+          </span>{" "}
+          <br />
           Pickup & Recycling Platform
         </motion.h1>
 
         {/* Subtext Animation */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="hero-subtitle mt-3 md:mt-6 text-lg md:text-3xl text-gray-600 max-w-xl mx-auto px-4"
         >
-          Sell your scrap in minutes with instant doorstep pickup.
+          Sell scrap online in Mumbai in minutes with instant doorstep pickup.
+          Get best prices for metal, paper, plastic, e-waste & more.
         </motion.p>
 
         {/* Mobile Layout: Person Image + App Buttons Side by Side */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="mt-6 md:hidden flex items-center justify-center gap-4 px-4"
         >
           {/* Person Image on Left */}
@@ -105,22 +45,23 @@ export default function Hero() {
             <ResponsiveAssetImage
               src="man.png"
               alt="Scrapiz Representative"
-              className="hero-man-img w-40 h-auto object-contain"
+              className="hero-man-img w-32 h-auto object-contain"
               loading="eager"
             />
           </div>
 
           {/* App Buttons on Right */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 flex-shrink-0">
             <a
               href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={googlePlay}
                 alt="Get it on Google Play"
-                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto object-contain"
                 loading="lazy"
               />
             </a>
@@ -128,11 +69,12 @@ export default function Hero() {
               href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={appStore}
                 alt="Download on the App Store"
-                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto object-contain"
                 loading="lazy"
               />
             </a>
@@ -141,20 +83,21 @@ export default function Hero() {
 
         {/* Desktop App Buttons - Hidden on mobile */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-8 hidden md:flex justify-center items-center gap-4"
         >
           <a
             href="https://play.google.com/store/apps/details?id=com.scrapiz.app"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
           >
             <img
               src={googlePlay}
               alt="Get it on Google Play"
-              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="h-14 lg:h-16 w-auto object-contain"
               loading="lazy"
             />
           </a>
@@ -162,11 +105,12 @@ export default function Hero() {
             href="https://apps.apple.com/in/app/scrapiz-sell-scrap-online/id6756441850"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex hover:scale-105 transition-transform duration-300"
           >
             <img
               src={appStore}
               alt="Download on the App Store"
-              className="h-14 cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="h-14 lg:h-16 w-auto object-contain"
               loading="lazy"
             />
           </a>
