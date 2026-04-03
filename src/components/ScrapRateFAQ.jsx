@@ -2,37 +2,29 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HelpCircle } from "lucide-react";
 
-const ScrapRateFAQ = ({ scrap, location }) => {
+const ScrapRateFAQ = ({ scrap, location, faqs: faqsProp }) => {
   if (!scrap) return null;
 
   const cleanName = scrap.name.replace("Scrap", "").trim();
   const lowerName = cleanName.toLowerCase();
   const locationName = location?.displayName;
 
-  // 🔥 Dynamic FAQs
-  const faqs = [
+  // Use passed-in FAQs if provided, otherwise generate defaults
+  const faqs = faqsProp?.length ? faqsProp : [
     {
-      question: `What is the ${lowerName} scrap rate ${
-        locationName ? `in ${locationName}` : "today"
-      }?`,
+      question: `What is the ${lowerName} scrap rate ${locationName ? `in ${locationName}` : "today"}?`,
       answer: `The current ${lowerName} scrap rate is around ₹${scrap.pricePerKg} per ${scrap.unit}. Prices may vary based on quality, quantity, and market demand.`,
     },
     {
-      question: `Where can I sell ${lowerName} scrap ${
-        locationName ? `in ${locationName}` : "near me"
-      }?`,
-      answer: `You can sell your ${lowerName} scrap with Scrapiz. We provide doorstep pickup, instant payment, and the best market rates ${
-        locationName ? `in ${locationName}` : ""
-      }.`,
+      question: `Where can I sell ${lowerName} scrap ${locationName ? `in ${locationName}` : "near me"}?`,
+      answer: `You can sell your ${lowerName} scrap with Scrapiz. We provide doorstep pickup, instant payment, and the best market rates ${locationName ? `in ${locationName}` : ""}.`,
     },
     {
       question: `How is ${lowerName} scrap price calculated?`,
       answer: `Scrap price depends on factors like purity, weight, and current market demand. Higher quality scrap fetches better prices.`,
     },
     {
-      question: `Do you offer scrap pickup ${
-        locationName ? `in ${locationName}` : ""
-      }?`,
+      question: `Do you offer scrap pickup ${locationName ? `in ${locationName}` : ""}?`,
       answer: `Yes, Scrapiz provides free doorstep pickup and instant payment for all types of scrap.`,
     },
   ];

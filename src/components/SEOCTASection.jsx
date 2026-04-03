@@ -19,70 +19,64 @@ const SEOCTASection = ({ scrap, location, openModal }) => {
      🧠 DYNAMIC TEXT LOGIC
   ========================= */
 
-  let heading = "Sell Scrap at Best Price 💰";
+  let heading = "Sell Scrap at Best Price";
   let description =
     "Get the highest scrap rate, instant payment, and free doorstep pickup with Scrapiz.";
 
   if (cleanName && locationName) {
-    heading = `Sell ${cleanName} Scrap in ${locationName} 💰`;
+    heading = `Sell ${cleanName} Scrap in ${locationName}`;
     description = `Looking to sell ${cleanName.toLowerCase()} scrap in ${locationName}? Get the best price, instant payment, and free pickup with Scrapiz.`;
   } else if (cleanName) {
-    heading = `Sell ${cleanName} Scrap at Best Price 💰`;
+    heading = `Sell ${cleanName} Scrap at Best Price`;
     description = `Looking to sell ${cleanName.toLowerCase()} scrap? Get the highest scrap rate, instant payment, and free pickup with Scrapiz.`;
   } else if (locationName) {
-    heading = `Sell Scrap in ${locationName} 💰`;
+    heading = `Sell Scrap in ${locationName}`;
     description = `Sell your scrap in ${locationName} at the best rates. Get instant payment and doorstep pickup with Scrapiz.`;
   }
 
   return (
-    <section className="py-14 lg:py-20 relative overflow-hidden bg-gray-900">
-      
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-800 opacity-90"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-14 lg:py-20 bg-white">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto"
+          className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12 text-center"
         >
-          {/* 🔥 HEADING */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
-            {heading}
+          {/* PRICE BADGE */}
+          {scrap?.pricePerKg && (
+            <span className="inline-block bg-green-50 border border-green-200 text-green-700 text-sm font-semibold px-4 py-1 rounded-full mb-5">
+              Current Rate: ₹{scrap.pricePerKg} / {scrap.unit}
+            </span>
+          )}
 
-            {/* PRICE (only if scrap exists) */}
-            {scrap?.pricePerKg && (
-              <span className="block text-yellow-300 text-lg mt-2">
-                ₹{scrap.pricePerKg} / {scrap.unit}
-              </span>
-            )}
+          {/* HEADING */}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+            {heading}
           </h2>
 
-          {/* 🔥 DESCRIPTION */}
-          <p className="text-sm lg:text-base text-green-100 mb-6">
+          {/* DESCRIPTION */}
+          <p className="text-sm lg:text-base text-gray-500 mb-6 max-w-xl mx-auto">
             {description}
           </p>
 
+          {/* DIVIDER */}
+          <div className="border-t border-gray-100 my-6" />
+
           {/* TRUST BADGES */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8 text-xs text-green-200">
-            <span className="bg-white/10 px-3 py-1 rounded-full">✔ Same Day Pickup</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full">✔ Instant Payment</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full">✔ No Hidden Charges</span>
+          <div className="flex flex-wrap justify-center gap-3 mb-8 text-xs text-green-700">
+            <span className="bg-green-50 border border-green-200 px-3 py-1.5 rounded-full font-medium">✔ Same Day Pickup</span>
+            <span className="bg-green-50 border border-green-200 px-3 py-1.5 rounded-full font-medium">✔ Instant Payment</span>
+            <span className="bg-green-50 border border-green-200 px-3 py-1.5 rounded-full font-medium">✔ No Hidden Charges</span>
           </div>
 
           {/* BUTTONS */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={handleBookPickup}
               size="lg"
-              className="w-full sm:w-auto bg-yellow-400 text-gray-900 hover:bg-yellow-500 px-8 py-6 rounded-full font-bold shadow-lg hover:scale-105 transition-all group"
+              className="w-full sm:w-auto bg-green-600 text-white hover:bg-green-700 px-8 py-6 rounded-full font-bold shadow-md hover:scale-105 transition-all group"
             >
               Book Free Pickup
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -92,30 +86,20 @@ const SEOCTASection = ({ scrap, location, openModal }) => {
               onClick={handleCallNow}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-6 rounded-full font-semibold"
+              className="w-full sm:w-auto border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-6 rounded-full font-semibold transition-all"
             >
               <Phone className="mr-2 w-5 h-5" />
               Call Now
             </Button>
-          </motion.div>
+          </div>
 
           {/* SUPPORT */}
-          <motion.div
-            className="mt-6 text-green-200 text-xs"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <p>
-              Need help?{" "}
-              <a
-                href="/contact"
-                className="font-semibold text-white underline hover:text-yellow-300"
-              >
-                Contact our team
-              </a>
-            </p>
-          </motion.div>
+          <p className="mt-6 text-gray-400 text-xs">
+            Need help?{" "}
+            <a href="/contact" className="font-semibold text-green-600 hover:text-green-700">
+              Contact our team
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>
