@@ -107,11 +107,34 @@ console.log(`Generated ${urls.length} URLs`);
 const uniqueUrls = [...new Set(urls)];
 
 // ---------- SITEMAP ----------
+// ---------- CONFIG ----------
+const CHUNK_SIZE = 200;
+const OUTPUT_DIR = "./public";
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+// ---------- SPLIT INTO CHUNKS ----------
+function chunkArray(array, size) {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size));
+  }
+  return chunks;
+}
+
+const chunks = chunkArray(uniqueUrls, CHUNK_SIZE);
+
+console.log(`📦 Total sitemap files: ${chunks.length}`);
+
+// ---------- GENERATE SITEMAP FILES ----------
+const sitemapFiles = [];
+
+chunks.forEach((chunk, index) => {
+  const fileName = `sitemap-${index + 1}.xml`;
+  const filePath = `${OUTPUT_DIR}/${fileName}`;
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-${uniqueUrls.map(url => `
+${chunk.map(url => `
   <url>
     <loc>${url}</loc>
     <lastmod>${today}</lastmod>
@@ -120,17 +143,33 @@ ${uniqueUrls.map(url => `
   </url>
 `).join("")}
 
-</urlset>
-`;
+</urlset>`;
 
-fs.writeFileSync("./public/sitemap-seo-pages.xml", sitemap);
+  fs.writeFileSync(filePath, sitemap);
+  sitemapFiles.push(`${baseUrl}/${fileName}`);
 
-// ---------- MARKDOWN ----------
+  console.log(`✅ Generated ${fileName} (${chunk.length} URLs)`);
+});
 
+// ---------- GENERATE SITEMAP INDEX ----------
+const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+${sitemapFiles.map(url => `
+  <sitemap>
+    <loc>${url}</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+`).join("")}
+
+</sitemapindex>`;
+
+fs.writeFileSync(`${OUTPUT_DIR}/sitemap.xml`, sitemapIndex);
+
+console.log("🔥 sitemap.xml (index) generated");
+
+// ---------- OPTIONAL MARKDOWN ----------
 const md = uniqueUrls.map(url => `- ${url}`).join("\n");
 fs.writeFileSync("./seo-pages.md", md);
 
-console.log("✅ sitemap-seo-pages.xml generated");
 console.log("✅ seo-pages.md generated");
-
-export { uniqueUrls as urls };
