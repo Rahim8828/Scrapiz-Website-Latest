@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Truck, IndianRupee, Clock, Star } from 'lucide-react';
+import { serviceData } from "../data/serviceData";
 
-const LocationHero = ({ location, scrap, service }) => {
+
+const LocationHero = ({ location, scrap, service, description })=> {
   if (!location) return null;
 
   const { content, nap } = location;
@@ -15,11 +17,14 @@ const LocationHero = ({ location, scrap, service }) => {
 
   const subheading = scrap && service ? "Free Pickup & Best Price" : null;
 
-  const description = scrap && service
-    ? service.slug === "sell"
-      ? `Sell your ${scrap.name.toLowerCase()} scrap in ${location.displayName} with Scrapiz. Doorstep pickup, digital weighing, and instant payment at the best rates.`
-      : `Looking for ${scrap.name.toLowerCase()} ${service.name.toLowerCase()} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and the best scrap rates.`
-    : content.heroDescription;
+  if (!description) {
+    description =
+      scrap && service
+        ? service.slug === "sell"
+          ? `Sell your ${scrap.name.toLowerCase()} scrap in ${location.displayName} with Scrapiz. Doorstep pickup, digital weighing, and instant payment at the best rates.`
+          : `Looking for ${scrap.name.toLowerCase()} ${service.name.toLowerCase()} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and the best scrap rates.`
+        : content.heroDescription;
+  }
 
   return (
     <>

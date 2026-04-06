@@ -104,7 +104,7 @@ function App() {
           
           
           {/* Extra Location Routes */}
-          <Route path="/locations/andheri" element={<Layout><ScrapDealerinAndheri /></Layout>} />
+          {/* <Route path="/locations/andheri" element={<Layout><ScrapDealerinAndheri /></Layout>} />
           <Route path="/locations/andheri-east" element={<Layout><ScrapDealerinAndheriEast /></Layout>} />
           <Route path="/locations/bhandup" element={<Layout><ScrapDealerinBhandup /></Layout>} />
           <Route path="/locations/byculla" element={<Layout><ScrapDealerinByculla /></Layout>} />
@@ -132,7 +132,7 @@ function App() {
           <Route path="/locations/vidyavihar" element={<Layout><ScrapDealerinVidyavihar /></Layout>} />
           <Route path="/locations/vikhroli" element={<Layout><ScrapDealerinVikhroli /></Layout>} />
           <Route path="/locations/wadala" element={<Layout><ScrapDealerinWadala /></Layout>} />
-          <Route path="/locations/worli" element={<Layout><ScrapDealerinWorli /></Layout>} />
+          <Route path="/locations/worli" element={<Layout><ScrapDealerinWorli /></Layout>} /> */}
 
            {/* Scrap Category Routes */}
            <Route path="/sell-ac-scrap-mumbai" element={<Layout><ACScrapPage /></Layout>} />
@@ -146,11 +146,13 @@ function App() {
           <Route path="/sell-stainless-steel-scrap-mumbai" element={<Layout><StainlessSteelScrapPage /></Layout>} />
           <Route path="/sell-washing-machine-scrap-mumbai" element={<Layout><WashingMachineScrapPage /></Layout>} />
 
-          {/* Dynamic Location Route */}
-          <Route path="/locations/:locationSlug" element={<Layout><LocationTemplate /></Layout>} />
-
           {/* Dynamic SEO Route */}
           <Route path="/:slug" element={<Layout><ScrapDynamicPage /></Layout>} />
+
+          {/* Dynamic Location Route */}
+          <Route path="/locations/:locationSlug" element={<Layout><LocationTemplate /></Layout>} />
+          <Route path="/:locationSlug" element={<Layout><LocationTemplate /></Layout>} />
+
 
           {/* 404 */}
           <Route path="*" element={<Layout><NotFound /></Layout>} />

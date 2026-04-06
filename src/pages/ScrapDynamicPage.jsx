@@ -23,6 +23,7 @@ import Testimonials from "@/components/TestimonialsSection";
 
 import ScrapRatePage from "./ScrapRatePage";
 
+
 const ScrapDynamicPage = () => {
   const { slug } = useParams();
 
@@ -59,11 +60,15 @@ const ScrapDynamicPage = () => {
   const location = Object.values(locationData).find(
     (loc) => loc.slug === city
   );
-
   const serviceType =
-    service === "sell"
-      ? { name: "Sell Scrap", slug: "sell" }
-      : serviceData[service];
+  service === "sell"
+    ? {
+        name: "Sell Scrap",
+        slug: "sell",
+        description:
+          "Sell your scrap easily with doorstep pickup, instant payment, and best market rates. We handle all types of scrap efficiently and responsibly."
+      }
+    : serviceData[service];
 
   if (!scrap || !location || !serviceType) {
     return <div>Page not found</div>;
@@ -73,11 +78,11 @@ const ScrapDynamicPage = () => {
 
   // 🧠 SEO
   const title =
-    service === "sell"
-      ? `Sell ${scrap.name} Scrap in ${location.displayName} | Scrapiz`
-      : `${scrap.name} ${serviceType.name} in ${location.displayName} | Scrapiz`;
+  service === "sell"
+    ? `Sell ${scrap.name} Scrap in ${location.displayName} | Instant Pickup | Scrapiz`
+    : `${scrap.name} ${serviceType.name} in ${location.displayName} | Best Rates | Scrapiz`;
 
-  const description = `Looking for ${scrap.name.toLowerCase()} ${serviceType.slug} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and best scrap rates in ${location.displayName}.`;
+    const description = `${serviceType.description} In ${location.displayName}, we specialize in ${scrap.name.toLowerCase()} scrap with doorstep pickup, instant payment, and top market rates.`;
 
   const canonicalUrl =
     service === "sell"
@@ -122,6 +127,7 @@ const ScrapDynamicPage = () => {
           location={safeLocation}
           scrap={scrap}
           service={serviceType}
+          description={description}
         />
 
         <LocationWhyChoose location={safeLocation} />
