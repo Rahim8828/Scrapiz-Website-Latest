@@ -354,7 +354,7 @@ const faqItems = [
         {/* TESTIMONIALS */}
         <Testimonials />
 
-        <Footer />
+
       </div>
 
       {/* STICKY MOBILE CTA */}
