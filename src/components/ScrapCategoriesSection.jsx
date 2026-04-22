@@ -14,44 +14,44 @@ const categories = [
     id: "paper",
     label: "Paper",
     items: [
-      { id: "newspaper", name: "Newspaper", minRate: 12, maxRate: 18, rate: 15, unit: "kg", image: "/assets-optimized/newspaper.png" },
-      { id: "cardboard", name: "Cardboard", minRate: 8, maxRate: 14, rate: 11, unit: "kg", image: "/assets-optimized/cardboard.png" },
+      { id: "newspaper", name: "Newspaper", minRate: 12, maxRate: 18, rate: 15, unit: "kg", image: "/assets-optimized/newspaper.webp" },
+      { id: "cardboard", name: "Cardboard", minRate: 8, maxRate: 14, rate: 11, unit: "kg", image: "/assets-optimized/cardboard.webp" },
     ],
   },
   {
     id: "metals",
     label: "Metals",
     items: [
-      { id: "iron", name: "Iron & Steel", minRate: 28, maxRate: 32, rate: 30, unit: "kg", image: "/assets-optimized/iron.png" },
-      { id: "aluminium", name: "Aluminium", minRate: 110, maxRate: 120, rate: 115, unit: "kg", image: "/assets-optimized/aluminium.png" },
-      { id: "copper", name: "Copper", minRate: 450, maxRate: 480, rate: 470, unit: "kg", image: "/assets-optimized/copper.png" },
-      { id: "brass", name: "Brass", minRate: 320, maxRate: 340, rate: 330, unit: "kg", image: "/assets-optimized/brass.png" },
-      { id: "stainless", name: "Stainless Steel", minRate: 50, maxRate: 60, rate: 55, unit: "kg", image: "/assets-optimized/stainlesssteel.png" },
+      { id: "iron", name: "Iron & Steel", minRate: 28, maxRate: 32, rate: 30, unit: "kg", image: "/assets-optimized/iron.webp" },
+      { id: "aluminium", name: "Aluminium", minRate: 110, maxRate: 120, rate: 115, unit: "kg", image: "/assets-optimized/aluminium.webp" },
+      { id: "copper", name: "Copper", minRate: 450, maxRate: 480, rate: 470, unit: "kg", image: "/assets-optimized/copper.webp" },
+      { id: "brass", name: "Brass", minRate: 320, maxRate: 340, rate: 330, unit: "kg", image: "/assets-optimized/brass.webp" },
+      { id: "stainless", name: "Stainless Steel", minRate: 50, maxRate: 60, rate: 55, unit: "kg", image: "/assets-optimized/stainlesssteel.webp" },
     ],
   },
   {
     id: "plastic",
     label: "Plastic",
     items: [
-      { id: "plastic", name: "Plastic (Hard)", minRate: 8, maxRate: 16, rate: 12, unit: "kg", image: "/assets-optimized/hardplastic.png" },
-      { id: "pet", name: "PET Bottles", minRate: 12, maxRate: 20, rate: 16, unit: "kg", image: "/assets-optimized/petbottels.png" },
+      { id: "plastic", name: "Plastic (Hard)", minRate: 8, maxRate: 16, rate: 12, unit: "kg", image: "/assets-optimized/hardplastic.webp" },
+      { id: "pet", name: "PET Bottles", minRate: 12, maxRate: 20, rate: 16, unit: "kg", image: "/assets-optimized/petbottels.webp" },
     ],
   },
   {
     id: "ewaste",
     label: "E-Waste",
     items: [
-      { id: "ewaste", name: "E-Waste", minRate: 50, maxRate: 500, rate: 200, unit: "piece", image: "/assets-optimized/ewaste.jpg" },
+      { id: "ewaste", name: "E-Waste", minRate: 50, maxRate: 500, rate: 200, unit: "piece", image: "/assets-optimized/ewaste.webp" },
     ],
   },
   {
     id: "appliances",
     label: "Appliances",
     items: [
-      { id: "ac", name: "AC Scrap", minRate: 2000, maxRate: 8000, rate: 4000, unit: "piece", image: "/assets-optimized/ac.png" },
-      { id: "fridge", name: "Refrigerator", minRate: 800, maxRate: 2500, rate: 1500, unit: "piece", image: "/assets-optimized/refrigerator.jpg" },
-      { id: "washing", name: "Washing Machine", minRate: 500, maxRate: 1500, rate: 1000, unit: "piece", image: "/assets-optimized/washingmachine.png" },
-      { id: "microwave", name: "Microwave", minRate: 200, maxRate: 500, rate: 350, unit: "piece", image: "/assets-optimized/microwave.jpg" },
+      { id: "ac", name: "AC Scrap", minRate: 2000, maxRate: 8000, rate: 4000, unit: "piece", image: "/assets-optimized/ac.webp" },
+      { id: "fridge", name: "Refrigerator", minRate: 800, maxRate: 2500, rate: 1500, unit: "piece", image: "/assets-optimized/refrigerator.webp" },
+      { id: "washing", name: "Washing Machine", minRate: 500, maxRate: 1500, rate: 1000, unit: "piece", image: "/assets-optimized/washingmachine.webp" },
+      { id: "microwave", name: "Microwave", minRate: 200, maxRate: 500, rate: 350, unit: "piece", image: "/assets-optimized/microwave.webp" },
     ],
   },
 ];
