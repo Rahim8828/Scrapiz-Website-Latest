@@ -1,151 +1,277 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import React, { useState, useMemo, useRef } from "react";
+import { Sparkles, Plus, Minus, Trash2, ArrowRight, Phone, IndianRupee, FileText, Wrench, Recycle, Monitor, Home, MousePointerClick } from "lucide-react";
+
+const categoryIcons = {
+  paper: FileText,
+  metals: Wrench,
+  plastic: Recycle,
+  ewaste: Monitor,
+  appliances: Home,
+};
+
+const categories = [
+  {
+    id: "paper",
+    label: "Paper",
+    items: [
+      { id: "newspaper", name: "Newspaper", minRate: 12, maxRate: 18, rate: 15, unit: "kg", image: "/assets-optimized/newspaper.webp" },
+      { id: "cardboard", name: "Cardboard", minRate: 8, maxRate: 14, rate: 11, unit: "kg", image: "/assets-optimized/cardboard.webp" },
+    ],
+  },
+  {
+    id: "metals",
+    label: "Metals",
+    items: [
+      { id: "iron", name: "Iron & Steel", minRate: 28, maxRate: 32, rate: 30, unit: "kg", image: "/assets-optimized/iron.webp" },
+      { id: "aluminium", name: "Aluminium", minRate: 110, maxRate: 120, rate: 115, unit: "kg", image: "/assets-optimized/aluminium.webp" },
+      { id: "copper", name: "Copper", minRate: 450, maxRate: 480, rate: 470, unit: "kg", image: "/assets-optimized/copper.webp" },
+      { id: "brass", name: "Brass", minRate: 320, maxRate: 340, rate: 330, unit: "kg", image: "/assets-optimized/brass.webp" },
+      { id: "stainless", name: "Stainless Steel", minRate: 50, maxRate: 60, rate: 55, unit: "kg", image: "/assets-optimized/stainlesssteel.webp" },
+    ],
+  },
+  {
+    id: "plastic",
+    label: "Plastic",
+    items: [
+      { id: "plastic", name: "Plastic (Hard)", minRate: 8, maxRate: 16, rate: 12, unit: "kg", image: "/assets-optimized/hardplastic.webp" },
+      { id: "pet", name: "PET Bottles", minRate: 12, maxRate: 20, rate: 16, unit: "kg", image: "/assets-optimized/petbottels.webp" },
+    ],
+  },
+  {
+    id: "ewaste",
+    label: "E-Waste",
+    items: [
+      { id: "ewaste", name: "E-Waste", minRate: 50, maxRate: 500, rate: 200, unit: "piece", image: "/assets-optimized/ewaste.webp" },
+    ],
+  },
+  {
+    id: "appliances",
+    label: "Appliances",
+    items: [
+      { id: "ac", name: "AC Scrap", minRate: 2000, maxRate: 8000, rate: 4000, unit: "piece", image: "/assets-optimized/ac.webp" },
+      { id: "fridge", name: "Refrigerator", minRate: 800, maxRate: 2500, rate: 1500, unit: "piece", image: "/assets-optimized/refrigerator.webp" },
+      { id: "washing", name: "Washing Machine", minRate: 500, maxRate: 1500, rate: 1000, unit: "piece", image: "/assets-optimized/washingmachine.webp" },
+      { id: "microwave", name: "Microwave", minRate: 200, maxRate: 500, rate: 350, unit: "piece", image: "/assets-optimized/microwave.webp" },
+    ],
+  },
+];
+
+// flat lookup for estimator
+const allItems = categories.flatMap(c => c.items);
 
 const ScrapCategoriesSection = () => {
-  const categories = [
-    {
-      name: 'Aluminium',
-      icon: '🥫',
-      rate: '₹110-120/kg',
-      path: '/sell-aluminium-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Copper',
-      icon: '🔶',
-      rate: '₹450-480/kg',
-      path: '/sell-copper-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Brass',
-      icon: '🔔',
-      rate: '₹320-340/kg',
-      path: '/sell-brass-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Iron & Steel',
-      icon: '🔩',
-      rate: '₹28-32/kg',
-      path: '/sell-iron-steel-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Stainless Steel',
-      icon: '🍴',
-      rate: '₹50-60/kg',
-      path: '/sell-stainless-steel-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'E-Waste',
-      icon: '💻',
-      rate: '₹50-500/pc',
-      path: '/sell-e-waste-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'AC Scrap',
-      icon: '❄️',
-      rate: '₹2000-8000/pc',
-      path: '/sell-ac-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Refrigerator',
-      icon: '🧊',
-      rate: '₹800-2500/pc',
-      path: '/sell-refrigerator-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Washing Machine',
-      icon: '🫧',
-      rate: '₹500-1500/pc',
-      path: '/sell-washing-machine-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      name: 'Microwave',
-      icon: '📻',
-      rate: '₹200-500/pc',
-      path: '/sell-microwave-scrap-mumbai',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
-    }
-  ];
+  const [activeCategory, setActiveCategory] = useState("paper");
+  const [selectedItems, setSelectedItems] = useState({});
+  const estimatorRef = useRef(null);
+
+  const handleAdd = (id) => {
+    setSelectedItems(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+    setTimeout(() => {
+      estimatorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  };
+
+  const handleIncrement = (id) => setSelectedItems(prev => ({ ...prev, [id]: prev[id] + 1 }));
+
+  const handleDecrement = (id) => {
+    setSelectedItems(prev => {
+      const next = { ...prev };
+      if (next[id] <= 1) delete next[id];
+      else next[id] -= 1;
+      return next;
+    });
+  };
+
+  const handleRemove = (id) => {
+    setSelectedItems(prev => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+  };
+
+  const totalEstimate = useMemo(() => {
+    return Object.entries(selectedItems).reduce((total, [id, qty]) => {
+      const item = allItems.find(i => i.id === id);
+      return total + (item ? item.rate * qty : 0);
+    }, 0);
+  }, [selectedItems]);
+
+  const hasItems = Object.keys(selectedItems).length > 0;
+
+  const handleGetQuote = () => {
+    const itemsList = Object.entries(selectedItems)
+      .map(([id, qty]) => {
+        const item = allItems.find(i => i.id === id);
+        return `• ${item.name}: ${qty} ${item.unit}`;
+      })
+      .join("\n");
+    const message = `Hi, I want to sell scrap:\n\n${itemsList}\n\nEstimated Value: ₹${totalEstimate}`;
+    window.open(`https://wa.me/918828700630?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
+  const activeItems = categories.find(c => c.id === activeCategory)?.items ?? [];
 
   return (
     <section className="py-12 lg:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
+
+        {/* HEADER */}
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-4">
-            <Sparkles className="w-4 h-4" strokeWidth={2.5} />
+            <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold">What We Buy</span>
           </div>
-          
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            Sell Any Type of <span className="text-gradient">Scrap</span>
-          </h2>
-          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-            We buy all types of scrap at best market rates. Click on any category to know more.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
-          {categories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.03 }}
-            >
-              <Link
-                to={category.path}
-                className={`block ${category.bgColor} rounded-xl p-4 lg:p-5 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 group h-full`}
-              >
-                <div className="text-3xl lg:text-4xl mb-3">{category.icon}</div>
-                <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors leading-tight">
-                  {category.name}
-                </h3>
-                <div className={`inline-block bg-gradient-to-r ${category.color} text-white text-xs lg:text-sm font-bold px-3 py-1 rounded-full`}>
-                  {category.rate}
-                </div>
-                <div className="mt-3 flex items-center justify-center text-green-600 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>Sell Now</span>
-                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          <h2 className="text-3xl font-bold">Sell Any Type of Scrap</h2>
+          <p className="text-gray-500 mt-2 text-sm">Pick a category, then click items to add them to your estimate</p>
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-sm text-gray-500 mt-6"
-        >
-          * Rates are indicative and may vary based on quality and market conditions
-        </motion.p>
+        {/* CATEGORY TABS */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {categories.map(cat => {
+            const catCount = cat.items.filter(i => selectedItems[i.id] > 0).length;
+            const Icon = categoryIcons[cat.id];
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-all
+                  ${activeCategory === cat.id
+                    ? "bg-green-600 text-white border-green-600 shadow-md"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-green-400 hover:text-green-600"
+                  }`}
+              >
+                <Icon className="w-4 h-4" />
+                {cat.label}
+                {catCount > 0 && (
+                  <span className={`text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center
+                    ${activeCategory === cat.id ? "bg-white text-green-600" : "bg-green-100 text-green-700"}`}>
+                    {catCount}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ITEMS GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {activeItems.map((item) => {
+            const qty = selectedItems[item.id] || 0;
+            const isSelected = qty > 0;
+            return (
+              <div
+                key={item.id}
+                onClick={() => handleAdd(item.id)}
+                className={`cursor-pointer rounded-xl overflow-hidden transition-all group border
+                  ${isSelected
+                    ? "bg-green-50 border-green-500 shadow-md"
+                    : "bg-white border-gray-200 hover:border-green-300 hover:shadow-md"
+                  }`}
+              >
+                <div className="h-40 p-2 flex items-center justify-center bg-gray-50 relative">
+                  <img src={item.image} alt={item.name} className="w-full h-full object-contain group-hover:scale-105 transition" />
+                  {isSelected && (
+                    <span className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                      {qty}
+                    </span>
+                  )}
+                </div>
+                <div className="p-3 text-center">
+                  <h3 className="font-semibold text-sm text-gray-800">{item.name}</h3>
+                  <p className="text-green-600 text-xs mt-0.5">₹{item.minRate}–{item.maxRate}/{item.unit}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ESTIMATOR */}
+        <div ref={estimatorRef} className="max-w-5xl mx-auto scroll-mt-24">
+          <h3 className="text-2xl font-bold text-center mb-6">Your Scrap Value Calculator</h3>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+
+            {/* LEFT — selected items */}
+            <div className="lg:col-span-2 bg-gray-50 rounded-2xl p-6 min-h-[200px]">
+              {hasItems ? (
+                <div className="space-y-3">
+                  {Object.entries(selectedItems).map(([id, qty]) => {
+                    const item = allItems.find(i => i.id === id);
+                    return (
+                      <div key={id} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+                        <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                          <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-sm text-gray-800 truncate">{item.name}</p>
+                          <p className="text-xs text-gray-400">₹{item.rate}/{item.unit}</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <button onClick={(e) => { e.stopPropagation(); handleDecrement(id); }} className="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition">
+                            <Minus className="w-3 h-3" />
+                          </button>
+                          <span className="w-8 text-center font-bold text-sm">{qty}</span>
+                          <button onClick={(e) => { e.stopPropagation(); handleIncrement(id); }} className="w-7 h-7 rounded-full bg-green-100 hover:bg-green-200 text-green-700 flex items-center justify-center transition">
+                            <Plus className="w-3 h-3" />
+                          </button>
+                        </div>
+                        <span className="text-sm font-bold text-green-700 w-20 text-right">₹{(item.rate * qty).toLocaleString()}</span>
+                        <button onClick={(e) => { e.stopPropagation(); handleRemove(id); }} className="text-gray-300 hover:text-red-400 transition ml-1">
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="h-full flex flex-col items-center justify-center text-gray-400 py-10">
+                  <MousePointerClick className="w-10 h-10 mb-3 text-gray-300" />
+                  <p className="text-sm">Click items above to add them here</p>
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT — total + CTA */}
+            <div className="lg:col-span-1">
+              <div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-2xl shadow-xl p-6 sticky top-24">
+                <h4 className="text-lg font-bold flex items-center gap-2 mb-5">
+                  <IndianRupee className="w-5 h-5" />
+                  Your Estimate
+                  {hasItems && (
+                    <span className="ml-auto bg-white/20 px-2 py-0.5 rounded-full text-xs font-bold">
+                      {Object.keys(selectedItems).length} items
+                    </span>
+                  )}
+                </h4>
+
+                <div className="bg-white/10 rounded-xl p-4 mb-5 text-center">
+                  <p className="text-sm text-green-100 mb-1">Estimated Total</p>
+                  <p className="text-4xl font-bold">{hasItems ? `₹${totalEstimate.toLocaleString()}` : "₹0"}</p>
+                  {hasItems && <p className="text-xs text-green-200 mt-1">*Approximate value</p>}
+                </div>
+
+                <button
+                  onClick={handleGetQuote}
+                  disabled={!hasItems}
+                  className="w-full bg-white text-green-600 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-50 transition disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  Get Quote on WhatsApp
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <div className="mt-5 pt-4 border-t border-white/20 text-center">
+                  <a href="tel:+918828700630" className="flex items-center justify-center gap-2 text-sm hover:text-green-200 transition">
+                    <Phone className="w-4 h-4" />
+                    Need help? Call now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );

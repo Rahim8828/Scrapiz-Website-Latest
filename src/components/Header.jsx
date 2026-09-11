@@ -53,6 +53,15 @@ export default function Navbar() {
     }
   };
 
+  const handlePartnersClick = () => {
+    setMobileMenuOpen(false);
+    if (location.pathname === "/scrapiz-partners") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    navigate("/scrapiz-partners");
+  };
+
   // Handle scrolling after navigation to home page
   useEffect(() => {
     if (location.pathname === "/" && location.state?.scrollTo) {
@@ -105,6 +114,12 @@ export default function Navbar() {
               className="hover:text-green-600 transition"
             >
               FAQs
+            </button>
+            <button
+              onClick={handlePartnersClick}
+              className="hover:text-green-600 transition"
+            >
+              Partners
             </button>
             <button
               onClick={() => handleNavClick("contact-us")}
@@ -176,6 +191,12 @@ export default function Navbar() {
               className="text-left text-gray-700 text-lg py-2 hover:text-green-600"
             >
               FAQs
+            </button>
+            <button
+              onClick={handlePartnersClick}
+              className="text-left text-gray-700 text-lg py-2 hover:text-green-600"
+            >
+              Partners
             </button>
             <button
               onClick={() => handleNavClick("contact-us")}

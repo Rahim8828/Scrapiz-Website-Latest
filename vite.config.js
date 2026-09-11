@@ -88,6 +88,8 @@ const staticRoutes = [
 ];
 
 export default defineConfig({
+
+  base: '/',  
   plugins: [
     react(), 
     markdown({ 

@@ -48,6 +48,7 @@ const Footer = () => {
             <ul className="footer-links-list">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
+              <li><Link to="/scrapiz-partners">Partners</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
               <li><Link to="/blog">Blog</Link></li>

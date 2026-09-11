@@ -79,10 +79,7 @@ export default function Hero() {
           transition={{ duration: 0.4 }}
           className="hero-title text-3xl md:text-5xl font-bold text-gray-900 leading-tight px-2"
         >
-          <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
-            Mumbai&apos;s Smart Scrap
-          </span>{" "}
-          <br />
+          Mumbai's Smart Scrap <br />
           Pickup & Recycling Platform
         </motion.h1>
 
@@ -93,8 +90,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="hero-subtitle mt-3 md:mt-6 text-lg md:text-3xl text-gray-600 max-w-xl mx-auto px-4"
         >
-          Sell scrap online in Mumbai in minutes with instant doorstep pickup.
-          Get best prices for metal, paper, plastic, e-waste & more.
+          Sell your scrap in minutes with instant doorstep pickup.
         </motion.p>
 
         {/* Mobile Layout: Person Image + App Buttons Side by Side */}

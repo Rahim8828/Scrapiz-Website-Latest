@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 
-// Lazy-load all non-home pages to reduce initial bundle size
+// Lazy-loaded pages
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -15,57 +15,45 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const RequestAccountDeletion = lazy(() => import('./pages/RequestAccountDeletion'));
+const Partners = lazy(() => import('./pages/Partners'));
 
-// Service Pages (lazy)
-const ScrapCollectionPage = lazy(() => import('./pages/ScrapCollectionPage'));
-const DemolitionServicePage = lazy(() => import('./pages/DemolitionServicePage'));
-const DismantlingPage = lazy(() => import('./pages/DismantlingPage'));
-const PaperShreddingPage = lazy(() => import('./pages/PaperShreddingPage'));
-const SocietyTieUpPage = lazy(() => import('./pages/SocietyTieUpPage'));
-const JunkRemovalServicePage = lazy(() => import('./pages/JunkRemovalServicePage'));
-const VehicleScrappingPage = lazy(() => import('./pages/VehicleScrappingPage'));
+// Service Pages — single dynamic page
+const ServicePage = lazy(() => import('./pages/ServicePage'));
 
-// Location Pages (lazy)
-const Bandra = lazy(() => import('./pages/Bandra'));
-const BandraEast = lazy(() => import('./pages/BandraEast'));
-const Dharavi = lazy(() => import('./pages/Dharavi'));
-const DharaviKoliwada = lazy(() => import('./pages/DharaviKoliwada'));
-const Goregaon = lazy(() => import('./pages/Goregaon'));
-const Jogeshwari = lazy(() => import('./pages/Jogeshwari'));
-const Kandivali = lazy(() => import('./pages/Kandivali'));
-const Mahim = lazy(() => import('./pages/Mahim'));
-const Nalasopara = lazy(() => import('./pages/Nalasopara'));
+// SEO Dynamic Pages
+const ScrapDynamicPage = lazy(() => import('./pages/ScrapDynamicPage'));
+const LocationTemplate = lazy(() => import('./pages/LocationPage'));
 
-// Extra Location Pages (lazy)
-const ScrapDealerinAndheri = lazy(() => import('./Extra Location pages /ScrapDealerinAndheri'));
-const ScrapDealerinAndheriEast = lazy(() => import('./Extra Location pages /ScrapDealerinAndheriEast'));
-const ScrapDealerinBhandup = lazy(() => import('./Extra Location pages /ScrapDealerinBhandup'));
-const ScrapDealerinByculla = lazy(() => import('./Extra Location pages /ScrapDealerinByculla'));
-const ScrapDealerinChembur = lazy(() => import('./Extra Location pages /ScrapDealerinChembur'));
-const ScrapDealerinColaba = lazy(() => import('./Extra Location pages /ScrapDealerinColaba'));
-const ScrapDealerinCST = lazy(() => import('./Extra Location pages /ScrapDealerinCST'));
-const ScrapDealerinDadarEast = lazy(() => import('./Extra Location pages /ScrapDealerinDadarEast'));
-const ScrapDealerinDadarWest = lazy(() => import('./Extra Location pages /ScrapDealerinDadarWest'));
-const ScrapDealerinFort = lazy(() => import('./Extra Location pages /ScrapDealerinFort'));
-const ScrapDealerinGhatkoparEast = lazy(() => import('./Extra Location pages /ScrapDealerinGhatkoparEast'));
-const ScrapDealerinGhatkoparWest = lazy(() => import('./Extra Location pages /ScrapDealerinGhatkoparWest'));
-const ScrapDealerinGoregaonEast = lazy(() => import('./Extra Location pages /ScrapDealerinGoregaonEast'));
-const ScrapDealerinGoregaonWest = lazy(() => import('./Extra Location pages /ScrapDealerinGoregaonWest'));
-const ScrapDealerinGrantRoad = lazy(() => import('./Extra Location pages /ScrapDealerinGrantRoad'));
-const ScrapDealerinJogeshwariEast = lazy(() => import('./Extra Location pages /ScrapDealerinJogeshwariEast'));
-const ScrapDealerinJogeshwariWest = lazy(() => import('./Extra Location pages /ScrapDealerinJogeshwariWest'));
-const ScrapDealerinKandivaliEast = lazy(() => import('./Extra Location pages /ScrapDealerinKandivaliEast'));
-const ScrapDealerinKandivaliWest = lazy(() => import('./Extra Location pages /ScrapDealerinKandivaliWest'));
-const ScrapDealerinKurla = lazy(() => import('./Extra Location pages /ScrapDealerinKurla'));
-const ScrapDealerinLowerParel = lazy(() => import('./Extra Location pages /ScrapDealerinLowerParel'));
-const ScrapDealerinMaladEast = lazy(() => import('./Extra Location pages /ScrapDealerinMaladEast'));
-const ScrapDealerinMaladWest = lazy(() => import('./Extra Location pages /ScrapDealerinMaladWest'));
-const ScrapDealerinMulund = lazy(() => import('./Extra Location pages /ScrapDealerinMulund'));
-const ScrapDealerinSion = lazy(() => import('./Extra Location pages /ScrapDealerinSion'));
-const ScrapDealerinVidyavihar = lazy(() => import('./Extra Location pages /ScrapDealerinVidyavihar'));
-const ScrapDealerinVikhroli = lazy(() => import('./Extra Location pages /ScrapDealerinVikhroli'));
-const ScrapDealerinWadala = lazy(() => import('./Extra Location pages /ScrapDealerinWadala'));
-const ScrapDealerinWorli = lazy(() => import('./Extra Location pages /ScrapDealerinWorli'));
+// ExtraLocationPages (lazy)
+const ScrapDealerinAndheri = lazy(() => import('./ExtraLocationPages/ScrapDealerinAndheri'));
+const ScrapDealerinAndheriEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinAndheriEast'));
+const ScrapDealerinBhandup = lazy(() => import('./ExtraLocationPages/ScrapDealerinBhandup'));
+const ScrapDealerinByculla = lazy(() => import('./ExtraLocationPages/ScrapDealerinByculla'));
+const ScrapDealerinChembur = lazy(() => import('./ExtraLocationPages/ScrapDealerinChembur'));
+const ScrapDealerinColaba = lazy(() => import('./ExtraLocationPages/ScrapDealerinColaba'));
+const ScrapDealerinCST = lazy(() => import('./ExtraLocationPages/ScrapDealerinCST'));
+const ScrapDealerinDadarEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinDadarEast'));
+const ScrapDealerinDadarWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinDadarWest'));
+const ScrapDealerinFort = lazy(() => import('./ExtraLocationPages/ScrapDealerinFort'));
+const ScrapDealerinGhatkoparEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinGhatkoparEast'));
+const ScrapDealerinGhatkoparWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinGhatkoparWest'));
+const ScrapDealerinGoregaonEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinGoregaonEast'));
+const ScrapDealerinGoregaonWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinGoregaonWest'));
+const ScrapDealerinGrantRoad = lazy(() => import('./ExtraLocationPages/ScrapDealerinGrantRoad'));
+const ScrapDealerinJogeshwariEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinJogeshwariEast'));
+const ScrapDealerinJogeshwariWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinJogeshwariWest'));
+const ScrapDealerinKandivaliEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinKandivaliEast'));
+const ScrapDealerinKandivaliWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinKandivaliWest'));
+const ScrapDealerinKurla = lazy(() => import('./ExtraLocationPages/ScrapDealerinKurla'));
+const ScrapDealerinLowerParel = lazy(() => import('./ExtraLocationPages/ScrapDealerinLowerParel'));
+const ScrapDealerinMaladEast = lazy(() => import('./ExtraLocationPages/ScrapDealerinMaladEast'));
+const ScrapDealerinMaladWest = lazy(() => import('./ExtraLocationPages/ScrapDealerinMaladWest'));
+const ScrapDealerinMulund = lazy(() => import('./ExtraLocationPages/ScrapDealerinMulund'));
+const ScrapDealerinSion = lazy(() => import('./ExtraLocationPages/ScrapDealerinSion'));
+const ScrapDealerinVidyavihar = lazy(() => import('./ExtraLocationPages/ScrapDealerinVidyavihar'));
+const ScrapDealerinVikhroli = lazy(() => import('./ExtraLocationPages/ScrapDealerinVikhroli'));
+const ScrapDealerinWadala = lazy(() => import('./ExtraLocationPages/ScrapDealerinWadala'));
+const ScrapDealerinWorli = lazy(() => import('./ExtraLocationPages/ScrapDealerinWorli'));
 
 // Scrap Category Pages (lazy)
 const ACScrapPage = lazy(() => import('./Scrap Category Pages/ACScrapPage'));
@@ -79,6 +67,17 @@ const RefrigeratorScrapPage = lazy(() => import('./Scrap Category Pages/Refrigir
 const StainlessSteelScrapPage = lazy(() => import('./Scrap Category Pages/StainlessSteelScrapPage'));
 const WashingMachineScrapPage = lazy(() => import('./Scrap Category Pages/WashingmachineScrapPage'));
 
+// Location Pages (lazy — converted from static imports)
+const Bandra = lazy(() => import('./pages/Bandra'));
+const BandraEast = lazy(() => import('./pages/BandraEast'));
+const Dharavi = lazy(() => import('./pages/Dharavi'));
+const DharaviKoliwada = lazy(() => import('./pages/DharaviKoliwada'));
+const Goregaon = lazy(() => import('./pages/Goregaon'));
+const Jogeshwari = lazy(() => import('./pages/Jogeshwari'));
+const Kandivali = lazy(() => import('./pages/Kandivali'));
+const Mahim = lazy(() => import('./pages/Mahim'));
+const Nalasopara = lazy(() => import('./pages/Nalasopara'));
+
 const fallback = (
   <div className="min-h-screen flex items-center justify-center">
     <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin" />
@@ -91,12 +90,15 @@ function App() {
       <ScrollToTop />
       <Suspense fallback={fallback}>
         <Routes>
+
+          {/* Home */}
           <Route path="/" element={<Home />} />
 
           {/* Standard Pages */}
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/scrapiz-partners" element={<Layout><Partners /></Layout>} />
           <Route path="/blog" element={<Layout><Blog /></Layout>} />
           <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
           <Route path="/locations" element={<Layout><Locations /></Layout>} />
@@ -104,30 +106,11 @@ function App() {
           <Route path="/terms-and-conditions" element={<Layout><TermsAndConditions /></Layout>} />
           <Route path="/request-account-deletion" element={<Layout><RequestAccountDeletion /></Layout>} />
 
-          {/* Service Routes */}
-          <Route path="/services/scrap-collection" element={<Layout><ScrapCollectionPage /></Layout>} />
-          <Route path="/services/demolition" element={<Layout><DemolitionServicePage /></Layout>} />
-          <Route path="/services/demolition-service" element={<Layout><DemolitionServicePage /></Layout>} />
-          <Route path="/services/dismantling" element={<Layout><DismantlingPage /></Layout>} />
-          <Route path="/services/paper-shredding" element={<Layout><PaperShreddingPage /></Layout>} />
-          <Route path="/services/society-tie-up" element={<Layout><SocietyTieUpPage /></Layout>} />
-          <Route path="/services/junk-removal" element={<Layout><JunkRemovalServicePage /></Layout>} />
-          <Route path="/services/junk-removal-service" element={<Layout><JunkRemovalServicePage /></Layout>} />
-          <Route path="/services/vehicle-scrapping" element={<Layout><VehicleScrappingPage /></Layout>} />
-
-          {/* Location Routes */}
-          <Route path="/locations/bandra" element={<Layout><Bandra /></Layout>} />
-          <Route path="/locations/bandra-east" element={<Layout><BandraEast /></Layout>} />
-          <Route path="/locations/dharavi" element={<Layout><Dharavi /></Layout>} />
-          <Route path="/locations/dharavi-koliwada" element={<Layout><DharaviKoliwada /></Layout>} />
-          <Route path="/locations/goregaon" element={<Layout><Goregaon /></Layout>} />
-          <Route path="/locations/jogeshwari" element={<Layout><Jogeshwari /></Layout>} />
-          <Route path="/locations/kandivali" element={<Layout><Kandivali /></Layout>} />
-          <Route path="/locations/mahim" element={<Layout><Mahim /></Layout>} />
-          <Route path="/locations/nalasopara" element={<Layout><Nalasopara /></Layout>} />
+          {/* Service Routes — single dynamic route */}
+          <Route path="/services/:serviceSlug" element={<Layout><ServicePage /></Layout>} />
 
           {/* Extra Location Routes */}
-          <Route path="/locations/andheri" element={<Layout><ScrapDealerinAndheri /></Layout>} />
+          {/* <Route path="/locations/andheri" element={<Layout><ScrapDealerinAndheri /></Layout>} />
           <Route path="/locations/andheri-east" element={<Layout><ScrapDealerinAndheriEast /></Layout>} />
           <Route path="/locations/bhandup" element={<Layout><ScrapDealerinBhandup /></Layout>} />
           <Route path="/locations/byculla" element={<Layout><ScrapDealerinByculla /></Layout>} />
@@ -155,7 +138,18 @@ function App() {
           <Route path="/locations/vidyavihar" element={<Layout><ScrapDealerinVidyavihar /></Layout>} />
           <Route path="/locations/vikhroli" element={<Layout><ScrapDealerinVikhroli /></Layout>} />
           <Route path="/locations/wadala" element={<Layout><ScrapDealerinWadala /></Layout>} />
-          <Route path="/locations/worli" element={<Layout><ScrapDealerinWorli /></Layout>} />
+          <Route path="/locations/worli" element={<Layout><ScrapDealerinWorli /></Layout>} /> */}
+
+          {/* Your local Location Pages */}
+          <Route path="/locations/bandra" element={<Layout><Bandra /></Layout>} />
+          <Route path="/locations/bandra-east" element={<Layout><BandraEast /></Layout>} />
+          <Route path="/locations/dharavi" element={<Layout><Dharavi /></Layout>} />
+          <Route path="/locations/dharavi-koliwada" element={<Layout><DharaviKoliwada /></Layout>} />
+          <Route path="/locations/goregaon" element={<Layout><Goregaon /></Layout>} />
+          <Route path="/locations/jogeshwari" element={<Layout><Jogeshwari /></Layout>} />
+          <Route path="/locations/kandivali" element={<Layout><Kandivali /></Layout>} />
+          <Route path="/locations/mahim" element={<Layout><Mahim /></Layout>} />
+          <Route path="/locations/nalasopara" element={<Layout><Nalasopara /></Layout>} />
 
           {/* Scrap Category Routes */}
           <Route path="/sell-ac-scrap-mumbai" element={<Layout><ACScrapPage /></Layout>} />
@@ -169,8 +163,17 @@ function App() {
           <Route path="/sell-stainless-steel-scrap-mumbai" element={<Layout><StainlessSteelScrapPage /></Layout>} />
           <Route path="/sell-washing-machine-scrap-mumbai" element={<Layout><WashingMachineScrapPage /></Layout>} />
 
-          {/* 404 Route */}
+          {/* Dynamic SEO Route */}
+          <Route path="/:slug" element={<Layout><ScrapDynamicPage /></Layout>} />
+
+          {/* Dynamic Location Route */}
+          <Route path="/locations/:locationSlug" element={<Layout><LocationTemplate /></Layout>} />
+          <Route path="/:locationSlug" element={<Layout><LocationTemplate /></Layout>} />
+
+
+          {/* 404 */}
           <Route path="*" element={<Layout><NotFound /></Layout>} />
+
         </Routes>
       </Suspense>
     </Router>
@@ -178,4 +181,3 @@ function App() {
 }
 
 export default App;
-
