@@ -15,6 +15,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const RequestAccountDeletion = lazy(() => import('./pages/RequestAccountDeletion'));
+const Partners = lazy(() => import('./pages/Partners'));
 
 // Service Pages — single dynamic page
 const ServicePage = lazy(() => import('./pages/ServicePage'));
@@ -97,6 +98,7 @@ function App() {
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/scrapiz-partners" element={<Layout><Partners /></Layout>} />
           <Route path="/blog" element={<Layout><Blog /></Layout>} />
           <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
           <Route path="/locations" element={<Layout><Locations /></Layout>} />

@@ -1,3 +1,67 @@
+// import personImg from "../assets/man.jpg";
+// import truckImg from "../assets/truck.png";
+// import googlePlay from "../assets/google.png";
+// import appStore from "../assets/apple.png";
+
+// export default function Hero() {
+//   return (
+//     <section className="relative bg-[#f3f3f3] min-h-screen overflow-hidden">
+
+//       {/* Content Wrapper */}
+//       <div className="max-w-7xl mx-auto px-6 pt-40 relative z-10 text-center">
+
+//         {/* Heading */}
+//         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+//           India's Smart Scrap <br />
+//           Pickup & Recycling Platform
+//         </h1>
+
+//         {/* Subtext */}
+//         <p className="mt-6 text-3xl text-gray-600 max-w-xl mx-auto">
+//           Sell your scrap in minutes with instant doorstep pickup.
+//         </p>
+
+//         {/* App Buttons */}
+//         <div className="mt-8 flex justify-center gap-4">
+//           <img
+//             src={googlePlay}
+//             alt="Google Play"
+//             className="h-14 cursor-pointer"
+//             loading="lazy"
+//           />
+//           <img
+//             src={appStore}
+//             alt="App Store"
+//             className="h-14 cursor-pointer"
+//             loading="lazy"
+//           />
+//         </div>
+//       </div>
+
+//       {/* Left Person Image */}
+//       <div className="absolute bottom-0 left-10 hidden md:block">
+//         <img
+//           src={personImg}
+//           alt="Scrapiz Representative"
+//           className="w-[380px] md:w-[350px] h-[500px]"
+//           loading="lazy"
+//         />
+//       </div>
+
+//       {/* Right Truck Image */}
+//       <div className="absolute bottom-0 right-0 hidden md:block">
+//         <img
+//           src={truckImg}
+//           alt="Scrapiz Truck"
+//           className="w-[550px] md:w-[500px] h-[340px]"
+//           loading="lazy"
+//         />
+//       </div>
+
+//     </section>
+//   );
+// }
+
 import { motion } from "framer-motion";
 import ResponsiveAssetImage from "../components/ResponsiveAssetImage";
 import googlePlay from "../assets/google.png";
@@ -15,10 +79,7 @@ export default function Hero() {
           transition={{ duration: 0.4 }}
           className="hero-title text-3xl md:text-5xl font-bold text-gray-900 leading-tight px-2"
         >
-          <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
-            Mumbai&apos;s Smart Scrap
-          </span>{" "}
-          <br />
+          Mumbai's Smart Scrap <br />
           Pickup & Recycling Platform
         </motion.h1>
 
@@ -29,8 +90,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="hero-subtitle mt-3 md:mt-6 text-lg md:text-3xl text-gray-600 max-w-xl mx-auto px-4"
         >
-          Sell scrap online in Mumbai in minutes with instant doorstep pickup.
-          Get best prices for metal, paper, plastic, e-waste & more.
+          Sell your scrap in minutes with instant doorstep pickup.
         </motion.p>
 
         {/* Mobile Layout: Person Image + App Buttons Side by Side */}

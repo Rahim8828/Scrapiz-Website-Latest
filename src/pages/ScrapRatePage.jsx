@@ -7,13 +7,12 @@ import { Truck, IndianRupee, Clock, Star, Phone, CheckCircle } from "lucide-reac
 import { scrapData } from "../data/scrapData";
 import { locationData } from "../data/locationData";
 
-import Navbar from "../components/Header";
-import Footer from "../components/Footer";
 import ScrapCategoriesSection from "../components/ScrapCategoriesSection";
 import SEOCTASection from "@/components/SEOCTASection";
 import Testimonials from "@/components/TestimonialsSection";
 import LocationMap from "@/components/LocationMap";
 import ScrapRateFAQ from "@/components/ScrapRateFAQ";
+import NotFound from "./NotFound";
 
 const synonymMap = {
   fridge: "refrigerator", refrigerator: "refrigerator",
@@ -54,7 +53,7 @@ const ScrapRatePage = () => {
   const { material, location } = resolveFromSlug(slug, scrapData, locationData);
 
   if (!material) {
-    return <div className="p-10 text-center text-xl font-semibold">Page not found</div>;
+    return <NotFound />;
   }
 
   const locationObj = locationData[location];
@@ -223,8 +222,6 @@ const faqItems = [
       </Helmet>
 
       <div className="bg-white text-gray-800 font-sans">
-        <Navbar />
-
         {/* HERO */}
         <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-teal-700 text-white pt-24 pb-12 md:pt-28 md:pb-20">
           <div className="absolute inset-0 bg-black/10"></div>
@@ -353,8 +350,6 @@ const faqItems = [
 
         {/* TESTIMONIALS */}
         <Testimonials />
-
-        <Footer />
       </div>
 
       {/* STICKY MOBILE CTA */}

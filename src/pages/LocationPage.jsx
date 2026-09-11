@@ -5,9 +5,6 @@ import { locationData } from "../data/locationData";
 import { generateLocationSchema } from "../utils/seoHelpers";
 import { generateFAQs } from "../utils/faqs";
 
-import Navbar from "../components/Header";
-import Footer from "../components/Footer";
-
 import LocationHero from "../components/LocationHero";
 import LocationWhyChoose from "../components/LocationWhyChoose";
 import LocationServices from "../components/LocationServices";
@@ -15,6 +12,7 @@ import LocationContact from "../components/LocationContact";
 import LocationMap from "../components/LocationMap";
 import LocationFAQ from "../components/LocationFAQ";
 import LocationNearby from "../components/LocationNearby";
+import NotFound from "./NotFound";
 
 const LocationTemplate = () => {
   const { locationSlug } = useParams();
@@ -24,7 +22,7 @@ const LocationTemplate = () => {
   );
 
   if (!location) {
-    return <div>Location not found</div>;
+    return <NotFound />;
   }
 
   const faqs = generateFAQs(location);
@@ -61,7 +59,6 @@ const LocationTemplate = () => {
       </Helmet>
 
       <div className="bg-white text-gray-800 font-sans">
-        <Navbar />
         <LocationHero location={location} />
         <LocationWhyChoose location={location} />
         <LocationServices location={location} />
@@ -88,8 +85,6 @@ const LocationTemplate = () => {
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
     </>
   );

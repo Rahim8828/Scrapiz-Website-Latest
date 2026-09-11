@@ -6,9 +6,6 @@ import { locationData } from "../data/locationData";
 import { serviceData } from "../data/serviceData";
 import { generateFAQs } from "../utils/faqs";
 
-import Navbar from "../components/Header";
-import Footer from "../components/Footer";
-
 import LocationHero from "../components/LocationHero";
 import LocationWhyChoose from "../components/LocationWhyChoose";
 import LocationServices from "../components/LocationServices";
@@ -20,10 +17,87 @@ import LocationFAQ from "../components/LocationFAQ";
 import SEOCTASection from "@/components/SEOCTASection";
 import Testimonials from "@/components/TestimonialsSection";
 
+import NotFound from "./NotFound";
 import ScrapRatePage from "./ScrapRatePage";
 
+const normalizeSlugPart = (value = "") =>
+  String(value)
+    .trim()
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, "-")
+    .replace(/-+/g, "-")
+    .toLowerCase();
+
+const stripHyphen = (value = "") => normalizeSlugPart(value).replace(/-/g, "");
+
+const materialAliases = {
+  "e-waste": "ewaste",
+  "e-wastes": "ewaste",
+  "stainless-steel": "stainless",
+  "stainless-steels": "stainless",
+  "iron-steel": "iron",
+  "washing-machine": "washingmachine",
+};
+
+const resolveMaterialKey = (rawMaterial) => {
+  const normalized = normalizeSlugPart(rawMaterial);
+  const compact = stripHyphen(rawMaterial);
+
+  if (materialAliases[normalized] && scrapData[materialAliases[normalized]]) {
+    return materialAliases[normalized];
+  }
+
+  if (scrapData[normalized]) return normalized;
+  if (scrapData[compact]) return compact;
+
+  return Object.keys(scrapData).find((key) => {
+    const keyNormalized = normalizeSlugPart(key);
+    return keyNormalized === normalized || stripHyphen(key) === compact;
+  });
+};
+
+const resolveLocation = (rawLocation) => {
+  const normalized = normalizeSlugPart(rawLocation);
+  const compact = stripHyphen(rawLocation);
+
+  return Object.values(locationData).find((loc) => {
+    const candidates = [loc.slug, loc.id, loc.name, loc.displayName];
+    return candidates.some((candidate) => {
+      const candidateNormalized = normalizeSlugPart(candidate);
+      return (
+        candidateNormalized === normalized ||
+        stripHyphen(candidateNormalized) === compact
+      );
+    });
+  });
+};
+
+const parseDynamicSlug = (rawSlug = "") => {
+  const slug = normalizeSlugPart(rawSlug);
+
+  const sellMatch = slug.match(/^sell-(.+)-scrap-(.+)$/);
+  if (sellMatch) {
+    return {
+      material: sellMatch[1],
+      service: "sell",
+      location: sellMatch[2],
+    };
+  }
+
+  const commonMatch = slug.match(/^(.+)-scrap-(buyers|pickup|dealers)-(.+)$/);
+  if (commonMatch) {
+    return {
+      material: commonMatch[1],
+      service: commonMatch[2],
+      location: commonMatch[3],
+    };
+  }
+
+  return null;
+};
+
 const ScrapDynamicPage = () => {
-  const { slug } = useParams();
+  const { slug = "" } = useParams();
 
   // 🔍 Detect rate pages
   const isRatePage =
@@ -34,54 +108,39 @@ const ScrapDynamicPage = () => {
     return <ScrapRatePage />;
   }
 
-  const parts = slug?.split("-") || [];
-
-  let material;
-  let service;
-  let city;
-
-  if (parts[0] === "sell") {
-    // sell-ewaste-scrap-bandra-east
-    material = parts[1];
-    service = "sell";
-    city = parts.slice(3).join("-");
-  } else {
-    // copper-scrap-buyers-bandra-east
-    material = parts[0];
-    service = parts[2];
-    city = parts.slice(3).join("-");
+  const parsed = parseDynamicSlug(slug);
+  if (!parsed) {
+    return <NotFound />;
   }
 
-  const scrap = scrapData[material];
-
-
-  const location = Object.values(locationData).find(
-    (loc) => loc.slug === city
-  );
+  const materialKey = resolveMaterialKey(parsed.material);
+  const serviceKey = normalizeSlugPart(parsed.service);
+  const scrap = materialKey ? scrapData[materialKey] : null;
+  const location = resolveLocation(parsed.location);
 
   const serviceType =
-    service === "sell"
+    serviceKey === "sell"
       ? { name: "Sell Scrap", slug: "sell" }
-      : serviceData[service];
+      : serviceData[serviceKey];
 
   if (!scrap || !location || !serviceType) {
-    return <div>Page not found</div>;
+    return <NotFound />;
   }
 
   const faqs = generateFAQs(location);
 
   // 🧠 SEO
   const title =
-    service === "sell"
+    serviceKey === "sell"
       ? `Sell ${scrap.name} Scrap in ${location.displayName} | Scrapiz`
       : `${scrap.name} ${serviceType.name} in ${location.displayName} | Scrapiz`;
 
   const description = `Looking for ${scrap.name.toLowerCase()} ${serviceType.slug} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and best scrap rates in ${location.displayName}.`;
 
   const canonicalUrl =
-    service === "sell"
-      ? `https://www.scrapiz.in/sell-${material}-scrap-${city}`
-      : `https://www.scrapiz.in/${material}-scrap-${service}-${city}`;
+    serviceKey === "sell"
+      ? `https://www.scrapiz.in/sell-${materialKey}-scrap-${location.slug}`
+      : `https://www.scrapiz.in/${materialKey}-scrap-${serviceType.slug}-${location.slug}`;
 
 
   const getSafeMapUrl = (location) => {
@@ -115,8 +174,6 @@ const ScrapDynamicPage = () => {
       </Helmet>
 
       <div className="bg-white text-gray-800 font-sans">
-        <Navbar />
-
         <LocationHero 
           location={safeLocation}
           scrap={scrap}
@@ -135,8 +192,6 @@ const ScrapDynamicPage = () => {
 
         <SEOCTASection scrap={scrap} location={safeLocation} />
         <Testimonials />
-
-        <Footer />
       </div>
     </>
   );

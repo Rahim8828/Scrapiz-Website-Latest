@@ -70,7 +70,7 @@ export default function ServicesSection() {
                   className="rounded-3xl overflow-hidden 
                  shadow-md 
                  transition-all duration-500 ease-out
-                 group-hover:-translate-y-1
+                 group-hover:-translate-y-3
                  group-hover:shadow-2xl
                  group-hover:scale-[1.02]"
                 >
@@ -79,7 +79,9 @@ export default function ServicesSection() {
                     <ResponsiveAssetImage
                       src={service.src}
                       alt={service.title}
-                      className="h-60 w-full object-cover"
+                      className="h-60 w-full object-cover 
+                     transition-transform duration-700 ease-out
+                     group-hover:scale-110"
                       loading="lazy"
                     />
                   </div>
