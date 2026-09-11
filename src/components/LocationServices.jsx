@@ -14,37 +14,37 @@ const LocationServices = ({ location }) => {
       title: 'Metal Scrap Collection',
       description: `We buy iron scrap, steel scrap, aluminum scrap, copper scrap, and brass scrap in ${name}. Get the best scrap rates for all metal materials.`,
       items: ['Iron & Steel', 'Aluminum', 'Copper', 'Brass', 'Stainless Steel'],
-      image: '/assets-optimized/metalscrap.jpg'
+      image: '/assets-optimized/metalscrap.webp'
     },
     {
       title: 'E-Waste Pickup',
       description: `Professional e-waste pickup in ${name} for computers, laptops, mobile phones, and all electronic items. Eco-friendly recycling guaranteed.`,
       items: ['Computers', 'Laptops', 'Mobile Phones', 'Printers', 'Electronic Boards'],
-      image: '/assets-optimized/ewaste.jpg'
+      image: '/assets-optimized/ewaste.webp'
     },
     {
       title: 'Appliance Scrap',
       description: `Sell old appliances in ${name} - refrigerators, washing machines, ACs, and microwaves. Free doorstep pickup with instant payment.`,
       items: ['Refrigerators', 'Washing Machines', 'Air Conditioners', 'Microwaves', 'Water Heaters'],
-      image: '/assets-optimized/Appliancescrap.png'
+      image: '/assets-optimized/Appliancescrap.webp'
     },
     {
       title: 'Paper & Cardboard',
       description: `We collect paper waste, cardboard, newspapers, and office documents in ${name}. Secure shredding services available.`,
       items: ['Newspapers', 'Cardboard Boxes', 'Office Paper', 'Books', 'Magazines'],
-      image: '/assets-optimized/paperscrap.png'
+      image: '/assets-optimized/paperscrap.webp'
     },
     {
       title: 'Plastic Scrap',
       description: `Buy all types of plastic scrap in ${name} including bottles, containers, and industrial plastic waste at competitive rates.`,
       items: ['Plastic Bottles', 'Containers', 'PVC Pipes', 'Industrial Plastic', 'Packaging Material'],
-      image: '/assets-optimized/plasitcscrap.jpg'
+      image: '/assets-optimized/plasitcscrap.webp'
     },
     {
       title: 'Furniture & Misc',
       description: `Remove old furniture, wooden items, and miscellaneous scrap from your home or office in ${name}. Hassle-free service.`,
       items: ['Old Furniture', 'Wooden Items', 'Glass', 'Rubber', 'Mixed Scrap'],
-      image: '/assets-optimized/woodenscrap.png'
+      image: '/assets-optimized/woodenscrap.webp'
     }
   ];
 

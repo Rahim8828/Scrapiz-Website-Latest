@@ -10,42 +10,66 @@ console.log('🖼️  Image Optimization Pipeline\n');
 console.log('='.repeat(60));
 
 // Configuration
+// const config = {
+//   inputDir: path.join(__dirname, '../public'),
+//   outputDir: path.join(__dirname, '../public/optimized'),
+//   quality: 85, // WebP quality (0-100)
+//   formats: ['webp'], // Output formats
+//   // Responsive breakpoints (widths in pixels)
+//   breakpoints: [320, 640, 768, 1024, 1280, 1920],
+//   // Minimum compression ratio to consider optimization successful
+//   minCompressionRatio: 0.6
+// };
 const config = {
-  inputDir: path.join(__dirname, '../public'),
-  outputDir: path.join(__dirname, '../public/optimized'),
-  quality: 85, // WebP quality (0-100)
-  formats: ['webp'], // Output formats
-  // Responsive breakpoints (widths in pixels)
+  inputDir: path.join(__dirname, '../public/assets-optimized'),
+  outputDir: path.join(__dirname, '../public/assets-optimized'),
+  quality: 85,
+  formats: ['webp'],
   breakpoints: [320, 640, 768, 1024, 1280, 1920],
-  // Minimum compression ratio to consider optimization successful
   minCompressionRatio: 0.6
 };
-
 // Create output directory if it doesn't exist
 if (!fs.existsSync(config.outputDir)) {
   fs.mkdirSync(config.outputDir, { recursive: true });
 }
 
 // Get all image files from public directory
-const getImageFiles = (dir) => {
-  const files = [];
-  const items = fs.readdirSync(dir);
+// const getImageFiles = (dir) => {
+//   const files = [];
+//   const items = fs.readdirSync(dir);
   
+//   for (const item of items) {
+//     const fullPath = path.join(dir, item);
+//     const stat = fs.statSync(fullPath);
+    
+//     if (stat.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(item)) {
+//       // Skip already optimized images and special files
+//       if (!item.includes('favicon') && !item.includes('robots')) {
+//         files.push({ name: item, path: fullPath });
+//       }
+//     }
+//   }
+  
+//   return files;
+// };
+const getImageFiles = (dir) => {
+  let files = [];
+
+  const items = fs.readdirSync(dir);
+
   for (const item of items) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
-    
-    if (stat.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(item)) {
-      // Skip already optimized images and special files
-      if (!item.includes('favicon') && !item.includes('robots')) {
-        files.push({ name: item, path: fullPath });
-      }
+
+    if (stat.isDirectory()) {
+      files = files.concat(getImageFiles(fullPath)); // recursion
+    } else if (stat.isFile() && /\.(jpg|jpeg|png)$/i.test(item)) {
+      files.push({ name: item, path: fullPath });
     }
   }
-  
+
   return files;
 };
-
 // Optimize a single image
 const optimizeImage = async (imagePath, imageName) => {
   try {
@@ -64,9 +88,18 @@ const optimizeImage = async (imagePath, imageName) => {
     };
     
     // Generate base optimized WebP
-    const baseName = path.parse(imageName).name;
-    const webpPath = path.join(config.outputDir, `${baseName}.webp`);
-    
+    // const baseName = path.parse(imageName).name;
+    // const webpPath = path.join(config.outputDir, `${baseName}.webp`);
+
+    const relativePath = path.relative(config.inputDir, imagePath);
+
+    const webpPath = path.join(
+      config.outputDir,
+      relativePath.replace(/\.(jpg|jpeg|png)$/i, '.webp')
+    );
+
+// Ensure directory exists
+fs.mkdirSync(path.dirname(webpPath), { recursive: true });
     await image
       .webp({ quality: config.quality, effort: 6 })
       .toFile(webpPath);
@@ -89,8 +122,16 @@ const optimizeImage = async (imagePath, imageName) => {
       for (const width of config.breakpoints) {
         // Only generate if smaller than original
         if (width < metadata.width) {
-          const responsivePath = path.join(config.outputDir, `${baseName}-${width}w.webp`);
+          // const responsivePath = path.join(config.outputDir, `${baseName}-${width}w.webp`);
+          const responsivePath = path.join(
+            config.outputDir,
+            relativePath.replace(
+              /\.(jpg|jpeg|png)$/i,
+              `-${width}w.webp`
+            )
+          );
           
+          fs.mkdirSync(path.dirname(responsivePath), { recursive: true });
           await sharp(imagePath)
             .resize(width, null, { withoutEnlargement: true })
             .webp({ quality: config.quality, effort: 6 })

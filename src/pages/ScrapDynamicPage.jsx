@@ -20,81 +20,6 @@ import Testimonials from "@/components/TestimonialsSection";
 import NotFound from "./NotFound";
 import ScrapRatePage from "./ScrapRatePage";
 
-const normalizeSlugPart = (value = "") =>
-  String(value)
-    .trim()
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/[\s_]+/g, "-")
-    .replace(/-+/g, "-")
-    .toLowerCase();
-
-const stripHyphen = (value = "") => normalizeSlugPart(value).replace(/-/g, "");
-
-const materialAliases = {
-  "e-waste": "ewaste",
-  "e-wastes": "ewaste",
-  "stainless-steel": "stainless",
-  "stainless-steels": "stainless",
-  "iron-steel": "iron",
-  "washing-machine": "washingmachine",
-};
-
-const resolveMaterialKey = (rawMaterial) => {
-  const normalized = normalizeSlugPart(rawMaterial);
-  const compact = stripHyphen(rawMaterial);
-
-  if (materialAliases[normalized] && scrapData[materialAliases[normalized]]) {
-    return materialAliases[normalized];
-  }
-
-  if (scrapData[normalized]) return normalized;
-  if (scrapData[compact]) return compact;
-
-  return Object.keys(scrapData).find((key) => {
-    const keyNormalized = normalizeSlugPart(key);
-    return keyNormalized === normalized || stripHyphen(key) === compact;
-  });
-};
-
-const resolveLocation = (rawLocation) => {
-  const normalized = normalizeSlugPart(rawLocation);
-  const compact = stripHyphen(rawLocation);
-
-  return Object.values(locationData).find((loc) => {
-    const candidates = [loc.slug, loc.id, loc.name, loc.displayName];
-    return candidates.some((candidate) => {
-      const candidateNormalized = normalizeSlugPart(candidate);
-      return (
-        candidateNormalized === normalized ||
-        stripHyphen(candidateNormalized) === compact
-      );
-    });
-  });
-};
-
-const parseDynamicSlug = (rawSlug = "") => {
-  const slug = normalizeSlugPart(rawSlug);
-
-  const sellMatch = slug.match(/^sell-(.+)-scrap-(.+)$/);
-  if (sellMatch) {
-    return {
-      material: sellMatch[1],
-      service: "sell",
-      location: sellMatch[2],
-    };
-  }
-
-  const commonMatch = slug.match(/^(.+)-scrap-(buyers|pickup|dealers)-(.+)$/);
-  if (commonMatch) {
-    return {
-      material: commonMatch[1],
-      service: commonMatch[2],
-      location: commonMatch[3],
-    };
-  }
-
-  return null;
-};
 
 const ScrapDynamicPage = () => {
   const { slug = "" } = useParams();
@@ -113,15 +38,21 @@ const ScrapDynamicPage = () => {
     return <NotFound />;
   }
 
-  const materialKey = resolveMaterialKey(parsed.material);
-  const serviceKey = normalizeSlugPart(parsed.service);
-  const scrap = materialKey ? scrapData[materialKey] : null;
-  const location = resolveLocation(parsed.location);
+  const scrap = scrapData[material];
 
+
+  const location = Object.values(locationData).find(
+    (loc) => loc.slug === city
+  );
   const serviceType =
-    serviceKey === "sell"
-      ? { name: "Sell Scrap", slug: "sell" }
-      : serviceData[serviceKey];
+  service === "sell"
+    ? {
+        name: "Sell Scrap",
+        slug: "sell",
+        description:
+          "Sell your scrap easily with doorstep pickup, instant payment, and best market rates. We handle all types of scrap efficiently and responsibly."
+      }
+    : serviceData[service];
 
   if (!scrap || !location || !serviceType) {
     return <NotFound />;
@@ -131,11 +62,11 @@ const ScrapDynamicPage = () => {
 
   // 🧠 SEO
   const title =
-    serviceKey === "sell"
-      ? `Sell ${scrap.name} Scrap in ${location.displayName} | Scrapiz`
-      : `${scrap.name} ${serviceType.name} in ${location.displayName} | Scrapiz`;
+  service === "sell"
+    ? `Sell ${scrap.name} Scrap in ${location.displayName} | Instant Pickup | Scrapiz`
+    : `${scrap.name} ${serviceType.name} in ${location.displayName} | Best Rates | Scrapiz`;
 
-  const description = `Looking for ${scrap.name.toLowerCase()} ${serviceType.slug} in ${location.displayName}? Scrapiz offers doorstep pickup, instant payment, and best scrap rates in ${location.displayName}.`;
+    const description = `${serviceType.description} In ${location.displayName}, we specialize in ${scrap.name.toLowerCase()} scrap with doorstep pickup, instant payment, and top market rates.`;
 
   const canonicalUrl =
     serviceKey === "sell"
@@ -178,6 +109,7 @@ const ScrapDynamicPage = () => {
           location={safeLocation}
           scrap={scrap}
           service={serviceType}
+          description={description}
         />
 
         <LocationWhyChoose location={safeLocation} />
